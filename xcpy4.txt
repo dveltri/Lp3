@@ -1,0 +1,27 @@
+echo ETH0 %1 >> %4\%1\startup.ini
+echo NETMASK0 %2 >> %4\%1\startup.ini
+echo DGW %3 >> %4\%1\startup.ini
+echo LOG 1 >> %4\%1\startup.ini
+echo Flashing 2 >> %4\%1\startup.ini
+echo FlasCA 50 >> %4\%1\startup.ini
+echo Virtual Inputs 0 >> %4\%1\startup.ini
+echo Inputs 24 >> %4\%1\startup.ini
+echo Loops 0 >> %4\%1\startup.ini
+echo Model GW4 >> %4\%1\startup.ini
+echo Outputs 0 >> %4\%1\startup.ini
+echo Phases 4 >> %4\%1\startup.ini
+echo Virtual Phases 0 >> %4\%1\startup.ini
+echo Remote Phases 0 >> %4\%1\startup.ini
+echo Groups Phases 0 >> %4\%1\startup.ini
+echo Controllers 1 >> %4\%1\startup.ini
+echo Time Out Electrical Error 160 >> %4\%1\startup.ini
+echo Time Out Consumption Error 256 >> %4\%1\startup.ini
+echo Alert Over Voltage 1600 >> %4\%1\startup.ini
+echo Normal Voltage 1200 >> %4\%1\startup.ini
+echo Error Minimal Voltage 1100 >> %4\%1\startup.ini
+echo Error Critical Voltage 1050 >> %4\%1\startup.ini
+echo Web Access Code Ro 54321 >> %4\%1\startup.ini
+echo Web Access Code R/W 12345 >> %4\%1\startup.ini
+echo Time Zone GMT -180 >> %4\%1\startup.ini
+echo Enable GPS 3 >> %4\%1\startup.ini
+echo Time Cap 0 >> %4\%1\startup.ini
