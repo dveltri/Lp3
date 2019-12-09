@@ -39,7 +39,7 @@ function SendStartup(Prg)
 	seek=0;
 	var dt;
 	UpFile="startup.ini"
-	chkAdvance();
+	//chkAdvance();
 	var ip=Prg.GlobalParms.ETH0;
 	if(Prg.GlobalParms.ID)
 		UpData+="ID "+Remplace(Prg.GlobalParms.ID," ","_")+"\n";

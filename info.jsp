@@ -2,7 +2,6 @@
 	String data;
 	String stemp;
 	String ID = request.getParameter("ID");
-//	String IpAdd = request.getParameter("IpAdd");
 	String path="/";
 	path = request.getParameter("path");
 	String Os=System.getProperty("os.name");

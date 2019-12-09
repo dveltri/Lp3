@@ -70,20 +70,6 @@
 					IpDGW+=".1";
 					if (Model.indexOf("MSTC-V1M3")!=-1)
 						cmd=rootDir+"\\STC.bat "+ID+" b"+Model+" "+rootDir+" "+Storage;
-					if (Model.indexOf("GW1M3FT")!=-1)
-						cmd=rootDir+"\\GW.bat "+ID+" b"+Model+" "+rootDir+" "+Storage;
-					if (Model.indexOf("GW2M3FT")!=-1)
-						cmd=rootDir+"\\GW.bat "+ID+" b"+Model+" "+rootDir+" "+Storage;
-					if (Model.indexOf("GW3M3RT")!=-1)
-						cmd=rootDir+"\\GW.bat "+ID+" b"+Model+" "+rootDir+" "+Storage;
-					if (Model.indexOf("GW1M4FT")!=-1)
-						cmd=rootDir+"\\GW.bat "+ID+" b"+Model+" "+rootDir+" "+Storage;
-					if (Model.indexOf("GW2M4FT")!=-1)
-						cmd=rootDir+"\\GW.bat "+ID+" b"+Model+" "+rootDir+" "+Storage;
-					if (Model.indexOf("GW3M4RT")!=-1)
-						cmd=rootDir+"\\GW.bat "+ID+" b"+Model+" "+rootDir+" "+Storage;
-					if (Model.indexOf("GW4M4RT")!=-1)
-						cmd=rootDir+"\\GW.bat "+ID+" b"+Model+" "+rootDir+" "+Storage;
 					if (Model.indexOf("MAC-TC1M4")!=-1)
 						cmd=rootDir+"\\MAC.bat "+ID+" b"+Model+" "+rootDir+" "+Storage;
 					if (Model.indexOf("SAD-V1M4")!=-1)
@@ -92,8 +78,6 @@
 						cmd=rootDir+"\\MST.bat "+ID+" b"+Model+" "+rootDir+" "+Storage;
 					if (Model.indexOf("SAD-V3M4")!=-1)
 						cmd=rootDir+"\\MST.bat "+ID+" b"+Model+" "+rootDir+" "+Storage;
-					if (Model.indexOf("DGV-uTC1-M4")!=-1)
-						cmd=rootDir+"\\DGV.bat "+ID+" b"+Model+" "+rootDir+" "+Storage;
 						//out.println("["+cmd+"]");
 				}
 				else

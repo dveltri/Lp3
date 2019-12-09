@@ -274,27 +274,17 @@ ClearInp:0,
 MSKCOLORFF=	[0,17,18]; 				//off,r,y
 MSKCOLORST=	[0,1,4];	  			//off,R,V
 MSKC_OR=	[0,1,18,17];	  		//off,R,V
-MSKC_ORV=	[0,1,2,3,4,17,18,19,20];//off,R,A,RA,V,r,ra,v
-MSKC_ORVvar=[0,1,2,3,4,17,18,19,20];//off,R,A,RA,V,r,ra,v
+MSKC_ORV=	[0,1,2,4,3,17,18,20,19];//off,R,A,V,v,a,r
+MSKC_ORVvar=[0,1,2,4,3,17,18,20,19];//off,R,A,V,v,a,r
 MSKC_ORAV=	[0,1,2,4];	  			//off,R,V
-MSKEV=		[1,2,3,17,18,19,20,22];	//R,A,RA,r,a,ra,v,va
+MSKEV=		[1,2,3,17,18,20];	  	//off,V,R
 MSKEV1=		[2,17,18,20];	  	//A,r,a,v
-MSKEVRV=	[1,2,3,4,17,18,20,22];		//R,A,RA,V,r,a,v,va
-MSKALL=		[0,1,2,3,4,17,18,19,20,22];//off,R,A,RA,V,r,ra,v,va
+MSKEVRV=	[1,2,3,17,18,20,4];		//off,R,V
+MSKALL=		[0,1,2,3,4,17,18,20,19];//off,R,A,V,RA,r,v,ra
 var MSKtemo=[];
 //---------------------------------------------------
-//OptAddSrc=["RT","RT","Fx","Fx","Remote Controler","Remote Controler"]		
+//OptAddSrc=["Local Hd RT","Local Hd RT","Local Hd Fx","Local Hd Fx","Remote Controler","Remote Controler"]		
 OptAddSrc=[
-"DGV-uTC1-M4"	,"DGV uTC1",
-"GW1M3FT"		,"GW1(M3)",
-"GW2M3FT"		,"GW2(M3)",
-"GW3M3RT"		,"GW3 Tempo Real(M3)",
-"GW1M4FT"		,"GW1(M4)",
-"GW2M4FT"		,"GW2(M4)",
-"GW3M4RT"		,"GW3 Tempo Real(M4)",
-"GW4M4RT"		,"GW4 Tempo Real",
-"MAC-TC1M4"		,"MAC-Tc1 Tempo Real",
-"STC-S4M3"		,"SUTEC Controler",
 "MSTC-V1M3"		,"MsTraffic STC",
 "SAD-V1M4"		,"Cosmos TSC 1",
 "SAD-V2M4"		,"Cosmos TSC 2",

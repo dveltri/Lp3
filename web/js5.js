@@ -395,25 +395,8 @@ function Setdphc()
 		var i=PLCs[PlcIdx].Phases[j];
 		if(i<PHASEs.length)
 		{
-			temp=parseInt(document.getElementById("TOEE"+i+"").innerHTML);
-			if(ChkParm("PHASEs.TOEE",temp)==true)
-			{
-				PHASEs[i].TOEE=temp;
-				ModParm("PHASEs.TOEE");
-			}
 			var temp=0;
-			temp=parseInt(document.getElementById("TOEC"+i+"").innerHTML);
-			if(ChkParm("PHASEs.TOEC",temp)==true)
-			{
-				PHASEs[i].TOEC=temp;
-				ModParm("PHASEs.TOEC");
-			}// */
-			temp=0;
 			//==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==
-			if(GlobalParms.MODEL.indexOf("DGV-uTC1-M4")!=-1)
-			{
-			}
-			else
 			{
 				if(GlobalParms.MODEL.indexOf("M4")!=-1)
 				{
