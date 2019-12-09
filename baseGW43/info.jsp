@@ -1,6 +1,6 @@
 <%@ page language="java" import="java.io.*, java.sql.*" %><%
 	String data;
-	String stemp;
+	String stemp="";
 	String ID = request.getParameter("ID");
 	String IpAdd = request.getParameter("IpAdd");
 	String path="/";
@@ -35,8 +35,8 @@
 	data = request.getParameter("data");
 	//response.setContentType("text/XML");
 	ServletContext context = session.getServletContext();
-	String rootDir = context.getRealPath(request.getContextPath()); 
-	//out.println("["+rootDir+"]");
+	String rootDir = context.getRealPath(request.getContextPath());  //getContextPath
+	//out.println("["+rootDir+"\\conf\\"+IpAdd+path+"]");
 	try
 	{
 		if (Mode==256)	// Request GET Delete File		
@@ -127,7 +127,7 @@
 	{
 		out.println("message exception 2:" + E0.getMessage());
 		return;
-	}// */
+	}
 	//------------------------------------------------------------------
 	try
 	{
