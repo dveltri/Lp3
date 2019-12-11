@@ -1027,16 +1027,13 @@ T2STP\n\
 	mov CHGP Nstp\n\
 FINDSTPA\n\
 	mov EIPL[Nstp] Nsts\n\
-	mov 0 temp\n\
-	!= 1 Nsts\n\
-	tim2sts Color1 temp\n\
-	!= 2 Nsts\n\
-	tim2sts Color2 temp\n\
-	!= 3 Nsts\n\
-	tim2sts Color3 temp\n\
-	!= 4 Nsts\n\
-	tim2sts Color4 temp\n\
-	sync TCicle 0 wait\n\
+	mov 0 temp\n";
+	for (var j=0;j<PLC.Sts.length;j++) 
+	{
+		out+="\t!= "+(j+1)+" Nsts\n";
+		out+="\ttim2sts Color"+(j+1)+" temp\n";
+	}
+out+="sync TCicle 0 wait\n\
 	dif TCicle wait\n\
 	mod TCicle wait\n\
 	add wait temp\n\
