@@ -283,12 +283,17 @@ MSKEVRV=	[1,2,3,17,18,20,4];		//off,R,V
 MSKALL=		[0,1,2,3,4,17,18,20,19];//off,R,A,V,RA,r,v,ra
 var MSKtemo=[];
 //---------------------------------------------------
-//OptAddSrc=["Local Hd RT","Local Hd RT","Local Hd Fx","Local Hd Fx","Remote Controler","Remote Controler"]		
+//OptAddSrc=["RT","RT","Fx","Fx","Remote Controler","Remote Controler"]		
 OptAddSrc=[
-"MSTC-V1M3"		,"MsTraffic STC",
-"SAD-V1M4"		,"Cosmos TSC 1",
-"SAD-V2M4"		,"Cosmos TSC 2",
-"SAD-V3M4"		,"Cosmos TSC 4"];
+"DGV-uTC1-M4"	,"DGV uTC1",
+"GW1M3FT"		,"GW1(M3)",
+"GW2M3FT"		,"GW2(M3)",
+"GW3M3RT"		,"GW3 Tempo Real(M3)",
+"GW1M4FT"		,"GW1(M4)",
+"GW2M4FT"		,"GW2(M4)",
+"GW3M4RT"		,"GW3 Tempo Real(M4)",
+"GW4M4RT"		,"GW4 Tempo Real",
+"MSTC-V1M3"		,"MsTraffic STC"];
 
 OptOPB2=["2","1 OPB","4","2 OPB","6","3 OPB","8","4 OPB","10","5 OPB","12","6 OPB"];
 OptMpt3=["2","1 MPT3","4","2 MPT3","6","3 MPT3","8","4 MPT3","10","5 MPT3","12","6 MPT3"];

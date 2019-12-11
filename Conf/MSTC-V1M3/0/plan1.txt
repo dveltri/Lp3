@@ -1,0 +1,230 @@
+	goto INICIO
+#CFT:sec.sec;
+#MCT:
+#VAR:
+Nsts=1
+Tsts=0
+Csts=0
+Cstp=0
+Nstp=255
+tstart=0
+MCTR=0
+Nmode=0
+Cmode=1
+temp=0
+wait=0
+DEMA=0
+FlasCtrl=0
+//--------------------------------------------
+PLCS=1
+STS2STP,0,0,1,2
+SYPTO=90000
+SIMC,0
+MCSS,1
+//--------------------------------------------
+T2SP,10000,32000,54000,72600
+P2SP,0,0,0,0
+//--------------------------------------------
+Lstps=3
+CHGP=0
+TCicle=66000
+//--------------------------------------------
+SIPL,1,2,0
+EIPL,1,2,3
+TIPL,10000,32000,54000,66000
+//--------------------------------------------
+LxD,0,0,0
+LgI,1,1,1
+CDL,0,0,0
+PRI,0,0,0
+//--------------------------------------------
+Tmax,0,0,0,120
+Color1,4,1,1,4,1,1
+Color2,1,4,1,1,4,1
+Color3,1,1,4,1,1,4
+ColorVT,1,1,1,1,1,1
+ColorFF,18,18,18,17,17,17
+ColorSL,0,0,0,0,0,0
+//--------------------------------------------
+SETSTS
+	!= 1 Nsts
+	phases Color1
+	!= 2 Nsts
+	phases Color2
+	!= 3 Nsts
+	phases Color3
+	== 255 Nsts FLAS
+	== 254 Nsts SLOF
+	== Nsts Csts
+	mov TIMERS tstart
+	mov Nsts Csts
+	return
+//--------------------------------------------
+INICIO
+ldphc /phconf.ini
+clrpri
+mov TIMERS tstart
+	sub 1 tstart
+	goto MAIN
+
+MAIN
+> Csts 253 NOMAX
+	== Tmax[Csts] 0 NOMAX
+	mov TIMERS temp
+	sub tstart temp
+	> Tmax[Csts] temp
+	call LOCKSTS
+NOMAX
+NOCTRLO
+goto CTRLISO
+
+CTRMAN
+	mov 1 Nmode
+	call CHKMODE
+	delay 1000
+WAITBTOFF
+	delay 200
+mov SIMC[Cstp] Nstp
+FSTP0
+	mov Nstp Cstp
+	mov MCSS[Cstp] Nsts
+	call SETSTS
+	tmin
+	mov 0 temp
+KEEPWAIT
+	delay 1000
+	add 1000 temp
+	mov 3 PLC[THIS].vsync
+> temp SYPTO
+	ifpsync PLCS KEEPWAIT
+OUTWAIT
+	wkuplc PLCS
+	delay 2000
+	mov 0 PLC[THIS].vsync
+goto MAIN
+
+
+CTRLISO
+	mov 0 Nmode
+	call CHKMODE
+call CLDstp
+mov SIPL[Cstp] Nstp
+	mov EIPL[Nstp] Nsts
+	call FNCDemISO
+	mov Nstp Cstp
+	!= Cstp CHGP SAMESTP
+agenda
+ldeil
+== io[13].in 0 SAMESTP
+phases ColorVT
+delay 3000
+KEPISFF
+phases ColorFF
+delay 5000
+!= io[13].in 0 KEPISFF
+phases ColorVT
+delay 3000
+call LOCAL
+FSTPL
+	SAMESTP
+	call SETSTS
+call CLDstp
+call PRIstp
+tmin
+		sync TCicle TIPL[Cstp]
+		goto MAIN
+	
+	FNCDemISO
+	mov LxD[Cstp] temp
+	!= 0 temp
+	return
+	!= io[temp].inh 0
+	return
+	mov 1 DEMA
+	mov LgI[Cstp] Nsts
+	return
+
+CLDstp
+== 1 DEMA
+return
+!= CDL[Cstp] 0
+	return
+	mov CDL[Cstp] temp
+	mov 0 DEMA
+	mov 0 io[temp].inh
+	mov 0 io[temp].wmu
+	return
+
+PRIstp
+	!= PRI[Cstp] 0
+	return
+	mov PRI[Cstp] temp
+	mov 1 io[temp].wmu
+	return
+
+FLAS
+phases ColorFF
+	return
+	
+LOCKSTS
+	== Nmode 0 LKM0
+	== Nmode 1 LKM1
+	== Nmode 2 LKM2
+LKM0
+	error 16 'TiempoMaximo
+	return
+LKM1
+return
+LKM2
+return
+
+CHKMODE
+	!= Nmode Cmode
+	return
+	== Nmode 0 LOCAL
+	== Nmode 1 MANUAL
+	== Nmode 2 CENTRAL
+	mov Nmode Cmode
+	return
+
+MANUAL
+mov TIMERS tstart
+mov 0 Nstp
+mov 1 io[13].enable
+mov Nmode Cmode
+return FSTP0
+	return MAIN
+
+CENTRAL
+mov TIMERS tstart
+	mov 0 Csts
+mov 0 io[13].enable
+mov Nmode Cmode
+	return
+
+LOCAL
+mov TIMERS tstart
+mov 1 io[13].enable
+sync TCicle 0 wait
+	mov 0 Nstp
+	dif TCicle wait
+	add TCicle wait
+	sub 3000 wait
+	mod TCicle wait
+	call T2STP
+	!= Cmode 2
+	mov STS2STP[Csts] Nstp
+	mov Nstp Cstp
+	mov EIPL[Nstp] Nsts
+	mov Nmode Cmode
+	return FSTPL
+
+T2STP
+	delay 10
+	> T2SP[Nstp] wait FINDSTP
+	add 1 Nstp
+	goto T2STP
+FINDSTP
+	mov P2SP[Nstp] Nstp
+	return
+end

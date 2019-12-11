@@ -9,6 +9,49 @@ function SelIObyModel(MODEL)
 	OutMc=11;
 	OutRemote=12;
 	//-----------
+	if(MODEL.indexOf("GW1")!=-1)
+	{
+		SwFF=0;
+		OutAdv=0;
+		OutMc=0;
+		OutRemote=0;
+	}
+	if(MODEL.indexOf("GW2M4")!=-1)
+	{
+		SwFF=11;
+		OutAdv=2;
+		OutMc=0;
+		OutRemote=0;
+	}
+	if(MODEL.indexOf("GW3M3")!=-1)
+	{
+		OutAdv = 10;
+		OutMc = 11;
+		OutRemote = 12;
+		SwFF = 14;
+		SwEnMc = 15;	//plug
+		SwCmMc = 16;	//comando
+	}
+	if(MODEL.indexOf("GW3M4")!=-1)
+	{
+		OutAdv=17;
+		OutMc=18;
+		OutRemote=19;
+		SwFF=21;
+		SwEnMc=22;	//plug
+		SwCmMc=23;	//comando
+	}
+	if(MODEL.indexOf("GW4")!=-1)
+	{
+		OutAdv=9;
+		OutMc=10;
+		OutRemote=11;
+		//Porta1=12;
+		//Porta2=13;
+		SwFF=14;
+		SwEnMc=15;
+		SwCmMc=16;
+	}
 	if(GlobalParms.MODEL.indexOf("MSTC-V1M3")!=-1)
 	{
 		OutAdv = 0;
@@ -17,39 +60,6 @@ function SelIObyModel(MODEL)
 		SwFF = 13;
 		SwEnMc = 0;	//plug
 		SwCmMc = 0;	//comando
-	}
-	if(MODEL.indexOf("SAD-V1")!=-1)
-	{
-		OutAdv=0;
-		OutMc=0;
-		OutRemote=0;
-		//Porta2=12;
-		//Porta1=13;
-		SwFF=12;
-		SwEnMc=8;
-		SwCmMc=9;
-	}
-	if(MODEL.indexOf("SAD-V2")!=-1)
-	{
-		OutAdv=0;
-		OutMc=0;
-		OutRemote=0;
-		//Porta2=12;
-		//Porta1=13;
-		SwFF=12;
-		SwEnMc=0;
-		SwCmMc=0;
-	}
-	if(MODEL.indexOf("SAD-V3")!=-1)
-	{
-		OutAdv=0;
-		OutMc=0;
-		OutRemote=0;
-		//Porta2=12;
-		//Porta1=13;
-		SwFF=12;
-		SwEnMc=8;
-		SwCmMc=9;
 	}
 	if(MODEL.indexOf("RT")!=-1 || MODEL.indexOf("GW3")!=-1 || MODEL.indexOf("GW4")!=-1)
 	{
@@ -100,14 +110,20 @@ function RcvStartup(Datos)
 			case "Model":
 				GlobalParms.MODEL=Datos[i][1].trim();
 				PhasesStructSize=0;
+				if(GlobalParms.MODEL.indexOf("DGV-uTC1-M4")!=-1)
+					GlobalParms.MODEL="DGV-uTC1-M4";
+				if(GlobalParms.MODEL.indexOf("MAC_TC1")!=-1)
+					GlobalParms.MODEL="MAC-TC1M4";
+				if(GlobalParms.MODEL.indexOf("Flex3")!=-1)
+					GlobalParms.MODEL="GW1M3FT";
+				if(GlobalParms.MODEL.indexOf("Flex4")!=-1)
+					GlobalParms.MODEL="GW2M3FT";
+				if(GlobalParms.MODEL.indexOf("Flex")!=-1)
+					GlobalParms.MODEL="GW1M3FT";
+				if(GlobalParms.MODEL.indexOf("GW4")!=-1)
+					GlobalParms.MODEL="GW4M4RT";
 				if(GlobalParms.MODEL.indexOf("STC-S4")!=-1)
 					GlobalParms.MODEL="MSTC-V1M3";
-				if(GlobalParms.MODEL.indexOf("SAD-V1")!=-1 || GlobalParms.MODEL.indexOf("SAD_V1")!=-1)
-					GlobalParms.MODEL="SAD-V1M4";
-				if(GlobalParms.MODEL.indexOf("SAD-V2")!=-1)
-					GlobalParms.MODEL="SAD-V2M4";
-				if(GlobalParms.MODEL.indexOf("SAD-V3")!=-1)
-					GlobalParms.MODEL="SAD-V3M4";
 				//--------------------------
 				HW_IOS=9;
 				PhasesStructSize=56;

@@ -1,0 +1,4 @@
+Warning[60],La placa del movimiento 1 se reporto por ultima vez hace[22865558]ms,2019/01/22 06:00:15
+Warning[60],La placa del movimiento 1 se reporto por ultima vez hace[40861710]ms,2019/01/22 11:00:28
+Warning[60],La placa del movimiento 1 se reporto por ultima vez hace[58857933]ms,2019/01/22 16:00:42
+Warning[60],La placa del movimiento 1 se reporto por ultima vez hace[73215903]ms,2019/01/22 20:00:13

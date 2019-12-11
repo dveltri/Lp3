@@ -2,7 +2,7 @@
 	String data;
 	String stemp;
 	String ID = request.getParameter("ID");
-	String IpAdd = request.getParameter("IpAdd");
+//	String IpAdd = request.getParameter("IpAdd");
 	String path="/";
 	path = request.getParameter("path");
 	String Os=System.getProperty("os.name");
@@ -31,12 +31,13 @@
 	data=request.getParameter("len");
 	int len=0;
 	if(data!=null)
-		len+=Integer.parseInt(data);
+		len=Integer.parseInt(data);
 	data = request.getParameter("data");
 	//response.setContentType("text/XML");
 	ServletContext context = session.getServletContext();
 	String rootDir = context.getRealPath(request.getContextPath()); 
-	//out.println("["+rootDir+"]");
+	rootDir= application.getRealPath(request.getRequestURI());
+	rootDir=rootDir.replaceAll("info.jsp","");
 	try
 	{
 		if (Mode==256)	// Request GET Delete File		
@@ -44,11 +45,11 @@
 			File archivo;
 			if (Os.indexOf("Win")!=-1)
 			{
-				archivo = new File(rootDir+"\\conf\\"+IpAdd+path+"\\"+file);
+				archivo = new File(rootDir+"\\"+path+"\\"+file);
 			}
 			else
 			{
-				archivo = new File(rootDir+"/conf/"+IpAdd+path+"/"+file);
+				archivo = new File(rootDir+"/"+path+"/"+file);
 			}
 			if (archivo.isDirectory() || !archivo.exists())
 			{
@@ -74,11 +75,11 @@
 					File archivo;
 					if (Os.indexOf("Win")!=-1)
 					{
-						archivo = new File(rootDir+"\\conf\\"+IpAdd+path);
+						archivo = new File(rootDir+"\\"+path);
 					}
 					else
 					{
-						archivo = new File(rootDir+"/conf/"+IpAdd+path);
+						archivo = new File(rootDir+"/"+path);
 					}
 					if (!archivo.exists())
 					{
@@ -86,11 +87,14 @@
 					}
 					if (Os.indexOf("Win")!=-1)
 					{
-						archivo = new File(rootDir+"\\conf\\"+IpAdd+path+"\\"+file);
+						stemp=rootDir+"\\"+path+"\\"+file;
+						stemp=stemp.replaceAll("\\\\\\\\","\\\\");
+						archivo = new File(stemp);
 					}
 					else
 					{
-						archivo = new File(rootDir+"/conf/"+IpAdd+path+"/"+file);
+						stemp=rootDir+"/"+path+"/"+file;
+						archivo = new File(stemp);
 					}
 					if(archivo.delete())
 					{
@@ -106,14 +110,16 @@
 				RandomAccessFile f;
 				if (Os.indexOf("Win")!=-1)
 				{
-					f = new RandomAccessFile(new File(rootDir+"\\conf\\"+IpAdd+path+"\\"+file), "rw");
+					f = new RandomAccessFile(new File(rootDir+"\\"+path+"\\"+file), "rw");
 				}
 				else
 				{
-					f = new RandomAccessFile(new File(rootDir+"/conf/"+IpAdd+path+"/"+file), "rw");
+					f = new RandomAccessFile(new File(rootDir+"/"+path+"/"+file), "rw");
 				}
 				f.seek(seek); // this basically reads n bytes in the file
+				//f.write(data.getBytes(),seek,len);
 				f.write(data.getBytes());
+				//f.writeBytes(data);
 				f.close();
 			}
 			catch (Exception E2)
@@ -127,7 +133,7 @@
 	{
 		out.println("message exception 2:" + E0.getMessage());
 		return;
-	}// */
+	}
 	//------------------------------------------------------------------
 	try
 	{
@@ -136,13 +142,13 @@
 		File directorio;
 		if (Os.indexOf("Win")!=-1)
 		{
-			delfile = new File (rootDir+"\\conf\\info.fls");
-			directorio = new File(rootDir+"\\conf\\"+IpAdd+path);
+			delfile = new File (rootDir+"\\info.fls");
+			directorio = new File(rootDir+"\\"+path);
 		}
 		else
 		{
-			delfile = new File (rootDir+"/conf/info.fls");	
-			directorio = new File(rootDir+"/conf/"+IpAdd+path);
+			delfile = new File (rootDir+"/info.fls");	
+			directorio = new File(rootDir+"/"+path);
 		}
 		File[] listado;
 		if (delfile.exists())
@@ -153,7 +159,7 @@
 		System.gc();
 		//-------------------------------------
 		listado = directorio.listFiles();
-		//FileWriter archivo = new FileWriter(rootDir+"\\conf\\info.fls");
+		//FileWriter archivo = new FileWriter(rootDir+"\\info.fls");
 		//archivo.write(path+",\n");
 		if (Os.indexOf("Win")!=-1)
 		{

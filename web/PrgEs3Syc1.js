@@ -506,16 +506,13 @@ function SaveSplan1(PLC,Parms,Plan)
 		for(var j=0;j<TIM2STP.length;j++) 
 		{
 			temp1=TIM2STP[j];
-			if(Parms.MODEL.indexOf("GW4")!=-1 || Parms.MODEL.indexOf("GW")==-1)
-			{
 				temp1+=Plan.LCLSYCTOF;
 				temp1%=Plan.LCLSYCTCI;
-			}
 			TIM2STP[j]=temp1*1000;
 		}
 		POS2STP=owl.deepCopy(Plan.LCLSYCSEQSTP);
 		POS2STP.unshift(POS2STP[POS2STP.length-1]);
-		POS2STP.pop();//*/
+		POS2STP.pop();
 		var pos=fmenor(TIM2STP)
 		for(var j=0;j<pos;j++) 
 		{
@@ -525,10 +522,7 @@ function SaveSplan1(PLC,Parms,Plan)
 			POS2STP.shift();
 		}
 		out+="T2SP,"+TIM2STP.toString()+","+(Plan.LCLSYCTCI*1100)+"\n";
-		if(Parms.MODEL.indexOf("GW")==-1)
 			out+="P2SP"+(",0".repeat(POS2STP.length))+",0\n";
-		else
-			out+="P2SP,"+POS2STP.toString()+",0\n";
 		//--------------------------------------------------------------------------
 		out+="//--------------------------------------------\n";
 		out+="Lstps="+Plan.LCLSYCSEQSTP.length+"\n";
@@ -543,11 +537,8 @@ function SaveSplan1(PLC,Parms,Plan)
 		{
 			j++;
 			temp1=Plan.LCLSYCTSTSTP[(j%Plan.LCLSYCTSTSTP.length)];
-			if(Parms.MODEL.indexOf("GW4")!=-1 || Parms.MODEL.indexOf("GW")==-1)
-			{
 				temp1+=Plan.LCLSYCTOF;
 				temp1%=Plan.LCLSYCTCI;
-			}
 			out+=","+(temp1*1000)
 		}
 		while(j<Plan.LCLSYCTSTSTP.length);
@@ -602,45 +593,26 @@ function SaveSplan1(PLC,Parms,Plan)
 		out+="\treturn\n";
 		out+="//--------------------------------------------\n";
 		out+="INICIO\n";
-		//if(Parms.MODEL.indexOf("M4")!=-1)
-		{
 			if(Plan.PHC!=0)
 				out+="ldphc /"+PlcIdx+"/phc"+Plan.PHC+".ini\n";
 			else
 				out+="ldphc /phconf.ini\n";
 		}
-	}
-	if(Parms.MODEL.indexOf("GW4")!=-1 || Parms.MODEL.indexOf("GW")==-1)
-	{
-		out+="clrpri\n";
-		/*for (var j = 0; j<Plan.LCLSYCSEQSTP.length; j++) 
-		{
-			if(Plan.LCLSYCDEMSTP[j]!=0 && Plan.DEMPRI[j]!=0)
-			{
-				if(DEMPRI.indexOf(Plan.LCLSYCDEMSTP[j])==-1)
-				{
-					DEMPRI[DEMPRI.length]=Plan.LCLSYCDEMSTP[j];
-					out+="mov 1 io["+Plan.LCLSYCDEMSTP[j]+"].rdy\n";
-					out+="mov 1 io["+Plan.LCLSYCDEMSTP[j]+"].wmu\n";
-				}
-			}
-		}// */
-	}
 	out+=SelIObyModel(Parms.MODEL);
 	if(SwEnMc!=0)
 	{
-		/*out+="mov 1 io["+SwEnMc+"].rdy\n";
-		out+="mov 1 io["+SwEnMc+"].wmu\n";// */
+		out+="mov 1 io["+SwEnMc+"].rdy\n";
+		out+="mov 1 io["+SwEnMc+"].wmu\n";
 	}
 	if(SwCmMc!=0)
+	{
 		out+="mov io["+SwCmMc+"].val MCTR\n";
+	}
 	out+="mov TIMERS tstart\n\
 	sub 1 tstart\n\
 	goto MAIN\n\
 \n\
 MAIN\n";
-	/*if(SwEnMc!=0)
-		out+="mov 1 io["+SwEnMc+"].rdy\n";// */
 	out+="> Csts 253 NOMAX\n\
 	== Tmax[Csts] 0 NOMAX\n\
 	mov TIMERS temp\n\
@@ -670,14 +642,20 @@ out+="CTRMAN\n\
 	call CHKMODE\n\
 	delay 1000\n";
 	if(SwCmMc!=0)
+	{
 		out+="== io["+SwCmMc+"].val MCTR MAIN\n";
+	}
 out+="WAITBTOFF\n\
 	delay 200\n";
 	if(SwCmMc!=0)
+	{
 		out+="== 1 io["+SwCmMc+"].in WAITBTOFF\n";
+	}
 	out+="mov SIMC[Cstp] Nstp\n";
 	if(OutAdv!=0)
+	{
 		out+="mov 0 io["+OutAdv+"].val\n";
+	}
 out+="FSTP0\n\
 	mov Nstp Cstp\n\
 	mov MCSS[Cstp] Nsts\n\
@@ -689,7 +667,9 @@ KEEPWAIT\n\
 	add 1000 temp\n\
 	mov 3 PLC[THIS].vsync\n";
 	if(SwEnMc!=0)
+	{
 		out+="== 0 io["+SwEnMc+"].in OUTWAIT\n";
+	}
 	out+="> temp SYPTO\n\
 	ifpsync PLCS KEEPWAIT\n\
 OUTWAIT\n\
@@ -697,9 +677,13 @@ OUTWAIT\n\
 	delay 2000\n\
 	mov 0 PLC[THIS].vsync\n";
 	if(SwCmMc!=0)
+	{
 		out+="mov io["+SwCmMc+"].val MCTR\n";
+	}
 	if(OutAdv!=0)
+	{
 		out+="mov 255 io["+OutAdv+"].val\n";
+	}
 	out+="goto MAIN\n\
 \n";
 }
@@ -723,13 +707,9 @@ out+="CTRLOTU\n\
 	out+="\n\
 CTRLISO\n\
 	mov 0 Nmode\n\
-	call CHKMODE\n";
-	if(Parms.MODEL.indexOf("GW4")==-1)
-	{
-		out+="call CLDstp\n";
-	}
-	//out+="ldeil\n";	
-	out+="mov SIPL[Cstp] Nstp\n\
+	call CHKMODE\n\
+	call CLDstp\n\
+	mov SIPL[Cstp] Nstp\n\
 	mov EIPL[Nstp] Nsts\n\
 	call FNCDemISO\n\
 	mov Nstp Cstp\n\
@@ -749,27 +729,36 @@ CTRLISO\n\
 	}
 	out+="agenda\n";
 	out+="ldeil\n";
-	if(Parms.MODEL.indexOf("GW4")!=-1 || Parms.MODEL.indexOf("GW")==-1)
+	if(SwFF!=0)
 	{
 		out+="== io["+SwFF+"].in 0 SAMESTP\n";
 		out+="phases ColorVT\n";
+	if(Parms.IniRed)
+		out+="delay "+(Parms.IniRed*1000)+"\n";
+	else
 		out+="delay 3000\n";
 		out+="KEPISFF\n";
 		out+="phases ColorFF\n";
+	if(Parms.IniFsh)
+		out+="delay "+(Parms.IniFsh*1000)+"\n";
+	else
 		out+="delay 5000\n";
 		out+="!= io["+SwFF+"].in 0 KEPISFF\n";
 		out+="phases ColorVT\n";
+	if(Parms.IniRed)
+		out+="delay "+(Parms.IniRed*1000)+"\n";
+	else
 		out+="delay 3000\n";
 		out+="call LOCAL\n";
 	}
 	out+="FSTPL\n\
 	SAMESTP\n\
 	call SETSTS\n";
-	if(Parms.MODEL.indexOf("GW4")!=-1 || Parms.MODEL.indexOf("GW")==-1)
+	/*demanda prioritaria
 	{
 		out+="call CLDstp\n";
 		out+="call PRIstp\n";
-	}
+	}// */
 	out+="sync TCicle TIPL[Cstp]\n";
 	out+="goto MAIN\n\
 	\n\
@@ -781,30 +770,35 @@ CTRLISO\n\
 	return\n\
 	mov 1 DEMA\n\
 	mov LgI[Cstp] Nsts\n\
-	return\n\n";
-out+="CLDstp\n";
-out+="== 1 DEMA\n";
-out+="return\n";
-out+="!= CDL[Cstp] 0\n\
+	return\n\
+	\n\
+CLDstp\n\
+	== 1 DEMA\n\
+	return\n\
+	!= CDL[Cstp] 0\n\
 	return\n\
 	mov CDL[Cstp] temp\n\
 	mov 0 DEMA\n\
 	mov 0 io[temp].inh\n\
 	mov 0 io[temp].wmu\n\
-	return\n\n";
-if(Parms.MODEL.indexOf("GW4")!=-1 || Parms.MODEL.indexOf("GW")==-1)
+	return\n\
+	\n";
+/*if(Parms.MODEL.indexOf("GW4")!=-1 || Parms.MODEL.indexOf("GW")==-1)
 {
-out+="PRIstp\n\
+out+="\
+PRIstp\n\
 	!= PRI[Cstp] 0\n\
 	return\n\
 	mov PRI[Cstp] temp\n\
 	mov 1 io[temp].wmu\n\
 	return\n\n";
-}
-out+="FLAS\n";
+}// */
+out+="\
+FLAS\n";
 if(Parms.MODEL.indexOf("RT")!=-1)
 {
-	out+="== 1 otu.ff FLASCENTRAL\n\
+	out+="\
+	== 1 otu.ff FLASCENTRAL\n\
 	mov 1 otu.fr\n";
 }
 	out+="phases ColorFF\n\
@@ -812,11 +806,10 @@ if(Parms.MODEL.indexOf("RT")!=-1)
 	\n";
 if(Parms.MODEL.indexOf("RT")!=-1)
 {
-out+="FLASCENTRAL\n\
-	phases ColorVT\n";
-if(Parms.MODEL.indexOf("GW4")==-1)
-{
-out+="delay 2000\n\
+out+="\
+FLASCENTRAL\n\
+	phases ColorVT\n\
+	delay 2000\n\
 	mov 0 temp\n\
 WAITFF\n\
 	delay 1000\n\
@@ -825,13 +818,8 @@ WAITFF\n\
 	== 0 otu.ff KEPFF\n\
 	> temp SYPTO\n\
 	ifpsync PLCS WAITFF\n\
-	wkuplc PLCS\n";
-}
-else
-{
-out+="delay 3000\n";
-}
-out+="KEPFF\n\
+	wkuplc PLCS\n\
+KEPFF\n\
 	mov 0 otu.sr\n\
 	mov 1 otu.fr\n\
 	phases ColorFF\n\
@@ -846,13 +834,15 @@ out+="KEPFF\n\
 	mov 0 otu.step\n\
 	mov 0 otu.fr\n\
 	return MAIN\n\
-\n\
+\n";
+}
+if(Parms.MODEL.indexOf("RT")!=-1)
+{
+out+="\
 SLOF\n\
 	mov 1 otu.faislado\n\
-	phases ColorVT\n";
-if(Parms.MODEL.indexOf("GW4")==-1)
-{
-out+="delay 2000\n\
+	phases ColorVT\n\
+	delay 2000\n\
 	mov 0 temp\n\
 WAITSL\n\
 	delay 1000\n\
@@ -861,13 +851,8 @@ WAITSL\n\
 	== 0 otu.sl KEPSL\n\
 	> temp SYPTO\n\
 	ifpsync PLCS WAITSL\n\
-	wkuplc PLCS\n";
-}
-else
-{
-out+="delay 3000\n";
-}
-out+="KEPSL\n\
+	wkuplc PLCS\n\
+KEPSL\n\
 	mov 1 otu.faislado\n\
 	mov 0 otu.fr\n\
 	mov 1 otu.sr\n\
@@ -886,7 +871,22 @@ out+="KEPSL\n\
 	mov 0 otu.step\n\
 	mov 0 otu.sr\n\
 	return MAIN\n\
-\n\
+\n";
+}
+else
+{
+out+="\
+SLOF\n\
+	phases ColorVT\n\
+	delay 2000\n\
+	phases ColorSL\n\
+	delay 2000\n\
+	return MAIN\n\
+\n";
+}
+if(Parms.MODEL.indexOf("RT")!=-1)
+{
+out+="\
 CLDsts\n\
 	== 0 otu.aislado\n\
 	return\n\
@@ -919,7 +919,11 @@ LKM0\n\
 	return\n\
 LKM1\n";
 	if(SwEnMc!=0)
-		out+="mov 1 io["+SwEnMc+"].fail\n";
+	{
+out+=  "mov 0 io["+SwEnMc+"].rdy\n\
+		mov 0 io["+SwEnMc+"].inh\n\
+		mov 1 io["+SwEnMc+"].fail\n";
+	}
 	out+="return\n\
 LKM2\n";
 if(Parms.MODEL.indexOf("RT")!=-1)
@@ -955,7 +959,10 @@ MANUAL\n";
 	out+="mov Nmode Cmode\n";
 	if(SwEnMc!=0)
 	{
-		//out+="mov 0 io["+SwEnMc+"].wmu\n";
+		out+="mov 1 io["+SwEnMc+"].rdy\n";
+		out+="mov 1 io["+SwEnMc+"].wmu\n";
+		out+="mov 0 io["+SwEnMc+"].inh\n";
+		out+="mov 0 io["+SwEnMc+"].fail\n";
 		out+="== 0 io["+SwEnMc+"].in\n";
 	}
 	out+="return FSTP0\n\
@@ -978,10 +985,11 @@ CENTRAL\n";
 		out+="mov 0 io["+SwFF+"].enable\n";
 	if(SwEnMc!=0)
 	{
-		//out+="mov 0 io["+SwEnMc+"].rdy\n";
-		//out+="mov 0 io["+SwEnMc+"].wmu\n";
-		out+="mov 0 io["+SwEnMc+"].enable\n";
+		out+="mov 0 io["+SwEnMc+"].rdy\n";
+		out+="mov 0 io["+SwEnMc+"].wmu\n";
+		out+="mov 0 io["+SwEnMc+"].inh\n";
 		out+="mov 0 io["+SwEnMc+"].fail\n";
+		out+="mov 0 io["+SwEnMc+"].enable\n";
 	}
 	out+="mov Nmode Cmode\n\
 	return\n";
@@ -1002,33 +1010,39 @@ LOCAL\n";
 		out+="mov 1 io["+SwFF+"].enable\n";
 	if(SwEnMc!=0)
 	{
-		//out+="mov 1 io["+SwEnMc+"].rdy\n";
-		//out+="mov 1 io["+SwEnMc+"].wmu\n";
-		out+="mov 1 io["+SwEnMc+"].enable\n";
+		out+="mov 0 io["+SwEnMc+"].rdy\n";
+		out+="mov 1 io["+SwEnMc+"].wmu\n";
+		out+="mov 0 io["+SwEnMc+"].inh\n";
 		out+="mov 0 io["+SwEnMc+"].fail\n";
 	}
-	out+="sync TCicle 0 wait\n\
-	mov 0 Nstp\n\
-	dif TCicle wait\n\
-	add TCicle wait\n\
-	sub 3000 wait\n\
-	mod TCicle wait\n\
-	call T2STP\n\
+out+="call T2STP\n\
+	mov Nstp Cstp\n\
 	!= Cmode 2\n\
 	mov STS2STP[Csts] Nstp\n\
-	mov Nstp Cstp\n\
 	mov EIPL[Nstp] Nsts\n\
 	mov Nmode Cmode\n\
-	return FSTPL\n\
+	return SAMESTP\n\
 \n\
 T2STP\n\
-	delay 10\n\
-	> T2SP[Nstp] wait FINDSTP\n\
-	add 1 Nstp\n\
-	goto T2STP\n\
-FINDSTP\n\
-	mov P2SP[Nstp] Nstp\n\
-	return\n";
+	mov CHGP Nstp\n\
+FINDSTPA\n\
+	mov EIPL[Nstp] Nsts\n\
+	mov 0 temp\n";
+	for (var j=0;j<PLC.Sts.length;j++) 
+	{
+		out+="\t!= "+(j+1)+" Nsts\n";
+		out+="\ttim2sts Color"+(j+1)+" temp\n";
+	}
+out+="sync TCicle 0 wait\n\
+	dif TCicle wait\n\
+	mod TCicle wait\n\
+	add wait temp\n\
+	add 500 temp\n\
+	mod TCicle temp\n\
+	> temp T2SP[Nstp]\n\
+	return\n\
+	mov SIPL[Nstp] Nstp\n\
+	goto FINDSTPA";
 	out+=EndPlan;
 	return out;
 }

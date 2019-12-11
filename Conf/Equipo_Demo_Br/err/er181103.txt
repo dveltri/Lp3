@@ -1,0 +1,9 @@
+Alert: 0,PLC Anel1 cambio para modo Normal,2018/11/03 18:50:25 
+Alert: 0,PLC Anel1 llave de focos Off,2018/11/03 18:50:25 
+Alert: 0,Return from error:0,2018/11/03 18:50:25 
+Alert: 0,PLC Anel1 cambio para modo Normal,2018/11/03 18:50:56 
+Alert: 0,PLC Anel1 llave de focos Off,2018/11/03 18:50:56 
+Alert: 0,Return from error:0,2018/11/03 18:50:56 
+Alert: 0,PLC Anel1 cambio para modo Normal,2018/11/03 18:51:25 
+Alert: 0,PLC Anel1 llave de focos Off,2018/11/03 18:51:25 
+Alert: 0,Return from error:0,2018/11/03 18:51:25

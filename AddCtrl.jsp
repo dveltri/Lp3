@@ -1,32 +1,65 @@
 <%@ page language="java" import="java.io.*, java.sql.*,org.apache.commons.io.FileUtils.*" %>
 <%
+	String ID = request.getParameter("ID");
 	String IpAdd = request.getParameter("IpAdd");
 	String Msk = request.getParameter("Msk");
-	String Mode = request.getParameter("Mode");
+	String Model = request.getParameter("Model");
+	String Comd= request.getParameter("Cmd");
+	//-----------------------------------------------------------------------------
+	String Os=System.getProperty("os.name");
 	ServletContext context = session.getServletContext();
 	String rootDir = context.getRealPath(request.getContextPath()); 
-	//out.println("["+rootDir+"]");
-	String Os=System.getProperty("os.name");
+	String app="\\lp3";
+	rootDir+=app;
+	String Storage="\\Conf";
 	String path=rootDir;
+	path+=Storage;
 	String[] IpDGWa;
 	String IpDGW="";
 	String cmd="";
-	int iMode=0;
-	int tmp=IpAdd.lastIndexOf(".");
-	Mode="0"+Mode;
-	iMode=0;
-	IpAdd+="";
-	IpDGW=IpAdd.substring(0,tmp);
-	iMode = Integer.parseInt("0"+Mode);
+	int tmp=0;
 	if (Os.indexOf("Win")!=-1)
 	{
 		path=path.replace('\\','/');
 		path=path.replaceAll("//","/");
 	}
-	//-----------------------------------------------------------------------------
-	if(iMode!=0)
+	else
 	{
-		File folder = new File(path+"/"+IpAdd+"/");
+		path=path.replace('\\','/');
+		path=path.replaceAll("//","/");
+		rootDir=rootDir.replace('\\','/');
+		rootDir=rootDir.replaceAll("//","/");
+		app=app.replace('\\','/');
+		app=app.replaceAll("//","/");
+		Storage=Storage.replace('\\','/');
+		Storage=Storage.replaceAll("//","/");
+	}
+	if(Comd!=null && ID!=null)
+	{
+		if(Comd.indexOf("del")!=-1)
+		{
+			Runtime runtime = Runtime.getRuntime();
+			if (Os.indexOf("Win")!=-1)
+			{
+			cmd=rootDir+"\\del.bat "+ID+" "+rootDir+" "+Storage;
+			}
+			else
+			{
+			    cmd="sh "+rootDir+"/del.sh "+ID+" "+rootDir+" "+Storage;
+			    //out.print(cmd+"<br>");
+			}
+			Process exec = runtime.exec(cmd);
+			Thread.sleep(500);
+		}
+	}
+	//-----------------------------------------------------------------------------
+	if(Model!=null && ID!=null && IpAdd!=null)
+	{
+		tmp=IpAdd.lastIndexOf(".");
+		IpAdd+="";
+		IpDGW=IpAdd.substring(0,tmp);
+		ID=ID.replace(' ','_');
+		File folder = new File(path+"/"+ID+"/");
 		if (!folder.exists())
 		{
 			//-----------------------------------------------------------------------------
@@ -35,68 +68,57 @@
 				if(Os.indexOf("Win")!=-1)
 				{
 					IpDGW+=".1";
-					switch(iMode)
-					{
-						case 31:
-						cmd=rootDir+"\\lp3\\xcpy31.bat "+IpAdd+" "+rootDir+"\\conf\\";
-						break;
-						case 32:
-						cmd=rootDir+"\\lp3\\xcpy32.bat "+IpAdd+" "+rootDir+"\\conf\\";
-						break;
-						case 33:
-						cmd=rootDir+"\\lp3\\xcpy33.bat "+IpAdd+" "+Msk+" "+IpDGW+" "+rootDir+"\\conf\\";
-						break;
-						case 41:
-						cmd=rootDir+"\\lp3\\xcpy41.bat "+IpAdd+" "+rootDir+"\\conf\\";
-						break;
-						case 42:
-						cmd=rootDir+"\\lp3\\xcpy42.bat "+IpAdd+" "+rootDir+"\\conf\\";
-						break;
-						case 43:
-						cmd=rootDir+"\\lp3\\xcpy43.bat "+IpAdd+" "+Msk+" "+IpDGW+" "+rootDir+"\\conf\\";
-						break;
-						case 44:
-						cmd=rootDir+"\\lp3\\xcpy4.bat "+IpAdd+" "+Msk+" "+IpDGW+" "+rootDir+"\\conf\\";
-						break;
-						case 51:
-						cmd=rootDir+"\\lp3\\xcpy51.bat "+IpAdd+" "+Msk+" "+IpDGW+" "+rootDir+"\\conf\\";
-						break;
-					}
+					if (Model.indexOf("MSTC-V1M3")!=-1)
+						cmd=rootDir+"\\STC.bat "+ID+" b"+Model+" "+rootDir+" "+Storage;
+					if (Model.indexOf("GW1M3FT")!=-1)
+						cmd=rootDir+"\\GW.bat "+ID+" b"+Model+" "+rootDir+" "+Storage;
+					if (Model.indexOf("GW2M3FT")!=-1)
+						cmd=rootDir+"\\GW.bat "+ID+" b"+Model+" "+rootDir+" "+Storage;
+					if (Model.indexOf("GW3M3RT")!=-1)
+						cmd=rootDir+"\\GW.bat "+ID+" b"+Model+" "+rootDir+" "+Storage;
+					if (Model.indexOf("GW1M4FT")!=-1)
+						cmd=rootDir+"\\GW.bat "+ID+" b"+Model+" "+rootDir+" "+Storage;
+					if (Model.indexOf("GW2M4FT")!=-1)
+						cmd=rootDir+"\\GW.bat "+ID+" b"+Model+" "+rootDir+" "+Storage;
+					if (Model.indexOf("GW3M4RT")!=-1)
+						cmd=rootDir+"\\GW.bat "+ID+" b"+Model+" "+rootDir+" "+Storage;
+					if (Model.indexOf("GW4M4RT")!=-1)
+						cmd=rootDir+"\\GW.bat "+ID+" b"+Model+" "+rootDir+" "+Storage;
+					if (Model.indexOf("MAC-TC1M4")!=-1)
+						cmd=rootDir+"\\MAC.bat "+ID+" b"+Model+" "+rootDir+" "+Storage;
+					if (Model.indexOf("SAD-V1M4")!=-1)
+						cmd=rootDir+"\\MST.bat "+ID+" b"+Model+" "+rootDir+" "+Storage;
+					if (Model.indexOf("SAD-V2M4")!=-1)
+						cmd=rootDir+"\\MST.bat "+ID+" b"+Model+" "+rootDir+" "+Storage;
+					if (Model.indexOf("SAD-V3M4")!=-1)
+						cmd=rootDir+"\\MST.bat "+ID+" b"+Model+" "+rootDir+" "+Storage;
+					if (Model.indexOf("DGV-uTC1-M4")!=-1)
+						cmd=rootDir+"\\DGV.bat "+ID+" b"+Model+" "+rootDir+" "+Storage;
+						//out.println("["+cmd+"]");
 				}
 				else
 				{
-					switch(iMode)
-					{
-						case 31:
-						cmd=rootDir+"/lp3/xcpy1.sh "+IpAdd+" "+rootDir+"/conf/";
-						break;
-						case 32:
-						cmd=rootDir+"/lp3/xcpy2.sh "+IpAdd+" "+rootDir+"/conf/";
-						break;
-						case 33:
-						cmd=rootDir+"/lp3/xcpy3.sh "+IpAdd+" "+rootDir+"/conf/";
-						break;
-						case 41:
-						cmd=rootDir+"/lp3/xcpy1.sh "+IpAdd+" "+rootDir+"/conf/";
-						break;
-						case 42:
-						cmd=rootDir+"/lp3/xcpy2.sh "+IpAdd+" "+rootDir+"/conf/";
-						break;
-						case 43:
-						cmd=rootDir+"/lp3/xcpy3.sh "+IpAdd+" "+rootDir+"/conf/";
-						break;
-						case 44:
-						cmd=rootDir+"/lp3/xcpy4.sh "+IpAdd+" "+rootDir+"/conf/";
-						break;
-					}
+					//out.println("folder:"+path+"/"+ID+"/<br>");
+					if (Model.indexOf("MSTC-V1M3")!=-1)
+						cmd="sh "+rootDir+"/STC.sh "+ID+" b"+Model+" "+rootDir+" "+Storage;
+					if (Model.indexOf("MAC-TC1M4")!=-1)
+						cmd="sh "+rootDir+"/MAC.sh "+ID+" b"+Model+" "+rootDir+" "+Storage;
+					if (Model.indexOf("SAD-V1M4")!=-1)
+						cmd="sh "+rootDir+"/MST.sh "+ID+" b"+Model+" "+rootDir+" "+Storage;
+					if (Model.indexOf("SAD-V2M4")!=-1)
+						cmd="sh "+rootDir+"/MST.sh "+ID+" b"+Model+" "+rootDir+" "+Storage;
+					if (Model.indexOf("SAD-V3M4")!=-1)
+						cmd="sh "+rootDir+"/MST.sh "+ID+" b"+Model+" "+rootDir+" "+Storage;
+					//out.println("["+cmd+"]");
 				}
 				Runtime runtime = Runtime.getRuntime();
-				System.out.println(cmd);
+				//out.print(cmd+"<br>");
 				Process exec = runtime.exec(cmd);
 				Thread.sleep(500);
 			}
 			catch(Exception E0)
 			{
+				//out.println("message exception" + E0.getMessage());
 				System.out.println("message exception" + E0.getMessage());
 			}
 			//-----------------------------------------------------------------------------
@@ -105,12 +127,15 @@
 				FileWriter archivo;
 				if (Os.indexOf("Win")!=-1)
 				{
-					archivo = new FileWriter(rootDir+"\\conf\\"+IpAdd+"\\startup.ini");
+					archivo = new FileWriter(rootDir+Storage+"\\"+ID+"\\startup.ini");
 				}
 				else
 				{
-					archivo = new FileWriter(rootDir+"/conf/"+IpAdd+"/startup.ini");
+					archivo = new FileWriter(path+"/"+ID+"/startup.ini");
 				}
+				//--------------------
+				archivo.write("ID "+ID+"\n");
+				{
 				archivo.write("MAC 00-01");
 				int ipf=0;
 				String temp="";
@@ -129,93 +154,101 @@
 						archivo.write("-"+temp);
 				}
 				archivo.write("\n");
+				}
 				archivo.write("ETH0 "+IpAdd+"\n");
+				if(Msk!=null)
 				archivo.write("NETMASK0 "+Msk+"\n");
+				if (Model.indexOf("M3")!=-1)
+					archivo.write("MACDGW FF-FF-FF-FF-FF-FF\n");
+				if (Model.indexOf("M4")!=-1)
+					archivo.write("DGW "+IpDGW+"\n");
 				archivo.write("Flashing 2\n");
 				archivo.write("FlasCA 50\n");
 				archivo.write("Virtual Inputs 0\n");
 				archivo.write("Outputs 0\n");
-				switch(iMode)
+				archivo.write("Model "+Model+"\n");
+				//----------------------------------------------------------------------- MST
+				if (Model.indexOf("SAD-V")!=-1)
 				{
-					case 31:
-						archivo.write("MACDGW FF-FF-FF-FF-FF-FF\n");
 						archivo.write("LOG 0\n");
 						archivo.write("Inputs 0\n");
 						archivo.write("Loops 0\n");
-						archivo.write("Model GW1M3FT\n");
+					
+					if (Model.indexOf("SAD-V2M4")!=-1)
 						archivo.write("Phases 2\n");
-					break;
-					case 32:
-						archivo.write("MACDGW FF-FF-FF-FF-FF-FF\n");
-						archivo.write("LOG 0\n");
-						archivo.write("Inputs 8\n");
-						archivo.write("Loops 8\n");
-						archivo.write("Model GW2M3FT\n");
-						archivo.write("Phases 2\n");
-					break;
-					case 33:
-						archivo.write("DGW "+IpDGW+"\n");
-						archivo.write("MACDGW FF-FF-FF-FF-FF-FF\n");
-						archivo.write("LOG 0\n");
-						archivo.write("Inputs 8\n");
-						archivo.write("Loops 8\n");
-						archivo.write("Model GW3M3RT\n");
-						archivo.write("Phases 2\n");
-					break;
-					case 41:
-						archivo.write("MACDGW FF-FF-FF-FF-FF-FF\n");
-						archivo.write("LOG 0\n");
-						archivo.write("Inputs 0\n");
-						archivo.write("Loops 0\n");
-						archivo.write("Model GW1M4FT\n");
-						archivo.write("Phases 2\n");
-					break;
-					case 42:
-						archivo.write("MACDGW FF-FF-FF-FF-FF-FF\n");
-						archivo.write("LOG 0\n");
-						archivo.write("Inputs 8\n");
-						archivo.write("Loops 8\n");
-						archivo.write("Model GW2M4FT\n");
-						archivo.write("Phases 2\n");
-					break;
-					case 43:
-						archivo.write("DGW "+IpDGW+"\n");
-						archivo.write("MACDGW FF-FF-FF-FF-FF-FF\n");
-						archivo.write("LOG 0\n");
-						archivo.write("Inputs 8\n");
-						archivo.write("Loops 8\n");
-						archivo.write("Model GW3M4RT\n");
-						archivo.write("Phases 2\n");
-					break;
-					case 44:
-						archivo.write("DGW "+IpDGW+"\n");
-						archivo.write("LOG 0\n");
-						archivo.write("Inputs 24\n");
-						archivo.write("Loops 0\n");
-						archivo.write("Model GW4M4RT\n");
+					else
 						archivo.write("Phases 4\n");
-						archivo.write("ATZ &00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00\n");
-					break;
-					case 51:
-						archivo.write("DGW "+IpDGW+"\n");
-						archivo.write("LOG 0\n");
-						archivo.write("Inputs 24\n");
-						archivo.write("Loops 0\n");
-						archivo.write("Model GW4M4RT\n");
-						archivo.write("Phases 4\n");
-						archivo.write("ATZ &00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00\n");
-					break;
+					if (Model.indexOf("SAD-V3M4")!=-1)
+					{
+						archivo.write("VoltDes 10\n");
+						archivo.write("VoltPen 151\n");
+					}
 				}
+				//----------------------------------------------------------------------- GW
+				if (Model.indexOf("GW")!=-1)
+				{
+						archivo.write("LOG 0\n");
+					if (Model.indexOf("GW1M3FT")!=-1)
+					{
+						archivo.write("Inputs 0\n");
+						archivo.write("Loops 0\n");
+						archivo.write("Phases 2\n");
+					}
+					if (Model.indexOf("GW2M3FT")!=-1)
+					{
+						archivo.write("Inputs 8\n");
+						archivo.write("Loops 8\n");
+						archivo.write("Phases 2\n");
+					}
+					if (Model.indexOf("GW3M3RT")!=-1)
+					{
+						archivo.write("Inputs 8\n");
+						archivo.write("Loops 8\n");
+						archivo.write("Phases 2\n");
+					}
+					if (Model.indexOf("GW4M4RT")!=-1)
+					{
+						archivo.write("Inputs 24\n");
+						archivo.write("Loops 0\n");
+						archivo.write("Phases 4\n");
+						archivo.write("ATZ &00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00\n");
+					}
+				}
+				//-----------------------------------------------------------------------MAC
+				if (Model.indexOf("MAC")!=-1)
+				{
+						archivo.write("LOG 0\n");
+					if (Model.indexOf("TC1M4")!=-1)
+					{
+						archivo.write("Inputs 0\n");
+						archivo.write("Loops 0\n");
+						archivo.write("Phases 4\n");
+						archivo.write("ATZ &00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00\n");
+				}
+				}
+				//-----------------------------------------------------------------------DGV
+				if (Model.indexOf("DGV")!=-1)
+				{
+					archivo.write("LOG 1\n");
+					if (Model.indexOf("uTC1")!=-1)
+					{
+						archivo.write("Inputs 0\n");
+						archivo.write("Loops 0\n");
+						archivo.write("Phases 2\n");
+						archivo.write("ATZ &00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00\n");
+					}						
+				}
+				//-----------------------------------------------------------------------DGV
 				archivo.write("Virtual Phases 0\n");
 				archivo.write("Remote Phases 0\n");
 				archivo.write("Groups Phases 0\n");
 				archivo.write("Controllers 1\n");
-				archivo.write("Time Out Electrical Error 160\n");
-				archivo.write("Time Out Consumption Error 256\n");
-				archivo.write("Alert Over Voltage 1600\n");
-				archivo.write("Normal Voltage 1200\n");
-				archivo.write("Error Minimal Voltage 1100\n");
-				archivo.write("Error Critical Voltage 1050\n");
+				archivo.write("Time Out Electrical Error 700\n");
+				archivo.write("Time Out Consumption Error 700\n");
+				archivo.write("Alert Over Voltage 26000\n");
+				archivo.write("Normal Voltage 22000\n");
+				archivo.write("Error Minimal Voltage 17000\n");
+				archivo.write("Error Critical Voltage 15000\n");
 				archivo.write("Web Access Code Ro 54321\n");
 				archivo.write("Web Access Code R/W 12345\n");
 				archivo.write("Time Zone GMT -180\n");
@@ -231,6 +264,10 @@
 			Thread.sleep(100);
 			//-----------------------------------------------------------------------------
 		}
+		else
+		{
+			//out.println("Folder Exist["+path+"/"+ID+"/]");
+		}
 	}
 	//------------------------------------------------------------------
 	try
@@ -239,16 +276,20 @@
 		File directorio;
 		if (Os.indexOf("Win")!=-1)
 		{
-			directorio = new File(rootDir+"\\conf\\");
+			directorio = new File(rootDir+Storage+"\\");
 		}
 		else
 		{
-			directorio = new File(rootDir+"/conf/");
+			//path+=Storage;
+			path=path.replace('\\','/');
+			path=path.replaceAll("//","/");
+			directorio = new File(path+"/");
 		}
+		//out.println(path);
 		File[] listado;
 		//-------------------------------------
 		listado = directorio.listFiles();
-		//FileWriter archivo = new FileWriter(rootDir+"\\conf\\info.fls");
+		//FileWriter archivo = new FileWriter(rootDir+"\\info.fls");
 		//archivo.write(path+",\n");
 		//path=path.replace("\\", "/");
 		out.flush();
@@ -259,15 +300,12 @@
 			if (listado[i].isDirectory())
 			{
 				temp=listado[i].getName();
-				if (temp.indexOf(".")!=-1)
+				//if (temp.indexOf(".")!=-1)
 				{
 					temp=listado[i].getName() + "," + listado[i].length() + "," + fecha.toString() + "," + "----D,\n";
 					out.print(temp);
 				}
-				else
-				{
-				 temp="";
-				}
+				//else temp="";
 			}
 			//archivo.write(temp);
 		}
@@ -277,5 +315,5 @@
 	{
 		System.out.println("ERROR: Could not create Progs List");
 		System.out.println("message exception" + E0.getMessage());
-	}// */
+	}
 %>

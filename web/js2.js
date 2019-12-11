@@ -1,50 +1,50 @@
 
 var MenuHtml=[
-/*0*/"<td align=\"center\" valign=\"middle\"><a href=\"\" onclick=\"ReDraw(home_home);return false;\"><img border=\"0\" src=\"../../img/home.png\" width=\"128\" height=\"128\" title=\""+Str_Home+"\" /><br /><font size=\"2\" face=\"arial\">"+Str_Home+"</font></a></td>\n",
-/*1*/"<td align=\"center\" valign=\"middle\"><a href=\"\" onclick=\"ReDraw(home_moni);return false;\" ><img border=\"0\" src=\"../../img/info.png\" width=\"128\" height=\"128\" title=\""+Str_MN_Info+"\" /><br /><font size=\"2\" face=\"arial\">"+Str_MN_Info+"</font></a></td>\n",
-/*2*/"<td align=\"center\" valign=\"middle\"><a href=\"\" onclick=\"ReDraw(home_conf);return false;\"><img border=\"0\" src=\"../../img/tools1.png\" width=\"128\" height=\"128\" title=\""+Str_MN_Config+"\" /><br /><font size=\"2\" face=\"arial\">"+Str_MN_Config+"</font></a></td>\n",
-/*3*/"<td align=\"center\" valign=\"middle\">\n<a href=\"\" onclick=\"ReDraw(conf_ip);return false;\"><img border=\"0\" src=\"../../img/ip2.png\" width=\"128\" height=\"128\" title=\""+Str_GP_ETH_Address+"\" /><br /><font size=\"2\" face=\"arial\">"+Str_GP_ETH_Address+"</font></a></td>\n",
-/*4*/"<td align=\"center\" valign=\"middle\">\n<a href=\"\" onclick=\"ReDraw(conf_hw_mods);return false;\"><img border=\"0\" src=\"../../img/plc0.png\" width=\"128\" height=\"128\" title=\""+Str_hardware+"\"/><br /><font size=\"2\" face=\"arial\">"+Str_hardware+"</font></a></td>\n",
+/*0*/"<td align=\"center\" valign=\"middle\"><a href=\"\" onclick=\"ReDraw(home_home);return false;\"><img border=\"0\" src=\"../../img/home.png\" width=\"128\" height=\"128\" title=\""+Str_Home+"\" /></a></td>\n",
+/*1*/"<td align=\"center\" valign=\"middle\"><a href=\"\" onclick=\"ReDraw(home_moni);return false;\" ><img border=\"0\" src=\"../../img/info.png\" width=\"128\" height=\"128\" title=\""+Str_MN_Info+"\" /></a></td>\n",
+/*2*/"<td align=\"center\" valign=\"middle\"><a href=\"\" onclick=\"ReDraw(home_conf);return false;\"><img border=\"0\" src=\"../../img/tools1.png\" width=\"128\" height=\"128\" title=\""+Str_MN_Config+"\" /></a></td>\n",
+/*3*/"<td align=\"center\" valign=\"middle\">\n<a href=\"\" onclick=\"ReDraw(conf_ip);return false;\"><img border=\"0\" src=\"../../img/ip2.png\" width=\"128\" height=\"128\" title=\""+Str_GP_ETH_Address+"\" /></a></td>\n",
+/*4*/"<td align=\"center\" valign=\"middle\">\n<a href=\"\" onclick=\"ReDraw(conf_hw_mods);return false;\"><img border=\"0\" src=\"../../img/plc0.png\" width=\"128\" height=\"128\" title=\""+Str_hardware+"\"/></a></td>\n",
 /*5*/"5",
-/*6*/"<td align=\"center\" valign=\"middle\">\n<a href=\"\" onclick=\"ReDraw(conf_errors);return false;\"><img border=\"0\" src=\"../../img/errors1.png\" width=\"128\" height=\"128\" title=\""+Str_Ocorr+"\"/><br /><font size=\"2\" face=\"arial\">"+Str_Ocorr+"</font></a></td>\n",
-/*7*/"<td align=\"center\" valign=\"middle\">\n<a href=\"\" onclick=\"ReDraw(conf_otu);return false;\"><img border=\"0\" src=\"../../img/otu2.png\" width=\"128\" height=\"128\" title=\""+Str_OTU+"\"/><br /><font size=\"2\" face=\"arial\">"+Str_OTU+"</font></a></td>\n",
-/*8*/"<td align=\"center\" valign=\"middle\">\n<a href=\"\" onclick=\"ReDraw(conf_gps);return false;\"><img border=\"0\" src=\"../../img/clock1.png\" width=\"128\" height=\"128\" title=\""+Str_clock+"\"/><br /><font size=\"2\" face=\"arial\">"+Str_clock+"</font></a></td>\n",
-/*9*/"<td align=\"center\" valign=\"middle\">\n<a href=\"\" onclick=\"ReDraw(conf_avanz);return false;\"><img border=\"0\" src=\"../../img/avanz2.png\" width=\"128\" height=\"128\" title=\""+Str_General+"\"/><br /><font size=\"2\" face=\"arial\">"+Str_General+"</font></a></td>\n",
-/*10*/"<td align=\"center\" valign=\"middle\">\n<a href=\"\" onclick=\"ReDraw(conf_phases);return false;\"><img border=\"0\" src=\"../../img/semaphore.png\" width=\"128\" height=\"128\" title=\""+Str_Config_Phases+"\"/><br /><font size=\"2\" face=\"arial\">"+Str_Config_Phases+"</font></a></td>\n",
+/*6*/"<td align=\"center\" valign=\"middle\">\n<a href=\"\" onclick=\"ReDraw(conf_errors);return false;\"><img border=\"0\" src=\"../../img/errors1.png\" width=\"128\" height=\"128\" title=\""+Str_Ocorr+"\"/></a></td>\n",
+/*7*/"<td align=\"center\" valign=\"middle\">\n<a href=\"\" onclick=\"ReDraw(conf_otu);return false;\"><img border=\"0\" src=\"../../img/otu2.png\" width=\"128\" height=\"128\" title=\""+Str_OTU+"\"/></a></td>\n",
+/*8*/"<td align=\"center\" valign=\"middle\">\n<a href=\"\" onclick=\"ReDraw(conf_gps);return false;\"><img border=\"0\" src=\"../../img/clock1.png\" width=\"128\" height=\"128\" title=\""+Str_clock+"\"/></a></td>\n",
+/*9*/"<td align=\"center\" valign=\"middle\">\n<a href=\"\" onclick=\"ReDraw(conf_avanz);return false;\"><img border=\"0\" src=\"../../img/avanz2.png\" width=\"128\" height=\"128\" title=\""+Str_General+"\"/></a></td>\n",
+/*10*/"<td align=\"center\" valign=\"middle\">\n<a href=\"\" onclick=\"ReDraw(conf_phases);return false;\"><img border=\"0\" src=\"../../img/semaphore.png\" width=\"128\" height=\"128\" title=\""+Str_Config_Phases+"\"/></a></td>\n",
 
-/*11*/"<td align=\"center\" valign=\"middle\">\n<a href=\"\" onclick=\"ReDraw(conf_sec);return false;\"><img border=\"0\" src=\"../../img/sec3.png\" width=\"128\" height=\"128\" title=\""+Str_Conflict+"\"/><br /><font size=\"2\" face=\"arial\">"+Str_Stage_EV+"</font></a></td>\n",
-/*12*/"<td align=\"center\" valign=\"middle\">\n<a href=\"\" onclick=\"CEV=0;GetEv();ReDraw(conf_ev);return false;\"><img border=\"0\" src=\"../../img/ev0.png\" width=\"128\" height=\"128\" title=\""+Str_Stage_EV+"\"/><br /><font size=\"2\" face=\"arial\">"+Str_Stage_EV+"</font></a></td>\n",
-/*13*/"<td align=\"center\" valign=\"middle\">\n<a href=\"\" onclick=\"ReDraw(conf_sts);return false;\"><img border=\"0\" src=\"../../img/sts0.png\" width=\"128\" height=\"128\" title=\""+Str_Status+"\"/><br /><font size=\"2\" face=\"arial\">"+Str_Status+"</font></a></td>\n",
-/*14*/"<td align=\"center\" valign=\"middle\">\n<a href=\"\" onclick=\"GoSch();return false;\"><img border=\"0\" src=\"../../img/agenda.png\" width=\"128\" height=\"128\" title=\""+Str_scheduler+"\"/><br /><font size=\"2\" face=\"arial\">"+Str_scheduler+"</font></a></td>\n",
-/*15*/"<td align=\"center\" valign=\"middle\">\n<a href=\"\" onclick=\"ReDraw(conf_plan);return false;\"><img border=\"0\" src=\"../../img/plan2.png\" width=\"128\" height=\"128\" title=\""+Str_Plans+"\"/><br /><font size=\"2\" face=\"arial\">"+Str_Plans+"</font></a></td>\n",
+/*11*/"<td align=\"center\" valign=\"middle\">\n<a href=\"\" onclick=\"ReDraw(conf_sec);return false;\"><img border=\"0\" src=\"../../img/sec3.png\" width=\"128\" height=\"128\" title=\""+Str_Conflict+"\"/></a></td>\n",
+/*12*/"<td align=\"center\" valign=\"middle\">\n<a href=\"\" onclick=\"CEV=0;GetEv();ReDraw(conf_ev);return false;\"><img border=\"0\" src=\"../../img/ev0.png\" width=\"128\" height=\"128\" title=\""+Str_Stage_EV+"\"/></a></td>\n",
+/*13*/"<td align=\"center\" valign=\"middle\">\n<a href=\"\" onclick=\"ReDraw(conf_sts);return false;\"><img border=\"0\" src=\"../../img/sts0.png\" width=\"128\" height=\"128\" title=\""+Str_Status+"\"/></a></td>\n",
+/*14*/"<td align=\"center\" valign=\"middle\">\n<a href=\"\" onclick=\"GoSch();return false;\"><img border=\"0\" src=\"../../img/agenda.png\" width=\"128\" height=\"128\" title=\""+Str_scheduler+"\"/></a></td>\n",
+/*15*/"<td align=\"center\" valign=\"middle\">\n<a href=\"\" onclick=\"ReDraw(conf_plan);return false;\"><img border=\"0\" src=\"../../img/plan2.png\" width=\"128\" height=\"128\" title=\""+Str_Plans+"\"/></a></td>\n",
 
-/*16*/"<td align=\"center\" valign=\"middle\">\n<a href=\"\" onclick=\"ReDraw(moni_errors);return false;\"><img border=\"0\" src=\"../../img/errors.png\" width=\"128\" height=\"128\" title=\""+Str_Ocorr+"\"/><br /><font size=\"2\" face=\"arial\">"+Str_Ocorr+"</font></a></td>\n",
-/*17*/"<td align=\"center\" valign=\"middle\">\n<a href=\"\" onclick=\"ReDraw(moni_general);return false;\"><img border=\"0\" src=\"../../img/mongen.png\" width=\"128\" height=\"128\" title=\""+Str_clock+"\"/><br /><font size=\"2\" face=\"arial\">"+Str_clock+"</font></a></td>\n",
-/*18*/"<td align=\"center\" valign=\"middle\">\n<a href=\"\" onclick=\"ReDraw(moni_plcs);return false;\"><img border=\"0\" src=\"../../img/monplc.png\" width=\"128\" height=\"128\" title=\""+Str_Controllers+"\" /><br /><font size=\"2\" face=\"arial\">"+Str_Controllers+"</font></a></td>\n",
-/*19*/"<td align=\"center\" valign=\"middle\">\n<a href=\"\" onclick=\"ReDraw(moni_phases);return false;\"><img border=\"0\" src=\"../../img/phases.png\" width=\"128\" height=\"128\" title=\""+Str_Config_Phases+"\"/><br /><font size=\"2\" face=\"arial\">"+Str_Config_Phases+"</font></a></td>\n",
-/*20*/"<td align=\"center\" valign=\"middle\">\n<a href=\"\" onclick=\"ReDraw(moni_io);return false;\"><img border=\"0\" src=\"../../img/io0.png\" width=\"128\" height=\"128\" title=\""+Str_Input_Output+"\"/><br /><font size=\"2\" face=\"arial\">"+Str_Input_Output+"</font></a></td>\n",
-/*21*/"<td align=\"center\" valign=\"middle\">\n<a href=\"\" onclick=\"ReDraw(moni_task);return false;\"><img border=\"0\" src=\"../../img/taskmoni.png\" width=\"128\" height=\"128\" title=\"Task Monitor\"/><br /><font size=\"2\" face=\"arial\">Task Monitor</font></a></td>\n",
-/*22*/"<td align=\"center\" valign=\"middle\">\n<a href=\"\" onclick=\"ReDraw(moni_plans);return false;\"><img border=\"0\" src=\"../../img/monplc3.png\" width=\"128\" height=\"128\" title=\"Debug\"/><br /><font size=\"2\" face=\"arial\">Debug</font></a></td>\n",
-/*23*/"<td align=\"center\" valign=\"middle\">\n<a href=\"\" onclick=\"ReDraw(conf_io);return false;\"><img border=\"0\" src=\"../../img/io1.png\" width=\"128\" height=\"128\" title=\""+Str_Input_Output+"\"/><br /><font size=\"2\" face=\"arial\">"+Str_Input_Output+"</font></a></td>\n",
-/*24*/"<td align=\"center\" valign=\"middle\">\n<a href=\"\" onclick=\"ReDraw(conf_planMC);return false;\"><img border=\"0\" src=\"../../img/handCtrl.png\" width=\"128\" height=\"128\" title=\""+Str_Plan_Control_Manual+"\"/><br /><font size=\"2\" face=\"arial\">"+Str_Plan_Control_Manual+"</font></a></td>\n",
-/*25*/"<td align=\"center\" valign=\"middle\">\n<a href=\"\" onclick=\"ReDraw(conf_planOTU);return false;\"><img border=\"0\" src=\"../../img/otu2.png\" width=\"128\" height=\"128\" title=\""+Str_Plan_Centralized+"\"/><br /><font size=\"2\" face=\"arial\">"+Str_Plan_Centralized+"</font></a></td>\n",
-/*26*/"<td align=\"center\" valign=\"middle\">\n<a href=\"\" onclick=\"ReDraw(conf_plansLcl);return false;\"><img border=\"0\" src=\"../../img/plan1.png\" width=\"128\" height=\"128\" title=\""+Str_Plan_Local+"\"/><br /><font size=\"2\" face=\"arial\">"+Str_Plan_Local+"</font></a></td>\n",
-/*27*/"<td align=\"center\" valign=\"middle\">\n<a href=\"\" onclick=\"ReDraw(conf_FrcPln);return false;\"><img border=\"0\" src=\"../../img/frcpln.png\" width=\"128\" height=\"128\" title=\"Force Plan\"/><font size=\"2\" face=\"arial\">Force Plan</font></a></td>\n",
+/*16*/"<td align=\"center\" valign=\"middle\">\n<a href=\"\" onclick=\"ReDraw(moni_errors);return false;\"><img border=\"0\" src=\"../../img/errors.png\" width=\"128\" height=\"128\" title=\""+Str_Ocorr+"\"/></a></td>\n",
+/*17*/"<td align=\"center\" valign=\"middle\">\n<a href=\"\" onclick=\"ReDraw(moni_general);return false;\"><img border=\"0\" src=\"../../img/mongen.png\" width=\"128\" height=\"128\" title=\""+Str_clock+"\"/></a></td>\n",
+/*18*/"<td align=\"center\" valign=\"middle\">\n<a href=\"\" onclick=\"ReDraw(moni_plcs);return false;\"><img border=\"0\" src=\"../../img/monplc.png\" width=\"128\" height=\"128\" title=\""+Str_Controllers+"\" /></a></td>\n",
+/*19*/"<td align=\"center\" valign=\"middle\">\n<a href=\"\" onclick=\"ReDraw(moni_phases);return false;\"><img border=\"0\" src=\"../../img/phases.png\" width=\"128\" height=\"128\" title=\""+Str_Config_Phases+"\"/></a></td>\n",
+/*20*/"<td align=\"center\" valign=\"middle\">\n<a href=\"\" onclick=\"ReDraw(moni_io);return false;\"><img border=\"0\" src=\"../../img/io0.png\" width=\"128\" height=\"128\" title=\""+Str_Input_Output+"\"/></a></td>\n",
+/*21*/"<td align=\"center\" valign=\"middle\">\n<a href=\"\" onclick=\"ReDraw(moni_task);return false;\"><img border=\"0\" src=\"../../img/taskmoni.png\" width=\"128\" height=\"128\" title=\"Task Monitor\"/></a></td>\n",
+/*22*/"<td align=\"center\" valign=\"middle\">\n<a href=\"\" onclick=\"ReDraw(moni_plans);return false;\"><img border=\"0\" src=\"../../img/monplc3.png\" width=\"128\" height=\"128\" title=\"Debug\"/></a></td>\n",
+/*23*/"<td align=\"center\" valign=\"middle\">\n<a href=\"\" onclick=\"ReDraw(conf_io);return false;\"><img border=\"0\" src=\"../../img/io1.png\" width=\"128\" height=\"128\" title=\""+Str_Input_Output+"\"/></a></td>\n",
+/*24*/"<td align=\"center\" valign=\"middle\">\n<a href=\"\" onclick=\"ReDraw(conf_planMC);return false;\"><img border=\"0\" src=\"../../img/handCtrl.png\" width=\"128\" height=\"128\" title=\""+Str_Plan_Control_Manual+"\"/></a></td>\n",
+/*25*/"<td align=\"center\" valign=\"middle\">\n<a href=\"\" onclick=\"ReDraw(conf_planOTU);return false;\"><img border=\"0\" src=\"../../img/otu2.png\" width=\"128\" height=\"128\" title=\""+Str_Plan_Centralized+"\"/></a></td>\n",
+/*26*/"<td align=\"center\" valign=\"middle\">\n<a href=\"\" onclick=\"ReDraw(conf_plansLcl);return false;\"><img border=\"0\" src=\"../../img/plan1.png\" width=\"128\" height=\"128\" title=\""+Str_Plan_Local+"\"/></a></td>\n",
+/*27*/"<td align=\"center\" valign=\"middle\">\n<a href=\"\" onclick=\"ReDraw(conf_FrcPln);return false;\"><img border=\"0\" src=\"../../img/frcpln.png\" width=\"128\" height=\"128\" title=\"Force Plan\"/></a></td>\n",
 "28",
 "29",
 /*30*/"<td align=\"center\" valign=\"middle\">\n<a href=\"\" onclick=\"goPrevPlc();return false;\"><img border=\"0\" src=\"../../img/left.png\" width=\"128\" height=\"128\" title=\""+Str_prev+"\" /></a></td>\n",
 /*31*/"<td align=\"center\" valign=\"middle\">\n<a href=\"\" onclick=\"goNextPlc();return false;\"><img border=\"0\" src=\"../../img/right.png\" width=\"128\" height=\"128\" title=\""+Str_next+"\"/></a></td>\n",
-/*32*/"<td align=\"center\" valign=\"middle\">\n<a href=\"\" onclick=\"ReDraw(home_plcs2);return false;\"><img border=\"0\" src=\"../../img/plcn"+(PlcIdx+1)+".png\" width=\"128\" height=\"128\" title=\""+Str_Controllers+"\"/><br /><font size=\"2\" face=\"arial\">"+Str_Controllers+"</font></a></td>\n",
+/*32*/"<td align=\"center\" valign=\"middle\">\n<a href=\"\" onclick=\"ReDraw(home_plcs2);return false;\"><img border=\"0\" src=\"../../img/plcn"+(PlcIdx+1)+".png\" width=\"128\" height=\"128\" title=\""+Str_Controllers+"\"/></a></td>\n",
 "33",
 "34",
 "35",
 "36",
 "37",
 "38",
-/*39*/"<td align=\"center\" valign=\"middle\">\n<a href=\"\" onclick=\"SendConf();ReDraw(home_home);return false;\"><img border=\"0\" src=\"../../img/save.png\" width=\"64\" height=\"64\" title=\""+Str_Upload+"\" /><br /><font size=\"2\" face=\"arial\">"+Str_Upload+"</font></a></td>\n",
-/*40*/"<td align=\"center\" valign=\"middle\">\n<a href=\"\" onclick=\"if(confirm(Str_sureQ)==true){GetUrlB(PrgEd[SrcIdx].host+'/web/rldall.dgv',fncnone);}return false;\"><img border=\"0\" src=\"../../img/reset1.png\" width=\"64\" height=\"64\" title=\""+Str_Reset+"\" /><br /><font size=\"2\" face=\"arial\">"+Str_Reset+"</font></a></td>\n",
-/*41*/"<td align=\"center\" valign=\"middle\">\n<a href=\"\" onclick=\"if(confirm(Str_sureQ)==true){GetUrlB(PrgEd[SrcIdx].host+'/web/rldpln.dgv',fncnone);}return false;\"><img border=\"0\" src=\"../../img/rstpln0.png\" width=\"64\" height=\"64\" title=\""+Str_Reload_All_Plans+"\"/><br /><font size=\"2\" face=\"arial\">"+Str_Reload_All_Plans+"</font></a></td>\n",
-/*42*/"<td align=\"center\" valign=\"middle\">\n<a href=\"\" onclick=\"if(confirm(Str_sureQ)==true){GetUrlB(PrgEd[SrcIdx].host+'/web/rldsch.dgv',fncnone);}return false;\"><img border=\"0\" src=\"../../img/scheduller0.png\" width=\"64\" height=\"64\" title=\""+Str_reload_scheduler+"\"/><br /><font size=\"2\" face=\"arial\">"+Str_reload_scheduler+"</font></a></td>\n",
+/*39*/"<td align=\"center\" valign=\"middle\">\n<a href=\"\" onclick=\"SendConf();ReDraw(home_home);return false;\"><img border=\"0\" src=\"../../img/save.png\" width=\"64\" height=\"64\" title=\""+Str_Upload+"\" /></a></td>\n",
+/*40*/"<td align=\"center\" valign=\"middle\">\n<a href=\"\" onclick=\"if(confirm(Str_sureQ)==true){GetUrlB(PrgEd[SrcIdx].host+'/web/rldall.dgv',fncnone);}return false;\"><img border=\"0\" src=\"../../img/reset1.png\" width=\"64\" height=\"64\" title=\""+Str_Reset+"\" /></a></td>\n",
+/*41*/"<td align=\"center\" valign=\"middle\">\n<a href=\"\" onclick=\"if(confirm(Str_sureQ)==true){GetUrlB(PrgEd[SrcIdx].host+'/web/rldpln.dgv',fncnone);}return false;\"><img border=\"0\" src=\"../../img/rstpln0.png\" width=\"64\" height=\"64\" title=\""+Str_Reload_All_Plans+"\"/></a></td>\n",
+/*42*/"<td align=\"center\" valign=\"middle\">\n<a href=\"\" onclick=\"if(confirm(Str_sureQ)==true){GetUrlB(PrgEd[SrcIdx].host+'/web/rldsch.dgv',fncnone);}return false;\"><img border=\"0\" src=\"../../img/scheduller0.png\" width=\"64\" height=\"64\" title=\""+Str_reload_scheduler+"\"/></a></td>\n",
 ];
 
 function goNextPlc()
@@ -197,7 +197,7 @@ function ReDraw(Fnc)
 		case home_conf:
 			{
 				document.getElementById("HOME0").innerHTML=GetMenu([home_home,home_conf]);
-				if(GlobalParms.MODEL.indexOf("SAD-V3M4")!=-1)
+				if(GlobalParms.MODEL.indexOf("DGV-uTC1-M4")!=-1 || GlobalParms.MODEL.indexOf("SAD-V3M4")!=-1)
 				{
 					if(GlobalParms.MODEL.indexOf("RT")!=-1)
 						document.getElementById("HOME1").innerHTML=GetMenu([conf_ip,conf_hw_mods,home_plcs,conf_io,conf_errors,conf_otu,conf_gps,conf_avanz]);
@@ -218,6 +218,11 @@ function ReDraw(Fnc)
 			document.getElementById("HOME0").innerHTML=GetMenu([home_home,home_conf,conf_ip]);
 			document.getElementById('HOME1').innerHTML=ShwEthernet();
 			document.getElementById('HOME2').innerHTML="<font size=\"2\" face=\"arial\">"+Str_Conf_Links+"</font><br />\n";
+			if(GlobalParms.MODEL.indexOf("DGV-uTC1-M4")!=-1)
+			{
+				document.getElementById('HOME2').innerHTML+=ShwGenComa(Links,"Links",10);
+			}
+			else
 			{
 				if(GlobalParms.MODEL.indexOf("M3")!=-1)
 					document.getElementById('HOME2').innerHTML+=ShwGenComa(Links,"Links",1);
@@ -271,6 +276,8 @@ function ReDraw(Fnc)
 			document.getElementById("HOME0").innerHTML=GetMenu([home_home,home_conf,conf_gps]);
 			document.getElementById('HOME1').innerHTML=ShwClock();
 			document.getElementById('HOME2').innerHTML=ShwGen(GPS,"GPS");
+			if(GlobalParms.MODEL.indexOf("DGV-uTC1-M4")!=-1)
+				document.getElementById('HOME3').innerHTML=ShwGen(NTP,"NTP");
 			LOG(SendStartup(PrgEd[SrcIdx]));
 			UpMode=0;
 		break;
@@ -744,6 +751,24 @@ function ShwEthernet()
 	return out;
 }
 
+/*
+	<font size=\"1\" face=\"arial\">"+Str_GP_Controllers+"</font>\n\
+	</td>\n\
+	<td>\n\
+	<font size=\"1\" face=\"arial\" >\n\
+	"+Str_Group+"<input type=\"text\" name=\"IDgrp\"  onkeypress=\"return blockSpecialChar(event)\" value=\"";
+	if(GlobalParms.ID[0])
+		out+=GlobalParms.ID[0];
+	out+="\"/>\
+	"+Str_Name+"<input type=\"text\" name=\"IDuid\"  onkeypress=\"return blockSpecialChar(event)\" value=\"";
+	if(GlobalParms.ID[1])
+		out+=GlobalParms.ID[1];
+	out+="\"/>\
+	</font>\n\
+	</td>\n\
+	<td>\n\
+*/
+
 function ShwTCHW()
 {
 	UpdateSizeOfStruct();
@@ -771,6 +796,16 @@ function ShwTCHW()
 	<td>\n\
 	<font size=\"1\" face=\"arial\" >\n\
 	<select class=\"INTEXT\" onchange=\"if(ChkParm('GlobalParms.Phases',parseInt(this.value))==true){GlobalParms.Phases=parseInt(this.value);UpdateSizeOfStruct();ModParm('GlobalParms.Phases');}\">\n";
+	if(GlobalParms.MODEL.indexOf("DGV-uTC1-M4")!=-1)
+		out+=GenOptions(OptOPB2,GlobalParms.Phases);
+	if(GlobalParms.MODEL.indexOf("MAC-TC1")!=-1)
+		out+=GenOptions(OptMpt5,GlobalParms.Phases);
+	if(GlobalParms.MODEL.indexOf("GW1")!=-1)
+		out+=GenOptions(OptMpt3,GlobalParms.Phases);
+	if(GlobalParms.MODEL.indexOf("GW2")!=-1 || GlobalParms.MODEL.indexOf("GW3")!=-1)
+		out+=GenOptions(OptMpt4,GlobalParms.Phases);
+	if(GlobalParms.MODEL.indexOf("GW4")!=-1)
+		out+=GenOptions(OptMpt5,GlobalParms.Phases);
 	if(GlobalParms.MODEL.indexOf("MSTC-V1M3")!=-1)
 		out+=GenOptions(OptMpt5,GlobalParms.Phases);
 	if(GlobalParms.MODEL.indexOf("SAD-V1")!=-1)
@@ -876,6 +911,35 @@ function ShwClock()
 		</td>\n\
 		</tr>\n\
 		</table>\n";
+	}
+	if(GlobalParms.MODEL.indexOf("GW4")!=-1 || GlobalParms.MODEL.indexOf("DGV-uTC1-M4")!=-1)
+	{
+		if(GlobalParms.ATZ)
+		{
+		}
+		else
+		{
+			GlobalParms.ATZ=new Array(40);
+		}
+		out+="<table border=\"0\" bgcolor=\"LightGrey\" align=\"center\" cellpadding=\"1\" cellspacing=\"0\" bordercolor=\"Silver\">\n";
+		for(var i=0;i<40;i+=2)
+		{
+			if(!GlobalParms.ATZ[i])
+				GlobalParms.ATZ[i]="2017/01/01";
+			if(!GlobalParms.ATZ[i+1])
+				GlobalParms.ATZ[i+1]=-180;
+			out+="<tr align=\"left\">\n\
+			<td>\n\
+			<input onchange=\"GlobalParms.ATZ["+i+"]=this.value;ModParm('GlobalParms.ETH');\" class=\"INTEXT\" size=\"10\" maxlength=\"10\"  value=\""+GlobalParms.ATZ[i]+"\" />\n\
+			</td>\n\
+			<td colspan=\"2\">\n\
+			<select class=\"INTEXT\" onchange=\"GlobalParms.ATZ["+(i+1)+"]=this.value;ModParm('GlobalParms.ETH');\" >\n";
+			out+=GenOptions(OptTimeZone,GlobalParms.ATZ[i+1]);
+			out+="</select>\n\
+			</td>\n\
+			</tr>\n";
+		}
+		out+="</table>\n";
 	}
 	return out;
 }
@@ -1059,7 +1123,17 @@ function ShwPHHW()
 	out+="\t<td align=\"center\"><font size=\"2\" face=\"arial\">"+Str_Flashing+"</font></td>\n";
 	out+="\t<td align=\"center\"><font size=\"2\" face=\"arial\">"+Str_Phase_Errors_Disable+"</font></td>\n";
 	out+="\t<td align=\"center\"><font size=\"2\" face=\"arial\">"+Str_Time_minimum_Green+"</font></td>\n";
+	if(GlobalParms.MODEL.indexOf("DGV-uTC1-M4")!=-1)
+		out+="\t<td align=\"center\"><font size=\"2\" face=\"arial\">"+Str_Time_minimum_Yellow+"</font></td>\n";
 	out+="\t<td align=\"center\"><font size=\"2\" face=\"arial\">"+Str_Time_minimum_Red+"</font></td>\n";
+	if(GlobalParms.MODEL.indexOf("DGV-uTC1-M4")!=-1)
+	{
+		out+="\t<td align=\"center\"><font size=\"2\" face=\"arial\">"+Str_Time_maximum_Green+"</font></td>\n";
+		out+="\t<td align=\"center\"><font size=\"2\" face=\"arial\">"+Str_Time_maximum_Yellow+"</font></td>\n";
+		out+="\t<td align=\"center\"><font size=\"2\" face=\"arial\">"+Str_Time_maximum_Red+"</font></td>\n";
+	}
+	out+="\t<td align=\"center\"><font size=\"2\" face=\"arial\">"+Str_GP_TOET+"</font></td>\n";
+	out+="\t<td align=\"center\"><font size=\"2\" face=\"arial\">"+Str_GP_TOCT+"</font></td>\n";
 	out+="</tr>\n";
 	for(var j=0;j<PLCs[PlcIdx].Phases.length;j++)
 	{
@@ -1073,11 +1147,57 @@ function ShwPHHW()
 			out+="\t<td align=\"center\">";
 			out+="<img src=\"../../img/error.jpg\" width=\"16\" height=\"16\" border=\"0\" onclick=\"DelPhPlc("+j+");\"/>";
 			out+="<font size=\"2\" face=\"arial\">G"+(i+1)+"</font>\n";
+			/*out+="<select name=\"PLCofPHASE\" id=\"PLCofPHASE\" class=\"INTEXT\" onchange=\"\">\n\
+			<option value=\"0\">Libre</option>\n";
+			for(var p=0;p<GlobalParms.Controllers;p++)
+			{
+				out+="<option value=\""+p+"\"";
+				if((p+1)==parseInt(PHASEs[i].PLC))out+=" selected=\"selected\"";
+				out+=">"+PLCs[p].Name+"</option>\n";
+			}		
+			out+="</select>\n"// */
 			out+="</td>\n";
 			out+="<td align=\"center\" valign=\"middle\" onclick=\"ModParm('PHASEs.FState');PHASEs["+i+"].FState=chgColor2(PHASEs["+i+"].FState,MSKCOLORFF);this.innerHTML=color2svg(PHASEs["+i+"].FState,'');\" >\n";
 			out+=color2svg(PHASEs[i].FState,"");
 			out+="</td>\n";
 			out+="\t<td align=\"left\"><font size=\"1\" face=\"arial\">";
+			if(GlobalParms.MODEL.indexOf("DGV-uTC1-M4")!=-1)
+			{
+				out+="<table border=\"0\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\" class=\"table1\" bordercolor=\"#000000\" bgcolor=\"FFFFFF\" width=\"100%\">\n";
+				out+="<tr bgcolor=\"#E0E0E0\">\n";
+				out+="\t<td align=\"left\" bgcolor=\"FFC0C0\">\n";
+				out+="<input type=\"checkbox\" onclick=\"PHASEs["+i+"].MskError^=0x00000003;\" id=\"PhEr"+i+"8\"  "+(PHASEs[i].MskError&0x00000003?"checked=\"checked\"":"")+" />"+Str_No+" "+Str_Err_Electric_Red+"<br />\n";
+				if(GlobalParms.MODEL.indexOf("DGV-uTC1-M4i")!=-1)
+				out+="<input type=\"checkbox\" onclick=\"PHASEs["+i+"].MskError^=0x00000004;\" id=\"PhEr"+i+"4\"  "+(PHASEs[i].MskError&0x00000004?"checked=\"checked\"":"")+" />"+Str_No+" "+Str_Partial_Lack_Red+"<br />\n";
+				out+="<input type=\"checkbox\" onclick=\"PHASEs["+i+"].MskError^=0x01000000;\" id=\"PhEr"+i+"0\"  "+(PHASEs[i].MskError&0x01000000?"checked=\"checked\"":"")+" />"+Str_No+" Total "+Str_Lack_Red+"<br />\n";
+				out+="\t</td>\n";
+				out+="</tr>\n";
+				out+="<tr bgcolor=\"#E0E0E0\">\n";
+				out+="\t<td align=\"left\" bgcolor=\"FFFFC0\">\n";
+				out+="<input type=\"checkbox\" onclick=\"PHASEs["+i+"].MskError^=0x00000030;\" id=\"PhEr"+i+"9\"  "+(PHASEs[i].MskError&0x00000030?"checked=\"checked\"":"")+" />"+Str_No+" "+Str_Err_Electric_Yellow+"<br />\n";
+				if(GlobalParms.MODEL.indexOf("DGV-uTC1-M4i")!=-1)
+				out+="<input type=\"checkbox\" onclick=\"PHASEs["+i+"].MskError^=0x00000040;\" id=\"PhEr"+i+"5\"  "+(PHASEs[i].MskError&0x00000040?"checked=\"checked\"":"")+" />"+Str_No+" "+Str_Partial_Lack_Yellow+"<br />\n";
+				out+="<input type=\"checkbox\" onclick=\"PHASEs["+i+"].MskError^=0x02000000;\" id=\"PhEr"+i+"1\"  "+(PHASEs[i].MskError&0x02000000?"checked=\"checked\"":"")+" />"+Str_No+" Total "+Str_Lack_Yellow+"<br />\n";
+				out+="\t</td>\n";
+				out+="</tr>\n";
+				out+="<tr bgcolor=\"#E0E0E0\">\n";
+				out+="\t<td align=\"left\" bgcolor=\"#C0FFC0\">\n";
+				out+="<input type=\"checkbox\" onclick=\"PHASEs["+i+"].MskError^=0x00000300;\" id=\"PhEr"+i+"10\" "+(PHASEs[i].MskError&0x00000300?"checked=\"checked\"":"")+" />"+Str_No+" "+Str_Err_Electric_Green+"<br />\n";
+				if(GlobalParms.MODEL.indexOf("DGV-uTC1-M4i")!=-1)
+				out+="<input type=\"checkbox\" onclick=\"PHASEs["+i+"].MskError^=0x00000400;\" id=\"PhEr"+i+"6\"  "+(PHASEs[i].MskError&0x00000400?"checked=\"checked\"":"")+" />"+Str_No+" "+Str_Partial_Lack_Green+"<br />\n";
+				out+="<input type=\"checkbox\" onclick=\"PHASEs["+i+"].MskError^=0x04000000;\" id=\"PhEr"+i+"2\"  "+(PHASEs[i].MskError&0x04000000?"checked=\"checked\"":"")+" />"+Str_No+" Total "+Str_Lack_Green+"<br />\n";
+				out+="\t</td>\n";
+				out+="</tr>\n";
+				out+="<tr bgcolor=\"#E0E0E0\">\n";
+				out+="\t<td align=\"left\">\n";
+				out+="<input type=\"checkbox\" onclick=\"PHASEs["+i+"].MskError^=0x00015000;\" id=\"PhEr"+i+"3\"  "+(PHASEs[i].MskError&0x00015000?"checked=\"checked\"":"")+" />"+Str_No+" "+Str_Check_Time_minimum+"<br />\n";
+				out+="<input type=\"checkbox\" onclick=\"PHASEs["+i+"].MskError^=0x80000000;\" id=\"PhEr"+i+"11\" "+(PHASEs[i].MskError&Math.abs(0x80000000)?"checked=\"checked\"":"")+" />"+Str_No+" "+Str_Fail_Report+"<br />\n";
+				//out+="<input class=\"INTEXT\"  id=\"PhEr"+i+"\" size=\"2\" maxlength=\"5\" value=\""+PHASEs[i].MskError+"\" />";
+				out+="\t</td>\n";
+				out+="</tr>\n";
+				out+="</table>";
+			}
+			else
 			{
 				if(GlobalParms.MODEL.indexOf("M4")!=-1)
 				{
@@ -1100,14 +1220,46 @@ function ShwPHHW()
 			out+="<img src=\"../../img/up.png\"   width=\"20\" height=\"20\" border=\"0\" onclick=\"ModInVal('Ph"+i+"_MiGT',1,[1,255]);\"></img>\n";
 			out+="<font size=\"1\" face=\"arial\" id=\"Ph"+i+"_MiGT\" >"+PHASEs[i].MiGT+"</font>\n";
 			out+="<img src=\"../../img/down.png\" width=\"20\" height=\"20\" border=\"0\" onclick=\"ModInVal('Ph"+i+"_MiGT',-1,[1,255]);\"></img>\n";
+			/*if(OTU.Link==0)
+				out+="<input type=\"checkbox\" id=\"Ph"+i+"_AMiGT\" "+(PHASEs[i].AMiGT&1?"checked=\"checked\"":"")+" />Automatico?<br />\n";// */
+			out+="</td>\n";
+			//------------------------------------------------------------------------*/
+			/*out+="\t<td align=\"center\" valign=\"top\">\n";
+			out+="<input id=\"PhTmy\" class=\"INTEXT\" size=\"2\" maxlength=\"2\" value=\""+PHASEs[i].MiYT+"\" /><br/>\n";
+			if(OTU.Link==0)
+				out+="<input type=\"checkbox\" id=\"PhTmyA"+i+"\" "+(PHASEs[i].AMiYT&1?"checked=\"checked\"":"")+" />Automatico?<br />\n";
 			out+="</td>\n";
 			//------------------------------------------------------------------------*/
 			out+="\t<td align=\"center\" valign=\"top\">\n";
 			out+="<img src=\"../../img/up.png\"   width=\"20\" height=\"20\" border=\"0\" onclick=\"ModInVal('Ph"+i+"_MiRT',1,[0,255]);\"></img>\n";
 			out+="<font size=\"1\" face=\"arial\" id=\"Ph"+i+"_MiRT\" >"+PHASEs[i].MiRT+"</font>\n";
 			out+="<img src=\"../../img/down.png\" width=\"20\" height=\"20\" border=\"0\" onclick=\"ModInVal('Ph"+i+"_MiRT',-1,[0,255]);\"></img>\n";
+			/*if(OTU.Link==0)
+				out+="<input type=\"checkbox\" id=\"Ph"+i+"_AMiRT\" "+(PHASEs[i].AMiRT&1?"checked=\"checked\"":"")+" />Automatico?<br />\n";//*/
 			out+="</td>\n";
 			//========================================================================*/
+			/*out+="\t<td align=\"center\" valign=\"top\">\n";
+			out+="<input id=\"PhTMg"+i+"\" class=\"INTEXT\" size=\"2\" maxlength=\"2\" value=\""+PHASEs[i].MaGT+"\" />\n";
+			out+="</td>\n";
+			//------------------------------------------------------------------------*/
+			/*out+="\t<td align=\"center\" valign=\"top\">\n";
+			out+="<input id=\"PhTMy"+i+"\" class=\"INTEXT\" size=\"2\" maxlength=\"2\" value=\""+PHASEs[i].MaYT+"\" />\n";
+			out+="</td>\n";
+			//------------------------------------------------------------------------*/
+			/*out+="\t<td align=\"center\" valign=\"top\">\n";
+			out+="<input id=\"PhTMr"+i+"\" class=\"INTEXT\" size=\"2\" maxlength=\"2\" value=\""+PHASEs[i].MaRT+"\" />\n";
+			out+="</td>\n";
+			//========================================================================*/
+			out+="\t<td align=\"center\" valign=\"top\">\n";
+			//out+="<img src=\"../../img/up.png\"   width=\"20\" height=\"20\" border=\"0\" onclick=\"ModInVal('TOEE"+i+"',32,[0,1023]);\"></img>\n";
+			out+="<font size=\"1\" face=\"arial\" id=\"TOEE"+i+"\" >"+PHASEs[i].TOEE+"</font>\n";
+			//out+="<img src=\"../../img/down.png\" width=\"20\" height=\"20\" border=\"0\" onclick=\"ModInVal('TOEE"+i+"',-32,[0,1023]);\"></img>\n";
+			out+="</td>\n";
+			out+="\t<td align=\"center\" valign=\"top\">\n";
+			//out+="<img src=\"../../img/up.png\"   width=\"20\" height=\"20\" border=\"0\" onclick=\"ModInVal('TOEC"+i+"',32,[0,1023]);\"></img>\n";
+			out+="<font size=\"1\" face=\"arial\" id=\"TOEC"+i+"\" >"+PHASEs[i].TOEC+"</font>\n";
+			//out+="<img src=\"../../img/down.png\" width=\"20\" height=\"20\" border=\"0\" onclick=\"ModInVal('TOEC"+i+"',-32,[0,1023]);\"></img>\n";
+			out+="</td>\n";// */
 			//========================================================================*/
 			out+="</tr>\n";
 		}
@@ -1356,4 +1508,133 @@ function ShowDgvpConf(ObjID)
 	return out;
 }
 
+/*
+function ShwSerial(select)
+{
+	if(select=="New")
+	{
+		alert(select)
+		select=Comm.length;
+		Comm[select]=new Object();
+		Comm[select].Speed="9600";
+		Comm[select].Config="8N1";
+	}
+	else
+		select--;
+	//---------------------------------Title
+	txt=document.getElementById("sample7Title");
+	txt.innerHTML=Str_Serial+" "+Str_Port;
+	//---------------------------------
+	var count=0;
+	out="<table border=\"0\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\" class=\"table1\" bordercolor=\"#FfFfFf\" bgcolor=\"LightGrey\" width=\"100%\">\n";
+	out+="<tr><td align=\"left\">\n<input type=\"button\" class=\"INTEXT2\" value=\""+Str_Save_Conf+"\" onclick=\"SendSerial();\" />\n</td>";
+	out+="<td align=\"center\"><font size=\"1\" face=\"arial\"> </font></td>\n";
+	out+="<td align=\"right\"><select class=\"INTEXT\" onchange=\"ShwSerial(this.value);\" value=\""+select+"\">\n";
+	for(var count=0;count<Comm.length;count++)
+	{
+		out+="<option value=\""+(count+1)+"\"";
+		if(select==count)
+			out+=" selected=\"selected\"";
+		out+=">"+Comm[count][0]+" "+(count+1)+"</option>\n";
+	}
+	out+="<option>New Can</option>\n";
+	out+="<option>New UDP</option>\n";
+	out+="<option>New TCPc</option>\n";
+	out+="<option>New TCPs</option>\n";
+	out+="</select></td>\n</tr>\n";
+	out+="</table><br />\n\n";
+	out+="<table border=\"0\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\" class=\"table1\" bordercolor=\"#FfFfFf\" bgcolor=\"LightGrey\" width=\"100%\">\n";
+	var j=1;
+	switch(Comm[select][0])
+	{
+		case "Can":
+		out+="<tr align=\"left\">\n\
+		<td><font size=\"1\" face=\"arial\"> Board </font></td>\n\
+		<td align=\"right\"><select class=\"INTEXT\" onchange=\"Comm["+select+"]["+j+"]=this.value;\" value=\""+Comm[select][j]+"\">\n";
+		out+="<option>"+Comm[select][j]+"</option>\n\
+		<option>1</option>\n\
+		<option>2</option>\n\
+		<option>3</option>\n\
+		<option>4</option>\n";
+		out+="</select></td>\n</tr>";
+		j++
+		case "Ser":
+		out+="<tr align=\"left\">\n\
+		<td><font size=\"1\" face=\"arial\">"+Str_Baud_Rate+"</font></td>\n\
+		<td align=\"right\"><select class=\"INTEXT\" onchange=\"Comm["+select+"]["+j+"]=this.value;\" >\n\
+		<option>"+Comm[select][j]+"</option>\n\
+		<option>110</option>\n\
+		<option>300</option>\n\
+		<option>600</option>\n\
+		<option>1200</option>\n\
+		<option>2400</option>\n\
+		<option>4800</option>\n\
+		<option>9600</option>\n\
+		<option>14400</option>\n\
+		<option>19200</option>\n\
+		<option>28800</option>\n\
+		<option>38400</option>\n\
+		<option>56000</option>\n\
+		<option>57600</option>\n\
+		<option>64000</option>\n\
+		<option>115200</option>\n";
+		out+="</select></td>\n</tr>";
+		j++;
+	out+="<tr align=\"left\">\n\
+		<td><font size=\"1\" face=\"arial\">"+Str_Parity+"</font></td>\n\
+		<td align=\"right\"><select class=\"INTEXT\" onchange=\"Comm["+select+"]["+j+"]=Comm["+select+"]["+j+"][0]+this.value[0]+Comm["+select+"]["+j+"][2];\">\n";
+		out+="<option>"+Comm[select][j][1]+"</option>\n\
+		<option>Even</option>\n\
+		<option>Mark</option>\n\
+		<option>None</option>\n\
+		<option>Odd</option>\n\
+		<option>Space</option>\n";
+		out+="</select></td>\n</tr>";
+	out+="<tr align=\"left\">\n\
+		<td><font size=\"1\" face=\"arial\">"+Str_Data_Bit+"</font></td>\n\
+		<td align=\"right\"><select class=\"INTEXT\" onchange=\"Comm["+select+"]["+j+"][0]=this.value;\" value=\""+Comm[select][j][0]+"\">\n";
+		out+="<option>"+Comm[select][j][0]+"</option>\n\
+		<option>8</option>\n\
+		<option>7</option>\n\
+		<option>6</option>\n\
+		<option>5</option>\n\
+		<option>4</option>\n";
+		out+="</select></td>\n</tr>";
+	out+="<tr align=\"left\">\n\
+		<td><font size=\"1\" face=\"arial\">"+Str_Stop_Bits+"</font></td>\n\
+		<td align=\"right\"><select class=\"INTEXT\" onchange=\"Comm["+select+"]["+j+"][2]=this.value;\" value=\""+Comm[select][j][2]+"\">\n";
+		out+="<option>"+Comm[select][j][2]+"</option>\n\
+		<option>1</option>\n\
+		<option>2</option>\n";
+		out+="</select></td>\n</tr>";
+		break;
+		case "cTCP":
+		case "UDP":
+		out+="\n\
+		<tr align=\"left\"><td><font size=\"1\" face=\"arial\"> IP Target </font></td>\n\
+		<td align=\"right\"><input class=\"INTEXT\" size=\"15\" maxlength=\"15\"  onchange=\"Comm["+select+"][1]=this.value;\" value=\""+Comm[select][1]+"\" /></td>\n</tr>\
+		<tr align=\"left\"><td><font size=\"1\" face=\"arial\"> Port Source </font></td>\n\
+		<td align=\"right\"><input class=\"INTEXT\" size=\"15\" maxlength=\"15\"  onchange=\"Comm["+select+"][2]=this.value;\" value=\""+Comm[select][2]+"\" /></td>\n</tr>\
+		<tr align=\"left\"><td><font size=\"1\" face=\"arial\"> Port Target </font></td>\n\
+		<td align=\"right\"><input class=\"INTEXT\" size=\"15\" maxlength=\"15\"  onchange=\"Comm["+select+"][3]=this.value;\" value=\""+Comm[select][3]+"\" /></td>\n</tr>\
+		<tr align=\"left\"><td><font size=\"1\" face=\"arial\"> Time Out To Send </font></td>\n\
+		<td align=\"right\"><input class=\"INTEXT\" size=\"15\" maxlength=\"15\"  onchange=\"Comm["+select+"][4]=this.value;\" value=\""+Comm[select][4]+"\" /></td>\n</tr>\
+		<tr align=\"left\"><td><font size=\"1\" face=\"arial\"> Buffer Size </font></td>\n\
+		<td align=\"right\"><input class=\"INTEXT\" size=\"15\" maxlength=\"15\"  onchange=\"Comm["+select+"][5]=this.value;\" value=\""+Comm[select][5]+"\" /></td>\n</tr>";
+		break;
+		case "sTCP":
+		out+="\n\
+		<tr align=\"left\"><td><font size=\"1\" face=\"arial\"> Server Port </font></td>\n\
+		<td align=\"right\"><input class=\"INTEXT\" size=\"15\" maxlength=\"15\"  onchange=\"Comm["+select+"][1]=this.value;\" value=\""+Comm[select][1]+"\" /></td>\n</tr>\
+		<tr align=\"left\"><td><font size=\"1\" face=\"arial\"> Time Out To Send </font></td>\n\
+		<td align=\"right\"><input class=\"INTEXT\" size=\"15\" maxlength=\"15\"  onchange=\"Comm["+select+"][2]=this.value;\" value=\""+Comm[select][2]+"\" /></td>\n</tr>\
+		<tr align=\"left\"><td><font size=\"1\" face=\"arial\"> Buffer Size </font></td>\n\
+		<td align=\"right\"><input class=\"INTEXT\" size=\"15\" maxlength=\"15\"  onchange=\"Comm["+select+"][3]=this.value;\" value=\""+Comm[select][3]+"\" /></td>\n</tr>";
+		break;
+	}
+	out+="</table>";
+	document.getElementById("CFGINI").innerHTML=out;
+}
+
+// */
 percent=15;
