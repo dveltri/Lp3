@@ -146,6 +146,7 @@ function SendStartup(Prg)
 		}
 		UpData+="\n";
 	}
+	UpData+=Prg.GlobalParms.OthersParms
 	return UpData;
 }
 //==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==

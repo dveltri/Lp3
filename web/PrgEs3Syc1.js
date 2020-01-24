@@ -1042,7 +1042,7 @@ out+="sync TCicle 0 wait\n\
 	> temp T2SP[Nstp]\n\
 	return\n\
 	mov SIPL[Nstp] Nstp\n\
-	goto FINDSTPA";
+	goto FINDSTPA\n";
 	out+=EndPlan;
 	return out;
 }
