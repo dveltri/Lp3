@@ -622,8 +622,6 @@ function SaveAplan(PLC,Parms,Plan)
 	out+=SelIObyModel(Parms.MODEL);
 	if(SwEnMc!=0)
 	{
-		/*out+="mov 1 io["+SwEnMc+"].rdy\n";
-		out+="mov 1 io["+SwEnMc+"].wmu\n";// */
 	}
 	if(SwCmMc!=0)
 		out+="mov io["+SwCmMc+"].val MCTR\n";
@@ -632,8 +630,6 @@ function SaveAplan(PLC,Parms,Plan)
 	goto MAIN\n\
 	\n\
 	MAIN\n";
-	/*if(SwEnMc!=0)
-		out+="mov 1 io["+SwEnMc+"].rdy\n";// */
 	out+="> Csts 253 NOMAX\n\
 	== Tmax[Csts] 0 NOMAX\n\
 	mov TIMERS temp\n\
@@ -940,7 +936,6 @@ function SaveAplan(PLC,Parms,Plan)
 	out+="mov Nmode Cmode\n";
 	if(SwEnMc!=0)
 	{
-		//out+="mov 0 io["+SwEnMc+"].wmu\n";
 		out+="== 0 io["+SwEnMc+"].in\n";
 	}
 	out+="return FSTP0\n\
@@ -963,8 +958,6 @@ function SaveAplan(PLC,Parms,Plan)
 		out+="mov 0 io["+SwFF+"].enable\n";
 	if(SwEnMc!=0)
 	{
-		/*out+="mov 0 io["+SwEnMc+"].rdy\n";
-		out+="mov 0 io["+SwEnMc+"].wmu\n";// */
 		out+="mov 0 io["+SwEnMc+"].enable\n";
 		out+="mov 0 io["+SwEnMc+"].fail\n";
 	}
@@ -987,8 +980,6 @@ function SaveAplan(PLC,Parms,Plan)
 		out+="mov 1 io["+SwFF+"].enable\n";
 	if(SwEnMc!=0)
 	{
-		/*out+="mov 1 io["+SwEnMc+"].rdy\n";
-		out+="mov 1 io["+SwEnMc+"].wmu\n";// */
 		out+="mov 1 io["+SwEnMc+"].enable\n";
 		out+="mov 0 io["+SwEnMc+"].fail\n";
 	}
