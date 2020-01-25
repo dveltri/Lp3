@@ -522,7 +522,7 @@ function SaveSplan1(PLC,Parms,Plan)
 			POS2STP.shift();
 		}
 		out+="T2SP,"+TIM2STP.toString()+","+(Plan.LCLSYCTCI*1100)+"\n";
-			out+="P2SP"+(",0".repeat(POS2STP.length))+",0\n";
+		out+="P2SP"+(",0".repeat(POS2STP.length))+",0\n";
 		//--------------------------------------------------------------------------
 		out+="//--------------------------------------------\n";
 		out+="Lstps="+Plan.LCLSYCSEQSTP.length+"\n";
@@ -593,11 +593,11 @@ function SaveSplan1(PLC,Parms,Plan)
 		out+="\treturn\n";
 		out+="//--------------------------------------------\n";
 		out+="INICIO\n";
-			if(Plan.PHC!=0)
-				out+="ldphc /"+PlcIdx+"/phc"+Plan.PHC+".ini\n";
-			else
-				out+="ldphc /phconf.ini\n";
-		}
+		if(Plan.PHC!=0)
+			out+="ldphc /"+PlcIdx+"/phc"+Plan.PHC+".ini\n";
+		else
+			out+="ldphc /phconf.ini\n";
+	}
 	out+=SelIObyModel(Parms.MODEL);
 	if(SwEnMc!=0)
 	{
@@ -783,16 +783,6 @@ CLDstp\n\
 	mov 0 io[temp].wmu\n\
 	return\n\
 	\n";
-/*if(Parms.MODEL.indexOf("GW4")!=-1 || Parms.MODEL.indexOf("GW")==-1)
-{
-out+="\
-PRIstp\n\
-	!= PRI[Cstp] 0\n\
-	return\n\
-	mov PRI[Cstp] temp\n\
-	mov 1 io[temp].wmu\n\
-	return\n\n";
-}// */
 out+="\
 FLAS\n";
 if(Parms.MODEL.indexOf("RT")!=-1)

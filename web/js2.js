@@ -276,8 +276,7 @@ function ReDraw(Fnc)
 			document.getElementById("HOME0").innerHTML=GetMenu([home_home,home_conf,conf_gps]);
 			document.getElementById('HOME1').innerHTML=ShwClock();
 			document.getElementById('HOME2').innerHTML=ShwGen(GPS,"GPS");
-			if(GlobalParms.MODEL.indexOf("DGV-uTC1-M4")!=-1)
-				document.getElementById('HOME3').innerHTML=ShwGen(NTP,"NTP");
+			document.getElementById('HOME3').innerHTML=ShwGen(NTP,"NTP");
 			LOG(SendStartup(PrgEd[SrcIdx]));
 			UpMode=0;
 		break;
@@ -751,24 +750,6 @@ function ShwEthernet()
 	return out;
 }
 
-/*
-	<font size=\"1\" face=\"arial\">"+Str_GP_Controllers+"</font>\n\
-	</td>\n\
-	<td>\n\
-	<font size=\"1\" face=\"arial\" >\n\
-	"+Str_Group+"<input type=\"text\" name=\"IDgrp\"  onkeypress=\"return blockSpecialChar(event)\" value=\"";
-	if(GlobalParms.ID[0])
-		out+=GlobalParms.ID[0];
-	out+="\"/>\
-	"+Str_Name+"<input type=\"text\" name=\"IDuid\"  onkeypress=\"return blockSpecialChar(event)\" value=\"";
-	if(GlobalParms.ID[1])
-		out+=GlobalParms.ID[1];
-	out+="\"/>\
-	</font>\n\
-	</td>\n\
-	<td>\n\
-*/
-
 function ShwTCHW()
 {
 	UpdateSizeOfStruct();
@@ -1147,15 +1128,6 @@ function ShwPHHW()
 			out+="\t<td align=\"center\">";
 			out+="<img src=\"../../img/error.jpg\" width=\"16\" height=\"16\" border=\"0\" onclick=\"DelPhPlc("+j+");\"/>";
 			out+="<font size=\"2\" face=\"arial\">G"+(i+1)+"</font>\n";
-			/*out+="<select name=\"PLCofPHASE\" id=\"PLCofPHASE\" class=\"INTEXT\" onchange=\"\">\n\
-			<option value=\"0\">Libre</option>\n";
-			for(var p=0;p<GlobalParms.Controllers;p++)
-			{
-				out+="<option value=\""+p+"\"";
-				if((p+1)==parseInt(PHASEs[i].PLC))out+=" selected=\"selected\"";
-				out+=">"+PLCs[p].Name+"</option>\n";
-			}		
-			out+="</select>\n"// */
 			out+="</td>\n";
 			out+="<td align=\"center\" valign=\"middle\" onclick=\"ModParm('PHASEs.FState');PHASEs["+i+"].FState=chgColor2(PHASEs["+i+"].FState,MSKCOLORFF);this.innerHTML=color2svg(PHASEs["+i+"].FState,'');\" >\n";
 			out+=color2svg(PHASEs[i].FState,"");
@@ -1220,45 +1192,19 @@ function ShwPHHW()
 			out+="<img src=\"../../img/up.png\"   width=\"20\" height=\"20\" border=\"0\" onclick=\"ModInVal('Ph"+i+"_MiGT',1,[1,255]);\"></img>\n";
 			out+="<font size=\"1\" face=\"arial\" id=\"Ph"+i+"_MiGT\" >"+PHASEs[i].MiGT+"</font>\n";
 			out+="<img src=\"../../img/down.png\" width=\"20\" height=\"20\" border=\"0\" onclick=\"ModInVal('Ph"+i+"_MiGT',-1,[1,255]);\"></img>\n";
-			/*if(OTU.Link==0)
-				out+="<input type=\"checkbox\" id=\"Ph"+i+"_AMiGT\" "+(PHASEs[i].AMiGT&1?"checked=\"checked\"":"")+" />Automatico?<br />\n";// */
-			out+="</td>\n";
-			//------------------------------------------------------------------------*/
-			/*out+="\t<td align=\"center\" valign=\"top\">\n";
-			out+="<input id=\"PhTmy\" class=\"INTEXT\" size=\"2\" maxlength=\"2\" value=\""+PHASEs[i].MiYT+"\" /><br/>\n";
-			if(OTU.Link==0)
-				out+="<input type=\"checkbox\" id=\"PhTmyA"+i+"\" "+(PHASEs[i].AMiYT&1?"checked=\"checked\"":"")+" />Automatico?<br />\n";
 			out+="</td>\n";
 			//------------------------------------------------------------------------*/
 			out+="\t<td align=\"center\" valign=\"top\">\n";
 			out+="<img src=\"../../img/up.png\"   width=\"20\" height=\"20\" border=\"0\" onclick=\"ModInVal('Ph"+i+"_MiRT',1,[0,255]);\"></img>\n";
 			out+="<font size=\"1\" face=\"arial\" id=\"Ph"+i+"_MiRT\" >"+PHASEs[i].MiRT+"</font>\n";
 			out+="<img src=\"../../img/down.png\" width=\"20\" height=\"20\" border=\"0\" onclick=\"ModInVal('Ph"+i+"_MiRT',-1,[0,255]);\"></img>\n";
-			/*if(OTU.Link==0)
-				out+="<input type=\"checkbox\" id=\"Ph"+i+"_AMiRT\" "+(PHASEs[i].AMiRT&1?"checked=\"checked\"":"")+" />Automatico?<br />\n";//*/
-			out+="</td>\n";
-			//========================================================================*/
-			/*out+="\t<td align=\"center\" valign=\"top\">\n";
-			out+="<input id=\"PhTMg"+i+"\" class=\"INTEXT\" size=\"2\" maxlength=\"2\" value=\""+PHASEs[i].MaGT+"\" />\n";
-			out+="</td>\n";
-			//------------------------------------------------------------------------*/
-			/*out+="\t<td align=\"center\" valign=\"top\">\n";
-			out+="<input id=\"PhTMy"+i+"\" class=\"INTEXT\" size=\"2\" maxlength=\"2\" value=\""+PHASEs[i].MaYT+"\" />\n";
-			out+="</td>\n";
-			//------------------------------------------------------------------------*/
-			/*out+="\t<td align=\"center\" valign=\"top\">\n";
-			out+="<input id=\"PhTMr"+i+"\" class=\"INTEXT\" size=\"2\" maxlength=\"2\" value=\""+PHASEs[i].MaRT+"\" />\n";
 			out+="</td>\n";
 			//========================================================================*/
 			out+="\t<td align=\"center\" valign=\"top\">\n";
-			//out+="<img src=\"../../img/up.png\"   width=\"20\" height=\"20\" border=\"0\" onclick=\"ModInVal('TOEE"+i+"',32,[0,1023]);\"></img>\n";
 			out+="<font size=\"1\" face=\"arial\" id=\"TOEE"+i+"\" >"+PHASEs[i].TOEE+"</font>\n";
-			//out+="<img src=\"../../img/down.png\" width=\"20\" height=\"20\" border=\"0\" onclick=\"ModInVal('TOEE"+i+"',-32,[0,1023]);\"></img>\n";
 			out+="</td>\n";
 			out+="\t<td align=\"center\" valign=\"top\">\n";
-			//out+="<img src=\"../../img/up.png\"   width=\"20\" height=\"20\" border=\"0\" onclick=\"ModInVal('TOEC"+i+"',32,[0,1023]);\"></img>\n";
 			out+="<font size=\"1\" face=\"arial\" id=\"TOEC"+i+"\" >"+PHASEs[i].TOEC+"</font>\n";
-			//out+="<img src=\"../../img/down.png\" width=\"20\" height=\"20\" border=\"0\" onclick=\"ModInVal('TOEC"+i+"',-32,[0,1023]);\"></img>\n";
 			out+="</td>\n";// */
 			//========================================================================*/
 			out+="</tr>\n";
@@ -1508,133 +1454,4 @@ function ShowDgvpConf(ObjID)
 	return out;
 }
 
-/*
-function ShwSerial(select)
-{
-	if(select=="New")
-	{
-		alert(select)
-		select=Comm.length;
-		Comm[select]=new Object();
-		Comm[select].Speed="9600";
-		Comm[select].Config="8N1";
-	}
-	else
-		select--;
-	//---------------------------------Title
-	txt=document.getElementById("sample7Title");
-	txt.innerHTML=Str_Serial+" "+Str_Port;
-	//---------------------------------
-	var count=0;
-	out="<table border=\"0\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\" class=\"table1\" bordercolor=\"#FfFfFf\" bgcolor=\"LightGrey\" width=\"100%\">\n";
-	out+="<tr><td align=\"left\">\n<input type=\"button\" class=\"INTEXT2\" value=\""+Str_Save_Conf+"\" onclick=\"SendSerial();\" />\n</td>";
-	out+="<td align=\"center\"><font size=\"1\" face=\"arial\"> </font></td>\n";
-	out+="<td align=\"right\"><select class=\"INTEXT\" onchange=\"ShwSerial(this.value);\" value=\""+select+"\">\n";
-	for(var count=0;count<Comm.length;count++)
-	{
-		out+="<option value=\""+(count+1)+"\"";
-		if(select==count)
-			out+=" selected=\"selected\"";
-		out+=">"+Comm[count][0]+" "+(count+1)+"</option>\n";
-	}
-	out+="<option>New Can</option>\n";
-	out+="<option>New UDP</option>\n";
-	out+="<option>New TCPc</option>\n";
-	out+="<option>New TCPs</option>\n";
-	out+="</select></td>\n</tr>\n";
-	out+="</table><br />\n\n";
-	out+="<table border=\"0\" align=\"center\" cellpadding=\"0\" cellspacing=\"0\" class=\"table1\" bordercolor=\"#FfFfFf\" bgcolor=\"LightGrey\" width=\"100%\">\n";
-	var j=1;
-	switch(Comm[select][0])
-	{
-		case "Can":
-		out+="<tr align=\"left\">\n\
-		<td><font size=\"1\" face=\"arial\"> Board </font></td>\n\
-		<td align=\"right\"><select class=\"INTEXT\" onchange=\"Comm["+select+"]["+j+"]=this.value;\" value=\""+Comm[select][j]+"\">\n";
-		out+="<option>"+Comm[select][j]+"</option>\n\
-		<option>1</option>\n\
-		<option>2</option>\n\
-		<option>3</option>\n\
-		<option>4</option>\n";
-		out+="</select></td>\n</tr>";
-		j++
-		case "Ser":
-		out+="<tr align=\"left\">\n\
-		<td><font size=\"1\" face=\"arial\">"+Str_Baud_Rate+"</font></td>\n\
-		<td align=\"right\"><select class=\"INTEXT\" onchange=\"Comm["+select+"]["+j+"]=this.value;\" >\n\
-		<option>"+Comm[select][j]+"</option>\n\
-		<option>110</option>\n\
-		<option>300</option>\n\
-		<option>600</option>\n\
-		<option>1200</option>\n\
-		<option>2400</option>\n\
-		<option>4800</option>\n\
-		<option>9600</option>\n\
-		<option>14400</option>\n\
-		<option>19200</option>\n\
-		<option>28800</option>\n\
-		<option>38400</option>\n\
-		<option>56000</option>\n\
-		<option>57600</option>\n\
-		<option>64000</option>\n\
-		<option>115200</option>\n";
-		out+="</select></td>\n</tr>";
-		j++;
-	out+="<tr align=\"left\">\n\
-		<td><font size=\"1\" face=\"arial\">"+Str_Parity+"</font></td>\n\
-		<td align=\"right\"><select class=\"INTEXT\" onchange=\"Comm["+select+"]["+j+"]=Comm["+select+"]["+j+"][0]+this.value[0]+Comm["+select+"]["+j+"][2];\">\n";
-		out+="<option>"+Comm[select][j][1]+"</option>\n\
-		<option>Even</option>\n\
-		<option>Mark</option>\n\
-		<option>None</option>\n\
-		<option>Odd</option>\n\
-		<option>Space</option>\n";
-		out+="</select></td>\n</tr>";
-	out+="<tr align=\"left\">\n\
-		<td><font size=\"1\" face=\"arial\">"+Str_Data_Bit+"</font></td>\n\
-		<td align=\"right\"><select class=\"INTEXT\" onchange=\"Comm["+select+"]["+j+"][0]=this.value;\" value=\""+Comm[select][j][0]+"\">\n";
-		out+="<option>"+Comm[select][j][0]+"</option>\n\
-		<option>8</option>\n\
-		<option>7</option>\n\
-		<option>6</option>\n\
-		<option>5</option>\n\
-		<option>4</option>\n";
-		out+="</select></td>\n</tr>";
-	out+="<tr align=\"left\">\n\
-		<td><font size=\"1\" face=\"arial\">"+Str_Stop_Bits+"</font></td>\n\
-		<td align=\"right\"><select class=\"INTEXT\" onchange=\"Comm["+select+"]["+j+"][2]=this.value;\" value=\""+Comm[select][j][2]+"\">\n";
-		out+="<option>"+Comm[select][j][2]+"</option>\n\
-		<option>1</option>\n\
-		<option>2</option>\n";
-		out+="</select></td>\n</tr>";
-		break;
-		case "cTCP":
-		case "UDP":
-		out+="\n\
-		<tr align=\"left\"><td><font size=\"1\" face=\"arial\"> IP Target </font></td>\n\
-		<td align=\"right\"><input class=\"INTEXT\" size=\"15\" maxlength=\"15\"  onchange=\"Comm["+select+"][1]=this.value;\" value=\""+Comm[select][1]+"\" /></td>\n</tr>\
-		<tr align=\"left\"><td><font size=\"1\" face=\"arial\"> Port Source </font></td>\n\
-		<td align=\"right\"><input class=\"INTEXT\" size=\"15\" maxlength=\"15\"  onchange=\"Comm["+select+"][2]=this.value;\" value=\""+Comm[select][2]+"\" /></td>\n</tr>\
-		<tr align=\"left\"><td><font size=\"1\" face=\"arial\"> Port Target </font></td>\n\
-		<td align=\"right\"><input class=\"INTEXT\" size=\"15\" maxlength=\"15\"  onchange=\"Comm["+select+"][3]=this.value;\" value=\""+Comm[select][3]+"\" /></td>\n</tr>\
-		<tr align=\"left\"><td><font size=\"1\" face=\"arial\"> Time Out To Send </font></td>\n\
-		<td align=\"right\"><input class=\"INTEXT\" size=\"15\" maxlength=\"15\"  onchange=\"Comm["+select+"][4]=this.value;\" value=\""+Comm[select][4]+"\" /></td>\n</tr>\
-		<tr align=\"left\"><td><font size=\"1\" face=\"arial\"> Buffer Size </font></td>\n\
-		<td align=\"right\"><input class=\"INTEXT\" size=\"15\" maxlength=\"15\"  onchange=\"Comm["+select+"][5]=this.value;\" value=\""+Comm[select][5]+"\" /></td>\n</tr>";
-		break;
-		case "sTCP":
-		out+="\n\
-		<tr align=\"left\"><td><font size=\"1\" face=\"arial\"> Server Port </font></td>\n\
-		<td align=\"right\"><input class=\"INTEXT\" size=\"15\" maxlength=\"15\"  onchange=\"Comm["+select+"][1]=this.value;\" value=\""+Comm[select][1]+"\" /></td>\n</tr>\
-		<tr align=\"left\"><td><font size=\"1\" face=\"arial\"> Time Out To Send </font></td>\n\
-		<td align=\"right\"><input class=\"INTEXT\" size=\"15\" maxlength=\"15\"  onchange=\"Comm["+select+"][2]=this.value;\" value=\""+Comm[select][2]+"\" /></td>\n</tr>\
-		<tr align=\"left\"><td><font size=\"1\" face=\"arial\"> Buffer Size </font></td>\n\
-		<td align=\"right\"><input class=\"INTEXT\" size=\"15\" maxlength=\"15\"  onchange=\"Comm["+select+"][3]=this.value;\" value=\""+Comm[select][3]+"\" /></td>\n</tr>";
-		break;
-	}
-	out+="</table>";
-	document.getElementById("CFGINI").innerHTML=out;
-}
-
-// */
 percent=15;
