@@ -201,6 +201,12 @@ function RcvStartup(Datos)
 			case "Phases":
 				GlobalParms.Phases=parseInt("0"+Datos[i][1].trim());
 			break;
+			case "Virtual Inputs":
+				GlobalParms.Virtual_Inputs=parseInt("0"+Datos[i][1].trim());
+			break;
+			case "Outputs":
+				GlobalParms.Outputs=parseInt("0"+Datos[i][1].trim());
+			break;
 			case "Virtual Phases":
 				GlobalParms.Virtual_Phases=parseInt("0"+Datos[i][1].trim());
 			break;
@@ -271,6 +277,12 @@ function RcvStartup(Datos)
 						x+=2;
 					}
 				}
+			break;
+			default:
+				if(!GlobalParms.OthersParms)
+					GlobalParms.OthersParms="";
+				temp=Datos[i].join(" ");
+				GlobalParms.OthersParms+=temp.trim()+"\n";
 			break;
 		}
 	}
