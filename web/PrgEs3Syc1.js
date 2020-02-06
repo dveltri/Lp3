@@ -783,6 +783,16 @@ CLDstp\n\
 	mov 0 io[temp].wmu\n\
 	return\n\
 	\n";
+/*if(Parms.MODEL.indexOf("GW4")!=-1 || Parms.MODEL.indexOf("GW")==-1)
+{
+out+="\
+PRIstp\n\
+	!= PRI[Cstp] 0\n\
+	return\n\
+	mov PRI[Cstp] temp\n\
+	mov 1 io[temp].wmu\n\
+	return\n\n";
+}// */
 out+="\
 FLAS\n";
 if(Parms.MODEL.indexOf("RT")!=-1)
@@ -1032,7 +1042,7 @@ out+="sync TCicle 0 wait\n\
 	> temp T2SP[Nstp]\n\
 	return\n\
 	mov SIPL[Nstp] Nstp\n\
-	goto FINDSTPA";
+	goto FINDSTPA\n";
 	out+=EndPlan;
 	return out;
 }

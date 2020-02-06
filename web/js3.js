@@ -781,7 +781,7 @@ function SendPlan98A(Prg)
 	add 1 temp;\n";
 	//UpData+="mov 1 PLC[temp].lamp;\n";
 	//UpData+="mov 1 PLC[temp].service\n";
-	UpData+="mov 9 PLC[temp].dbug\n";
+	UpData+="mov 1 PLC[temp].dbug\n";
 	UpData+="< temp CPLCS loop1;\n";
 	if(SwEnMc!=0)
 		UpData+="mov 0 io["+SwEnMc+"].fail\n";

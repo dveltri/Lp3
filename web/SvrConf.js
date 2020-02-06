@@ -1188,7 +1188,24 @@ function SendConf()
 				}
 				else
 					UpMode=0;
-				percent2+=3;
+				percent2+=1;
+			}
+			break;
+			case 5:
+			{
+				document.getElementById("LOADINGTXT2").innerHTML=Str_looking_for_difference+" "+Str_Initial_Plan;
+				ttemp=SendPlan98A(PrgBk[TrgIdx]);
+				stemp=SendPlan98A(PrgEd[SrcIdx]);
+				if(ttemp!==stemp)
+				{
+					AllConf+="<hr />"+stemp
+					UpType="txt";
+					UpFile="plan98p.txt"
+					rcvUpFileFileEdit();
+				}
+				else
+					UpMode=0;
+				percent2+=2;
 			}
 			break;
 			case 7:
