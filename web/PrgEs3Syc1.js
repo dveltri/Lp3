@@ -701,13 +701,13 @@ out+="CTRLOTU\n\
 	call CLDsts\n\
 	call SETSTS\n\
 	goto MAIN\n";
-	}
+}
 	out+="\n\
 CTRLISO\n\
 	mov 0 Nmode\n\
-	call CHKMODE\n";
-	out+="call CLDstp\n";
-	out+="mov SIPL[Cstp] Nstp\n\
+	call CHKMODE\n\
+	call CLDstp\n\
+	mov SIPL[Cstp] Nstp\n\
 	mov EIPL[Nstp] Nsts\n\
 	call FNCDemISO\n\
 	mov Nstp Cstp\n\
@@ -748,7 +748,7 @@ CTRLISO\n\
 	out+="sync TCicle TIPL[Cstp]\n";
 	out+="goto MAIN\n\
 	\n\
-	FNCDemISO\n\
+FNCDemISO\n\
 	mov LxD[Cstp] temp\n\
 	!= 0 temp\n\
 	return\n\
@@ -756,11 +756,12 @@ CTRLISO\n\
 	return\n\
 	mov 1 DEMA\n\
 	mov LgI[Cstp] Nsts\n\
-	return\n\n";
-out+="CLDstp\n";
-out+="== 1 DEMA\n";
-out+="return\n";
-out+="!= CDL[Cstp] 0\n\
+	return\n\
+	\n\
+CLDstp\n\
+	== 1 DEMA\n\
+	return\n\
+	!= CDL[Cstp] 0\n\
 	return\n\
 	mov CDL[Cstp] temp\n\
 	mov 0 DEMA\n\

@@ -189,7 +189,7 @@ function ReDraw(Fnc)
 		case home_moni:
 			document.getElementById("HOME0").innerHTML=GetMenu([home_home,home_moni]);
 			if(Errors.length>0)
-				document.getElementById("HOME1").innerHTML=GetMenu([moni_errors,moni_general,moni_plcs,moni_phases,moni_io]); //moni_task,moni_plans
+				document.getElementById("HOME1").innerHTML=GetMenu([moni_errors,moni_general,moni_io]); //moni_task,moni_plans
 			else
 				document.getElementById("HOME1").innerHTML=GetMenu([moni_general,moni_plcs,moni_phases,moni_io]);
 		break;
@@ -356,7 +356,7 @@ function ReDraw(Fnc)
 		//-----------------------------------------------------
 		case moni_general:
 			document.getElementById("HOME0").innerHTML=GetMenu([home_home,home_moni,moni_general]);
-			Resource.MoniBit=1;
+			Resource.MoniBit=7;
 			PoolData=1;
 			Resource.Element=document.getElementById("HOME1");
 			document.getElementById("HOME2").innerHTML="<br/><select id=\"ClockOffSet\" class=\"INTEXT\">\n"+GenOptions(OptSyncClock,0)+"</select><input type=\"button\" class=\"INTEXT2\" value=\""+Str_Sync+"\" onclick=\"UpDateRtc();return false\" />\n";
@@ -1037,7 +1037,7 @@ function AddPhToPlc(Obj)
 //--------------------------------------------------
 function ShwPHHW()
 {
-	var j=0;	
+	var j=0;
 	for(j=0;j<PLCs[PlcIdx].Phases.length;j++)
 		PLCs[PlcIdx].Phases[j]=parseInt(PLCs[PlcIdx].Phases[j]);
 	PLCs[PlcIdx].Phases=PLCs[PlcIdx].Phases.sort(sortI);

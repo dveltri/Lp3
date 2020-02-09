@@ -59,7 +59,7 @@ function UpdateSyn2(PLC,Plan)
 		if(Plan.LCLSYCDEMSTS[j]==0)
 			Plan.LCLSYCDEMSTS[j]=1;
 		Plan.LCLSYCCLRDEM[j]=0;
-		if(Plan.LCLSYCDEMSTP[j])
+		if(Plan.LCLSYCDEMSTP[j]!=0)
 			Plan.LCLSYCCLRDEM[((j+1)%Plan.LCLSYCSEQSTP.length)]=Plan.LCLSYCDEMSTP[j];
 		if(Plan.LCLSYCDEMSTP[j]==0)
 			Plan.DEMPRI[j]=0;
@@ -238,12 +238,12 @@ function ModSynTime2(ELMT,J)
 	}//*/
 	tTSTSTP+=parseInt(ELMT.value);
 	if(ChkParm('PLAN.SYN.TIME',parseInt(ELMT.value))==true) // && (PlanGen.LCLSYCTCI>=tTSTSTP)
-			{
+	{
 		PlanGen.LCLSYCTSTSTP[J]=parseInt(ELMT.value);
 		ModParm('PLAN.SYN.TIME');
-				ShowPlanWizard(3);
-			}
-			else
+		ShowPlanWizard(3);
+	}
+	else
 	{
 		ELMT.value=PlanGen.LCLSYCTSTSTP[J];
 	}
@@ -632,13 +632,10 @@ function SaveSplan2(PLC,Parms,Plan)
 		out+="\treturn\n";
 		out+="//--------------------------------------------\n";
 		out+="INICIO\n";
-		//if(Parms.MODEL.indexOf("M4")!=-1)
-		{
-			if(Plan.PHC!=0)
-				out+="ldphc /"+PlcIdx+"/phc"+Plan.PHC+".ini\n";
-			else
-				out+="ldphc /phconf.ini\n";
-		}
+		if(Plan.PHC!=0)
+			out+="ldphc /"+PlcIdx+"/phc"+Plan.PHC+".ini\n";
+		else
+			out+="ldphc /phconf.ini\n";
 	}
 	if(Parms.MODEL.indexOf("GW4")!=-1 || Parms.MODEL.indexOf("GW")==-1)
 	{
@@ -689,21 +686,27 @@ out+="NOCTRLO\n";
 	}
 	out+="goto CTRLISO\n\
 \n";
-	if(SwEnMc!=0)
-	{
+if(SwEnMc!=0)
+{
 out+="CTRMAN\n\
 	mov 1 Nmode\n\
 	call CHKMODE\n\
 	delay 1000\n";
 	if(SwCmMc!=0)
+	{
 		out+="== io["+SwCmMc+"].val MCTR MAIN\n";
+	}
 out+="WAITBTOFF\n\
 	delay 200\n";
 	if(SwCmMc!=0)
+	{
 		out+="== 1 io["+SwCmMc+"].in WAITBTOFF\n";
+	}
 	out+="mov SIMC[Cstp] Nstp\n";
 	if(OutAdv!=0)
+	{
 		out+="mov 0 io["+OutAdv+"].val\n";
+	}
 out+="FSTP0\n\
 	mov Nstp Cstp\n\
 	mov MCSS[Cstp] Nsts\n\
@@ -715,7 +718,9 @@ KEEPWAIT\n\
 	add 1000 temp\n\
 	mov 3 PLC[THIS].vsync\n";
 	if(SwEnMc!=0)
+	{
 		out+="== 0 io["+SwEnMc+"].in OUTWAIT\n";
+	}
 	out+="> temp SYPTO\n\
 	ifpsync PLCS KEEPWAIT\n\
 OUTWAIT\n\
@@ -723,9 +728,13 @@ OUTWAIT\n\
 	delay 2000\n\
 	mov 0 PLC[THIS].vsync\n";
 	if(SwCmMc!=0)
+	{
 		out+="mov io["+SwCmMc+"].val MCTR\n";
+	}
 	if(OutAdv!=0)
+	{
 		out+="mov 255 io["+OutAdv+"].val\n";
+	}
 	out+="goto MAIN\n\
 \n";
 }
@@ -811,7 +820,8 @@ CTRLISO\n\
 	return\n\
 	mov 1 DEMA\n\
 	mov LgI[Cstp] Nsts\n\
-	return\n\n";
+	return\n\
+	\n";
 out+="CLDstp\n";
 out+="== 1 DEMA\n";
 out+="return\n";
@@ -824,17 +834,20 @@ out+="!= CDL[Cstp] 0\n\
 	return\n\n";
 if(Parms.MODEL.indexOf("GW4")!=-1 || Parms.MODEL.indexOf("GW")==-1)
 {
-out+="PRIstp\n\
+out+="\
+PRIstp\n\
 	!= PRI[Cstp] 0\n\
 	return\n\
 	mov PRI[Cstp] temp\n\
 	mov 1 io[temp].wmu\n\
 	return\n\n";
-}
-out+="FLAS\n";
+}// */
+out+="\
+FLAS\n";
 if(Parms.MODEL.indexOf("RT")!=-1)
 {
-	out+="== 1 otu.ff FLASCENTRAL\n\
+	out+="\
+	== 1 otu.ff FLASCENTRAL\n\
 	mov 1 otu.fr\n";
 }
 	out+="phases ColorFF\n\
