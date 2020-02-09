@@ -993,7 +993,7 @@ CENTRAL\n";
 	}
 	out+="mov Nmode Cmode\n\
 	return\n";
-out+="\n\
+	out+="\n\
 LOCAL\n";
 	if(OutAdv!=0)
 		out+="mov 0 io["+OutAdv+"].val\n";

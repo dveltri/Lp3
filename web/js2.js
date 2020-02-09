@@ -1101,7 +1101,7 @@ function AddPhToPlc(Obj)
 //--------------------------------------------------
 function ShwPHHW()
 {
-	var j=0;	
+	var j=0;
 	for(j=0;j<PLCs[PlcIdx].Phases.length;j++)
 		PLCs[PlcIdx].Phases[j]=parseInt(PLCs[PlcIdx].Phases[j]);
 	PLCs[PlcIdx].Phases=PLCs[PlcIdx].Phases.sort(sortI);

@@ -227,13 +227,13 @@ function CloneSch()
 		{
 			for(var p=0;p<GlobalParms.Controllers;p++)
 			{
-				if(99!=parseInt(TimeScheduler[idx].Hs[idx2].Plan) && 98!=parseInt(TimeScheduler[idx].Hs[idx2].Plan))
+				if(99!=parseInt(TimeScheduler[idx].Hs[idx2].Plan) && 98!=parseInt(TimeScheduler[idx].Hs[idx2].Plan) && 97!=parseInt(TimeScheduler[idx].Hs[idx2].Plan))   //Se agrego la condicion 97!=. VMV;16/12/19.
 				{
 					if(TimeScheduler[idx].Hs[idx2].Plan>PLCs[p].Plans.length)
 					{
 						if(TimeScheduler[idx].Hs.length>1)
 						{
-							TimeScheduler[idx].Hs.splice(idx2,1);
+							TimeScheduler[idx].Hs.splice(idx2,1);   //En esta linea anulaba de la agenda al plan 97. VMV;16/12/19.
 							if(idx2)idx2--
 						}
 						else
@@ -321,6 +321,11 @@ function MkTSF(ArgIdx,Sel)
 	out="";
 	out+="<select id=\""+ArgIdx+"\" class=\"INTEXT\">\n";
 	out+="<option value=\"\"></option>\n";
+	//----------------------------------
+	out+="<option value=\"98\"";				//Se agrega en el desplegable de la
+	if(98==Sel)									//agenda, el Plan inicial.	
+		out+=" selected=\"selected\"";			//Como opcion para cambio de plan.
+	out+=" >"+Str_Initial_Plan+"</option>\n";	//Esto es para cuando retorna del Lamp Off. Agregado 6/1/20.
 	//----------------------------------
 	out+="<option value=\"97\"";
 	if(97==Sel)
