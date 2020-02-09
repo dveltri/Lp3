@@ -810,7 +810,7 @@ CTRLISO\n\
 	out+="FSTPL\n\
 	SAMESTP\n\
 	call SETSTS\n";
-	/*if(Parms.MODEL.indexOf("GW4")!=-1)
+	/*demanda prioritaria
 	{
 		out+="call CLDstp\n";
 		out+="call PRIstp\n";
@@ -843,7 +843,7 @@ out+="!= CDL[Cstp] 0\n\
 	mov 0 io[temp].wmu\n\
 	return\n\
 	\n";
-/*if(Parms.MODEL.indexOf("GW4")!=-1)
+/*if(Parms.MODEL.indexOf("GW4")!=-1 || Parms.MODEL.indexOf("GW")==-1)
 {
 out+="\
 PRIstp\n\

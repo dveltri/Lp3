@@ -276,8 +276,7 @@ function ReDraw(Fnc)
 			document.getElementById("HOME0").innerHTML=GetMenu([home_home,home_conf,conf_gps]);
 			document.getElementById('HOME1').innerHTML=ShwClock();
 			document.getElementById('HOME2').innerHTML=ShwGen(GPS,"GPS");
-			if(GlobalParms.MODEL.indexOf("DGV-uTC1-M4")!=-1)
-				document.getElementById('HOME3').innerHTML=ShwGen(NTP,"NTP");
+			document.getElementById('HOME3').innerHTML=ShwGen(NTP,"NTP");
 			LOG(SendStartup(PrgEd[SrcIdx]));
 			UpMode=0;
 		break;
