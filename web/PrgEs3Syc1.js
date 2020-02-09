@@ -506,8 +506,8 @@ function SaveSplan1(PLC,Parms,Plan)
 		for(var j=0;j<TIM2STP.length;j++) 
 		{
 			temp1=TIM2STP[j];
-				temp1+=Plan.LCLSYCTOF;
-				temp1%=Plan.LCLSYCTCI;
+			temp1+=Plan.LCLSYCTOF;
+			temp1%=Plan.LCLSYCTCI;
 			TIM2STP[j]=temp1*1000;
 		}
 		POS2STP=owl.deepCopy(Plan.LCLSYCSEQSTP);
@@ -537,8 +537,8 @@ function SaveSplan1(PLC,Parms,Plan)
 		{
 			j++;
 			temp1=Plan.LCLSYCTSTSTP[(j%Plan.LCLSYCTSTSTP.length)];
-				temp1+=Plan.LCLSYCTOF;
-				temp1%=Plan.LCLSYCTCI;
+			temp1+=Plan.LCLSYCTOF;
+			temp1%=Plan.LCLSYCTCI;
 			out+=","+(temp1*1000)
 		}
 		while(j<Plan.LCLSYCTSTSTP.length);
@@ -703,7 +703,7 @@ out+="CTRLOTU\n\
 	call CLDsts\n\
 	call SETSTS\n\
 	goto MAIN\n";
-	}
+}
 	out+="\n\
 CTRLISO\n\
 	mov 0 Nmode\n\
@@ -762,7 +762,7 @@ CTRLISO\n\
 	out+="sync TCicle TIPL[Cstp]\n";
 	out+="goto MAIN\n\
 	\n\
-	FNCDemISO\n\
+FNCDemISO\n\
 	mov LxD[Cstp] temp\n\
 	!= 0 temp\n\
 	return\n\

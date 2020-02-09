@@ -238,12 +238,12 @@ function ModSynTime2(ELMT,J)
 	}//*/
 	tTSTSTP+=parseInt(ELMT.value);
 	if(ChkParm('PLAN.SYN.TIME',parseInt(ELMT.value))==true) // && (PlanGen.LCLSYCTCI>=tTSTSTP)
-			{
+	{
 		PlanGen.LCLSYCTSTSTP[J]=parseInt(ELMT.value);
 		ModParm('PLAN.SYN.TIME');
-				ShowPlanWizard(3);
-			}
-			else
+		ShowPlanWizard(3);
+	}
+	else
 	{
 		ELMT.value=PlanGen.LCLSYCTSTSTP[J];
 	}
@@ -485,11 +485,11 @@ function SaveSplan2(PLC,Parms,Plan)
 		if(PLC.McPlan)
 		{
 			if(PLC.McPlan.SYCPLCTOU)
-		out+="SYPTO="+PLC.McPlan.SYCPLCTOU+"\n";
+				out+="SYPTO="+PLC.McPlan.SYCPLCTOU+"\n";
 			if(PLC.McPlan.MACSEQSTP)
-		out+="SIMC,"+PLC.McPlan.MACSEQSTP.toString()+"\n";
+				out+="SIMC,"+PLC.McPlan.MACSEQSTP.toString()+"\n";
 			if(PLC.McPlan.MACSTSSTP)
-		out+="MCSS,"+PLC.McPlan.MACSTSSTP.toString()+"\n";
+				out+="MCSS,"+PLC.McPlan.MACSTSSTP.toString()+"\n";
 		}
 		out+="//--------------------------------------------\n";
 		if(Parms.MODEL.indexOf("RT")!=-1)
@@ -687,8 +687,8 @@ out+="NOCTRLO\n";
 	}
 	out+="goto CTRLISO\n\
 \n";
-	if(SwEnMc!=0)
-	{
+if(SwEnMc!=0)
+{
 out+="CTRMAN\n\
 	mov 1 Nmode\n\
 	call CHKMODE\n\
