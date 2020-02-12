@@ -66,11 +66,11 @@ FncChk:0,Nombre:"IOs.TimeOut"						,Type:"int",Unit:512,MaxLen:[3,6],Range:[[0,2
 FncChk:0,Nombre:"PLAN.Ls"							,Type:"int",Unit:1,MaxLen:[1,3],Range:[[1,1000]]								,Reload:0x00F,Modified:0,Child:[RstPlnLs],AlerTxt:"Error en plan control manual"},{
 FncChk:0,Nombre:"PLAN.MC"							,Type:"int",Unit:1,MaxLen:[1,3],Range:[[1,1000]]								,Reload:0x00F,Modified:0,Child:[],AlerTxt:"Error en plan control manual"},{
 FncChk:0,Nombre:"PLAN.OTU"							,Type:"int",Unit:1,MaxLen:[1,3],Range:[[1,1000]]								,Reload:0x00F,Modified:0,Child:[],AlerTxt:"Error en plan otu"},{
-FncChk:0,Nombre:"PLAN.CYCLE"							,Type:"int",Unit:1,MaxLen:[1,3],Range:[[20,1000]]								,Reload:0x00F,Modified:0,Child:[],AlerTxt:"Error en tiempo de ciclo"},{
+FncChk:0,Nombre:"PLAN.CYCLE"						,Type:"int",Unit:1,MaxLen:[1,3],Range:[[20,1000]]								,Reload:0x00F,Modified:0,Child:[],AlerTxt:"Error en tiempo de ciclo"},{
 FncChk:0,Nombre:"PLAN.TIME"							,Type:"int",Unit:1,MaxLen:[1,3],Range:[[1,1000]]								,Reload:0x00F,Modified:0,Child:[],AlerTxt:"Error en tiempo de estado"},{
 FncChk:0,Nombre:"PLAN.SYN.TIME"						,Type:"int",Unit:1,MaxLen:[1,3],Range:[[0,1000]]								,Reload:0x00F,Modified:0,Child:[],AlerTxt:"Error en tiempo de estado"},{
 FncChk:ChkTMPE,Nombre:"PLAN.STS.TMPE"				,Type:"int",Unit:1,MaxLen:[1,3],Range:[[0,900]]									,Reload:0x00F,Modified:0,Child:[],AlerTxt:"El tiempo maximo de permanencia de estado puede ser 900seg a 0->disabled"},{
-FncChk:0,Nombre:"EV.TIME.Y"							,Type:"int",Unit:1,MaxLen:[1,3],Range:[[1,7]]									,Reload:0x100,Modified:0,Child:[],AlerTxt:""},{
+FncChk:0,Nombre:"EV.TIME.Y"							,Type:"int",Unit:1,MaxLen:[1,3],Range:[[3,7]]									,Reload:0x100,Modified:0,Child:[],AlerTxt:""},{
 FncChk:0,Nombre:"EV.TIME.R"							,Type:"int",Unit:1,MaxLen:[1,3],Range:[[0,7]]									,Reload:0x100,Modified:0,Child:[],AlerTxt:""},{
 FncChk:0,Nombre:"EV.TIME.r"							,Type:"int",Unit:1,MaxLen:[1,3],Range:[[1,32]]									,Reload:0x100,Modified:0,Child:[],AlerTxt:""},{
 FncChk:0,Nombre:"PLAN.STS.TmPE"						,Type:"int",Unit:1,MaxLen:[1,2],Range:[[0,30]]									,Reload:0x00F,Modified:0,Child:[],AlerTxt:"El tiempo maximo de permanencia de estado puede ser 30seg a 0->desactiva esta funcionalidad"}];
