@@ -9,13 +9,13 @@ function LanguageToPO()
 	Str_Demand = "Demanda";
 	Str_Next_Stp="Pr\u00f3ximo passo de est\u00e1gio";
 	Str_Check_Time_minimum="Inibe Tempo M\u00ednimo";
-	Str_Error_Time_Stp="Erro de tempo no passo";// added by dgv -> please Traduct
+	Str_Error_Time_Stp="Erro de tempo no passo";
 	Str_Typ_Src="Origem, Tipo";
 /*menus iniciais*/
 	Str_MN_Config="Configura&#231;&#245;es";
 	Str_MN_Info="Informa&#231;&#245;es";
 	Str_MN_Tools="Ferramentas";
-	Str_check_Conf="Verificar e definir";			//Rog�rio - 09/05/2014
+	Str_check_Conf="Verificar e definir";
 //SubMenu (Config)
 	Str_General="Geral";
 	Str_Controllers="Anel";
@@ -23,7 +23,7 @@ function LanguageToPO()
 	Str_Add_Conflict="Matriz de Conflito";
 	Str_Matrix="Matriz";
 	Str_Lack="Falha de L&#226;mpadas";
-	Str_Config_Phases="Config Grupos";				//M�rcio - TESC - 26/03/2013
+	Str_Config_Phases="Config Grupos";
 	Str_Config_Comms="Config Porta Com";
 	Str_Config_Iteris="Config Iteris";
 	Str_Config_OPCT="Config OPCT";
@@ -38,9 +38,9 @@ function LanguageToPO()
 	Str_Phases="Grupos";
 	Str_Process="Processos";
 	Str_Inputs="Entradas";
-	//Str_All_Inputs="Todas as Entradas";
+	Str_All_Inputs="Todas as Entradas";
 	Str_All_Inputs="Entradas";
-	Str_About="Sobre";						//Marcio - 14/08/2012
+	Str_About="Sobre";
 	
 //SubMenu (Tools)
 	Str_FilerManager="Gerenciador de Arquivos";
@@ -63,9 +63,9 @@ function LanguageToPO()
 	Str_GP_Log_Out="Destino do Log:";
 	Str_GP_LOG="Especifica o destino dos Logs";
 	Str_GP_FUT="Frequencia do Piscante:";
-	Str_GP_FUC="Especifica a frequencia (Hz) do sinal Sinc";	//Rog�rio 09/05/2014
+	Str_GP_FUC="Especifica a frequencia (Hz) do sinal Sinc";
 	Str_GP_FDT="Tempo apagado do Piscante:";
-	Str_GP_FDC="Especifica o tempo (%) que o sinal Sinc deve estar baixo";	//Rog�rio 09/05/2014
+	Str_GP_FDC="Especifica o tempo (%) que o sinal Sinc deve estar baixo";
 	Str_GP_Loops="La&#231;os:";
 	Str_GP_Loops_1="Especifica a quantidade de la&#231;os do sistema";
 	Str_GP_Inputs="Entradas:";
@@ -152,7 +152,7 @@ function LanguageToPO()
 	Str_Conflict_File="Arquivo de Conflito";
 	Str_GB_Conflict_File="Arquivo de Conflito (.sec)";
 	Str_Qtd_Phase="Quantidade de Grupos";
-	Str_Number_Phase="N&#250;mero da Grupo";             						// Marcio - 16/08/2012
+	Str_Number_Phase="N&#250;mero da Grupo";
 	Str_GB_Qtd_Phase="Entre com a quantidade de Grupos do Plano";
 	Str_Main="Gerar Principal";
 	Str_Name_Stage="Nome do Est&#225;gio";
@@ -190,71 +190,71 @@ function LanguageToPO()
 	Str_Yellow_Blink="Amarelo piscante";
 	
 	//Gen�ricas
-	Str_Mov="Est";										//M�rcio - 17/08/2012 - Troca string Mov: em Easy Program
-	Str_Times="Tempos";									//M�rcio - 17/08/2012
-	Str_Sync="Sinc";									//M�rcio - 17/08/2012
-	Str_Labels="Nomes";									//M�rcio - 17/08/2012
-	Str_Condic="Condi&#231;&#227;o";					//M�rcio - 17/08/2012
-	Str_Copy="Copiar";									//M�rcio - 17/08/2012
+	Str_Mov="Est";
+	Str_Times="Tempos";
+	Str_Sync="Sinc";
+	Str_Labels="Nomes";
+	Str_Condic="Condi&#231;&#227;o";
+	Str_Copy="Copiar";
 	
-	Str_flashing_Plan="Plano piscante";					//M�rcio - 21/11/2012
+	Str_flashing_Plan="Plano piscante";
 	
-	Str_logic_state="Transi&#231;&#245;es";				//M�rcio - 26/12/2012
+	Str_logic_state="Transi&#231;&#245;es";
 	Str_ocup="Ocupa&#231;&#227;o";
 	Str_restart_plan="Reiniciar planos";
 	Str_reload_page="Necess&#225;rio recarregar a p&#225;gina";
 	
-	Str_Time = "Tempo";									//M�rcio - 27/12/2012
+	Str_Time = "Tempo";
 	
-	Str_seg = "seguran&#231;a";							//M�rcio - 08/01/2013
-	Str_extend = "extens&#227;o"						//M�rcio - 08/01/2013
-	Str_maximum = "m&#225;ximo";						//M�rcio - 09/01/2013
-	Str_Comp_Program = "Compilador";					//M�rcio - 10/01/2013
-	Str_Plan_Type = "Tipo do plano";					//M�rcio - 28/01/2013
-	Str_Force_Plan = "For&#231;a plano";				//M�rcio - 04/02/2013
-	Str_Rest_Plan = "Restaura planos";					//M�rcio - 04/02/2013
-	Str_Sinc = "Ponto de Sincronismo";					//M�rcio - 05/02/2013
-	Str_board = "Tipo da placa";						//M�rcio - 07/02/2013
-	Str_boardH = "Especifica o modelo da placa de captura";		//M�rcio - 07/02/2013
+	Str_seg = "seguran&#231;a";
+	Str_extend = "extens&#227;o";
+	Str_maximum = "m&#225;ximo";
+	Str_Comp_Program = "Compilador";
+	Str_Plan_Type = "Tipo do plano";
+	Str_Force_Plan = "For&#231;a plano";
+	Str_Rest_Plan = "Restaura planos";
+	Str_Sinc = "Ponto de Sincronismo";
+	Str_board = "Tipo da placa";
+	Str_boardH = "Especifica o modelo da placa de captura";
 	
-	Str_FilePlan = "Planos";									//M�rcio - 28/02/2013
+	Str_FilePlan = "Planos";
 	Str_FileConf = "Conflitos";
 	Str_FileSch  = "Agendas";
 	Str_Files     = "Arquivos";
 	
-	Str_no_select = "N&#227;o selecionado";						//M�rcio Jos� Soares - 11/04/2013
-	Str_Ocorr     = "Ocorr&#234;ncias";							//M�rcio - TESC - 12/04/2013
+	Str_no_select = "N&#227;o selecionado";
+	Str_Ocorr     = "Ocorr&#234;ncias";
 	
-	Str_Cod_Ocorr = "C&#243;digo do Erro";							//M�rcio - TESC - 12/04/2013
-	Str_Descr_Ocorr = "Descri&#231;&#227;o da Ocorr&#234;ncia";		//M�rcio - TESC - 12/04/2013
-	Str_DtHr_Ocorr = "Data / Hora da Ocorr&#234;ncia";				//M�rcio - TESC - 12/04/2013
-	Str_Day = "Dia";												//M�rcio - TESC - 15/04/2013
-	Str_Month = "M&#234;s";											//M�rcio - TESC - 15/04/2013
-	Str_Year = "Ano";												//M�rcio - TESC - 15/04/2013
-	Str_Seek = "Buscar";											//M�rcio - TESC - 15/04/2013
-	Str_New_Seek = "Nova Busca";									//M�rcio - TESC - 15/04/2013
+	Str_Cod_Ocorr = "C&#243;digo do Erro";
+	Str_Descr_Ocorr = "Descri&#231;&#227;o da Ocorr&#234;ncia";
+	Str_DtHr_Ocorr = "Data / Hora da Ocorr&#234;ncia";
+	Str_Day = "Dia";
+	Str_Month = "M&#234;s";
+	Str_Year = "Ano";
+	Str_Seek = "Buscar";
+	Str_New_Seek = "Nova Busca";
 	
 	Str_PhaseV="Movimentos Virtuais:";
 	Str_PhaseG="Grupo de Fases:";
 	
-	Str_tp_controller = "Tipo do controlador => ";					//M�rcio - TESC - 29/04/2013
-	Str_New_Easy_Seq = "Gera sequ&#234;ncia de in&#237;cio";		//M�rcio - TESC - 03/05/2013
+	Str_tp_controller = "Tipo do controlador => ";
+	Str_New_Easy_Seq = "Gera sequ&#234;ncia de in&#237;cio";
 //	
 
-	Str_Config_OTU = "Config OTU";									//M�rcio - TESC - 24/06/2013
-	Str_Ctrl_OTU   = "Controle";									//M�rcio - TESC - 25/06/2013
+	Str_Config_OTU = "Config OTU";
+	Str_Ctrl_OTU   = "Controle";
 	Str_Reply_OTU  = "Resposta";
-	Str_OTU_Command = "Comando";									//M�rcio - TESC - 27/06/2013
+	Str_OTU_Command = "Comando";
 	Str_OTU_Demand= "Demanda";
 	
-	Str_OTU_Menu1 = " Bits IN/OUT";									//M�rcio - TESC - 15/07/2013
-	Str_OTU_Menu2 = " Entreverdes";				
+	Str_OTU_Menu1 = " Bits IN/OUT";
+	Str_OTU_Menu2 = " Entreverdes";
 	Str_OTU_Menu3 = " Sequ&#234;ncia Conflit.";
 	
-	Str_OTU_CEV = " Cores";											//M�rcio - TESC - 16/07/2013
+	Str_OTU_CEV = " Cores";
 	Str_Control = " Controles";
 	
-	Str_FO = "Focos desligados";									//M�rcio - TESC - 02/10/2013
+	Str_FO = "Focos desligados";
 	Str_Manual_CTRL = "Controle Manual";
 	Str_Excesso = "Excesso de";
 	Str_Bord_off = "Falta de Placa";
@@ -381,9 +381,9 @@ function LanguageToPO()
 
 	Str_Lamp="Lampada";
 	
-	Str_Err_Electric_Red="Erro Eletrico de Vermelho";	//Rog�rio 09/05/2014
-	Str_Err_Electric_Yellow="Erro Eletrico de Amarelo";	//Rog�rio 09/05/2014
-	Str_Err_Electric_Green="Erro Eletrico de Verde";	//Rog�rio 09/05/2014
+	Str_Err_Electric_Red="Erro Eletrico de Vermelho";
+	Str_Err_Electric_Yellow="Erro Eletrico de Amarelo";
+	Str_Err_Electric_Green="Erro Eletrico de Verde";
 	
 	Str_MD_Normal_lock="Agenda Modo Local";
 	Str_New="Novo";
@@ -410,12 +410,12 @@ function LanguageToPO()
 	Str_DaysName=["Domingo","Segunda","Ter&#231;a","Quarta","Quinta","Sexta","S&#225;bado"];
 
 	Str_Lamp_Off="Foco Desligado";
-	Str_Service_On="Modo Teste";							//Rog�rio 09/05/2014
+	Str_Service_On="Modo Teste";
 	
-	Str_Phase_Errors_Disable="Inibe erros no Grupo";		//Rog�rio 09/05/2014
-	Str_Time_minimum_Green="Tempo de Verde de Seguran\u00e7a";	//Rog�rio 09/05/2014
-	Str_Time_minimum_Yellow="Tempo m&#237;nimo de Amarelo";	//Rog�rio 09/05/2014
-	Str_Time_minimum_Red="Tempo m&#237;nimo de Vermelho";	//Rog�rio 09/05/2014
+	Str_Phase_Errors_Disable="Inibe erros no Grupo";
+	Str_Time_minimum_Green="Tempo de Verde de Seguran\u00e7a";
+	Str_Time_minimum_Yellow="Tempo m&#237;nimo de Amarelo";
+	Str_Time_minimum_Red="Tempo m&#237;nimo de Vermelho";
 	
 	//******************************************* Fabiano Nogueira 10/04/2014
 	Str_Error_ErrorCode = "C&#243;digo de erro";
@@ -428,10 +428,11 @@ function LanguageToPO()
 	Str_Error_Description="Descri&#231;&#227;o";
 	Str_Error_SelectNewError="Selecione novo erro";
 	Str_EV_RemoveMessage="Deseja remover \u00faltimo entreverdes?";
+	OptInputTyp=[0,"Saida Fija",1,"Entrada Fija",2,"Saida cambiable",3,"Entrada cambiable",5,"Loop Fijo"]		
 	OptNEWPLNTYP=[-1,"Nuevo Plan!",0,"Nuevo plan Aislado",2,"Nuevo plan Sincronizado",1,"Nuevo plan Sincronizado BR"];
 	//******************************************* Fabiano Nogueira 10/04/2014
-	Str_Add_State="Adiciona Estado";	//Rog�rio - 09/05/2014
-	Str_Del_State="Apaga Estado";		//Rog�rio - 09/05/2014	
+	Str_Add_State="Adiciona Estado";
+	Str_Del_State="Apaga Estado";
 	
 	Str_Error=["Alert[0],Inicio de operacao - Versao:%u.%u\n",
 "Alert[1],LDO power not OK reset",

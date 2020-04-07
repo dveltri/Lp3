@@ -92,7 +92,7 @@ var Str_Flow_Program="Flow Program";
 var Str_Easy_Program="Easy Program";
 var Str_New_scheduler="New Scheduler";
 var Str_scheduler="Scheduler";
-var Str_Config_Phases="Config Phases";				//M�rcio - TESC - 26/03/2013
+var Str_Config_Phases="Config Phases";
 
 //SubMenu (Info)
 var Str_Status="Status";
@@ -106,8 +106,8 @@ var Str_Fail="Fail";
 var Str_io_Time_out="Tiemeout";
 var Str_Input_Output="Inputs Outputs";
 var Str_All_Inputs="All Imputs";
-var Str_About="About";					//M�rcio - 14/08/2012
-var Str_OTU="Out Station";					//M�rcio - 14/08/2012
+var Str_About="About";
+var Str_OTU="Out Station";
 
 //SubMenu (Tools)
 var Str_FilerManager="File Manager";
@@ -407,7 +407,7 @@ var Str_Controllers_Parameters ="Config of Controllers";
 var Str_Crit_Voltage="Critical Voltage";
 var Str_Capture="Capture";
 
-//var Str_Comms="Comms";
+var Str_Comms="Links";
 var Str_Cycle="Cycle";
 var Str_Color="Color";
 var Str_Code="Code";
@@ -584,7 +584,7 @@ var Str_EV_RemoveMessage="Are you sure to remove last intergreen?";
 var Str_Reset="Reset";
 
 var OptSyncClock=[3,"Clock +3",2,"Clock +2",1,"Clock +1",0,"Clock +0"];
-//var OptInputTyp=[0,"Saida Fija",1,"Entrada Fija",2,"Saida cambiable",3,"Entrada cambiable",5,"Loop Fijo"]		
+var OptInputTyp=[0,"Saida Fija",1,"Entrada Fija",2,"Saida cambiable",3,"Entrada cambiable",5,"Loop Fijo"]		
 var OptInputV=[0,"0",1,"1"];
 var OptInputFlk=[0,"Count in 0",1,"Count in 1"];
 var OptNEWPLNTYP=[-1,"Nuevo Plano!",0,"Nuevo plano Aislado",2,"Nuevo plano Sincronizado",1,"Nuevo plano Sincronizado BR"];
