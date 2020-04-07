@@ -20,7 +20,7 @@ var Str_Target="Target";
 var Str_Source="Source";
 var Str_Storage_plans="Plans in SD-card(.eil)"
 var Str_User_plans="Plans on editor(.es3)"
-var Str_Force_info="For foce plan you have got equivalent plan number in storage and user plan"
+var Str_Force_info="For foce plan you have got equivalent plan number in storage and editor plan"
 var Str_Typ_Src="Source type";
 var Str_States_STP="States of Steps";
 var Str_Sequense_STP="Sequence of Step";
@@ -311,75 +311,75 @@ var Str_Day="Day";
 var Str_weektable="Week Tabel";
 
 //vari�veis para nova tela de gera��o de planos
-var Str_NewEasy_Program="New Easy Program";					//M�rcio - 17/08/2012
-var Str_NewEasy_Plans="Plans";								//M�rcio - 13/12/2012
-var	Str_NewEasy_InitSeq="Make Init Seq.";					//M�rcio - 13/12/2012
-var	Str_Est_Time_YellowP="Yellow Blink Time";				//M�rcio - 13/12/2012
-var	Str_Est_Time_RedT="Red Total Time";						//M�rcio - 13/12/2012
+var Str_NewEasy_Program="New Easy Program";					
+var Str_NewEasy_Plans="Plans";								
+var	Str_NewEasy_InitSeq="Make Init Seq.";					
+var	Str_Est_Time_YellowP="Yellow Blink Time";				
+var	Str_Est_Time_RedT="Red Total Time";						
 var Str_Red_Total="Total Red";
 var Str_Yellow_Blink="Blink Yellow";
 	
 //Gen�ricas
-var Str_Mov="Move";											//M�rcio - 17/08/2012 - Troca string Mov: em Easy Program
-var Str_Sync="Sync";										//M�rcio - 17/08/2012
-var Str_Labels="Labels";									//M�rcio - 17/08/2012
-var Str_Condic="Condition";									//M�rcio - 17/08/2012
-var Str_Copy="Copy";										//M�rcio - 17/08/2012
-var Str_seg = "security";									//M�rcio - 17/08/2012
-var Str_flashing_Plan="Flashing Plan";						//M�rcio - 21/11/2012
+var Str_Mov="Move";											// - Troca string Mov: em Easy Program
+var Str_Sync="Sync";				
+var Str_Labels="Labels";			
+var Str_Condic="Condition";			
+var Str_Copy="Copy";				
+var Str_seg = "security";			
+var Str_flashing_Plan="Flashing Plan";
 
 var Str_logic_state="Transitions";
 var Str_ocup="Load";
 var Str_restart_plan="Reload plans";
 var Str_reload_page="Need to reload the web page";
 
-var Str_Time = "Delay";										//M�rcio - 27/12/2012
+var Str_Time = "Delay";
 
-var Str_seg = "security";									//M�rcio - 08/01/2013
-var Str_extend = "extended";								//M�rcio - 08/01/2013
-var Str_maximum = "maximum";								//M�rcio - 09/01/2013
-var Str_Comp_Program = "Assembler";							//M�rcio - 10/01/2013
-var Str_Plan_Type = "Type of plan";							//M�rcio - 28/01/2013
-var Str_Force_Plan = "Force plan";							//M�rcio - 04/02/2013
-var Str_Rest_Plan = "Restore plans";						//M�rcio - 04/02/2013
-var Str_Sinc = "Sync point";								//M�rcio - 05/02/2013
-var Str_board = "Board type";								//M�rcio - 07/02/2013
-var Str_boardH = "Select the board type";					//M�rcio - 07/02/2013
+var Str_seg = "security";				
+var Str_extend = "extended";			
+var Str_maximum = "maximum";			
+var Str_Comp_Program = "Assembler";		
+var Str_Plan_Type = "Type of plan";		
+var Str_Force_Plan = "Force plan";		
+var Str_Rest_Plan = "Restore plans";	
+var Str_Sinc = "Sync point";			
+var Str_board = "Board type";			
+var Str_boardH = "Select the board type";
 
-var Str_FilePlan = "Plans";									//M�rcio - 28/02/2013
+var Str_FilePlan = "Plans";
 var	Str_FileConf = "Conflict";
 var	Str_FileSch  = "Scheduler";
 var	Str_Files    = "Files";
 
-var Str_no_select = "No selected";							//M�rcio Jos� Soares - 11/04/2013
-var Str_Ocorr     = "Errors";								//M�rcio - TESC - 12/04/2013
-var Str_Cod_Ocorr = "Error Code";							//M�rcio - TESC - 12/04/2013
-var	Str_Descr_Ocorr = "Error Info";							//M�rcio - TESC - 12/04/2013
-var	Str_DtHr_Ocorr = "Error Date / Hour";					//M�rcio - TESC - 12/04/2013
-var Str_Day = "Day";										//M�rcio - TESC - 15/04/2013
-var	Str_Month = "Month";									//M�rcio - TESC - 15/04/2013
-var	Str_Year = "Year";										//M�rcio - TESC - 15/04/2013
-var Str_Seek = "Busca";										//M�rcio - TESC - 15/04/2013
-var Str_New_Seek = "New Seek";								//M�rcio - TESC - 15/04/2013
+var Str_no_select = "No selected";
+var Str_Ocorr     = "Errors";			
+var Str_Cod_Ocorr = "Error Code";		
+var	Str_Descr_Ocorr = "Error Info";		
+var	Str_DtHr_Ocorr = "Error Date / Hour";
+var Str_Day = "Day";					
+var	Str_Month = "Month";				
+var	Str_Year = "Year";					
+var Str_Seek = "Busca";					
+var Str_New_Seek = "New Seek";			
 
-var Str_tp_controller = "Controller type => ";				//M�rcio - TESC - 29/04/2013
-var Str_New_Easy_Seq = "Make init sequence";				//M�rcio - TESC - 03/05/2013
+var Str_tp_controller = "Controller type => ";
+var Str_New_Easy_Seq = "Make init sequence";
 
-var Str_Config_OTU = "Config OTU";							//M�rcio - TESC - 24/06/2013
+var Str_Config_OTU = "Config OTU";
 
-var Str_Ctrl_OTU   = "Control";								//M�rcio - TESC - 25/06/2013
+var Str_Ctrl_OTU   = "Control";
 var	Str_Reply_OTU  = "Reply";
-var Str_OTU_Command = "Command";							//M�rcio - TESC - 27/06/2013
+var Str_OTU_Command = "Command";
 var	Str_OTU_Demand= "Demand";
 
-var	Str_OTU_Menu1 = " IN/OUT Bits";							//M�rcio - TESC - 15/07/2013
-var	Str_OTU_Menu2 = " Between green";				
+var	Str_OTU_Menu1 = " IN/OUT Bits";
+var	Str_OTU_Menu2 = " Between green";
 var	Str_OTU_Menu3 = " Conflict Sequence";
 
-var Str_OTU_CEV = " Colors";								//M�rcio - TESC - 16/07/2013
+var Str_OTU_CEV = " Colors";
 var Str_Control = " Controls";
 	
-var Str_FO = "Focus off";									//M�rcio - TESC - 02/10/2013
+var Str_FO = "Focus off";
 var	Str_Manual_CTRL = "Manual Control";
 var Str_Excesso = "Excess of";	
 var Str_Bord_off = "Lack of board";
