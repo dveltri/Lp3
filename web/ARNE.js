@@ -1,7 +1,7 @@
 //**********************************************************************************************************
-// Arquivo - arne.js - Contem funções para programação das funções OTU no controlador MCP+
+// Arquivo - arne.js - Contem funï¿½ï¿½es para programaï¿½ï¿½o das funï¿½ï¿½es OTU no controlador MCP+
 //
-// Desenvolvido por    : Eng. Márcio José Soares
+// Desenvolvido por    : Eng. Mï¿½rcio Josï¿½ Soares
 // Data                : 07/04/2014
 // Linguagem           : JavaScript
 // Plataforma de testes: Placa MCP+ REV3.0 Brasil 
@@ -113,7 +113,7 @@ function GetCtrl()
 					out += "<option value=\""+(idx+1)+"\">"+Str_Ctrl_OTU+" "+(idx+1)+"</option>\n";
 			}
 		}
-		out += "</select>";	//Este objeto irá permitir ao usuário controlar os itens de uma lista de opções criada com o tag HTML
+		out += "</select>";	//Este objeto irï¿½ permitir ao usuï¿½rio controlar os itens de uma lista de opï¿½ï¿½es criada com o tag HTML
 		out += "</td>";
 		out += "<td valign=\"middle\" align=\"left\">\n";
 		out += "<select class=\"INTEXT\" onchange=\"if(this.value){DelCtrl(this.value);ShwArne0();}\" >\n";
@@ -302,7 +302,7 @@ function GetCtrl()
 								if(Parms[prm]!=PLCs[plc-1].OTUPlan.OTUDEMSTS[dem])
 								{
 									Parms[prm]=PLCs[plc-1].OTUPlan.OTUDEMSTS[dem];
-									setTimeout("ShwArne0();",200); //Faz com que uma expressão seja avaliada após um determinado tempo (milissegundos)
+									setTimeout("ShwArne0();",200); //Faz com que uma expressï¿½o seja avaliada apï¿½s um determinado tempo (milissegundos)
 								}
 								break;
 							}
@@ -319,7 +319,7 @@ function GetCtrl()
 					x=0;
 					for(idx=0;idx<QtDem;idx++)
 					{
-						//indexof retorna a posição índice dentro da string, se o índice não estiver na string, indexof retorna -1, se retornar -1 entra no if
+						//indexof retorna a posiï¿½ï¿½o ï¿½ndice dentro da string, se o ï¿½ndice nï¿½o estiver na string, indexof retorna -1, se retornar -1 entra no if
 						if(((IOs[idx].Type&1)==1) && (IOs[idx].Enable!=0) && (IOs[idx].Name.indexOf("Bot")!=-1)) 
 						{
 							out +="[";
@@ -564,7 +564,7 @@ function ShwArne0()
 	//---------------------------------------------------------------------------------------------------
 	document.getElementById("HOME1").innerHTML=out; 
 	/*O objeto document armazena todas as caracteristicas da pagina HTML, sempre 
-	que é feito algo no <body> é armazenado no document, nele é armazenado cor das letras, cor da página e etc*/
+	que ï¿½ feito algo no <body> ï¿½ armazenado no document, nele ï¿½ armazenado cor das letras, cor da pï¿½gina e etc*/
 }
 
 function decode()
@@ -680,10 +680,10 @@ function decode()
 }
 
 //**********************************************************************************************************
-// Função selplanN - seleciona o plano do Anel a ser forçado
+// Funï¿½ï¿½o selplanN - seleciona o plano do Anel a ser forï¿½ado
 //
 // Entradas - nenhuma
-// Saídas   - nenhuma 
+// Saï¿½das   - nenhuma 
 //**********************************************************************************************************
 function selplanN()
 {
@@ -700,10 +700,10 @@ function selplanN()
 }
 
 //**********************************************************************************************************
-// Função myRestPlan - restaura plano após ter forçado um
+// Funï¿½ï¿½o myRestPlan - restaura plano apï¿½s ter forï¿½ado um
 //
 // Entradas - nenhuma
-// Saídas   - nenhuma 
+// Saï¿½das   - nenhuma 
 //**********************************************************************************************************
 function myRestPlan()
 {	
@@ -711,11 +711,11 @@ function myRestPlan()
 }
 
 //**********************************************************************************************************
-// Função myForcePlanCont - verifica se número digitado para plano a ser forçado é valido 
-//                          e força o plano em caso afirmativo
+// Funï¿½ï¿½o myForcePlanCont - verifica se nï¿½mero digitado para plano a ser forï¿½ado ï¿½ valido 
+//                          e forï¿½a o plano em caso afirmativo
 //
 // Entradas - nenhuma
-// Saídas   - nenhuma 
+// Saï¿½das   - nenhuma 
 //**********************************************************************************************************
 function myForcePlanCont()
 {
@@ -727,8 +727,8 @@ function myForcePlanCont()
 	else
 		snxchg = 1*(document.getElementById("NxChgPlan").value*60);
 	if(isNaN(snxchg) || snxchg <=0)
-	{											//se não for número ou menor que zero e maior igual a 98
-		alert('Erro!!! Tempo invalido!!');										//alerta o erro com um botão "ok"
+	{											//se nï¿½o for nï¿½mero ou menor que zero e maior igual a 98
+		alert('Erro!!! Tempo invalido!!');										//alerta o erro com um botï¿½o "ok"
 		inputFocus="NxChgPlan";
 		if(inputFocus)document.getElementById(inputFocus).focus();		//entra em foco
 		return;
@@ -790,37 +790,51 @@ function OptTime()
     return out;
 }
 //**********************************************************************************************************
-// Função ShwArne1 - pega o número de um plano para forçar o mesmo
+// Funï¿½ï¿½o ShwArne1 - pega o nï¿½mero de um plano para forï¿½ar o mesmo
 //
 // Entradas - nenhuma
-// Saídas   - nenhuma 
+// Saï¿½das   - nenhuma 
 //**********************************************************************************************************
 function ShwArne1()
 {
 	var out = "";
-	var nxchg = 0;					//pega número do plano do usuário
+	var out2 = "";
+	var nxchg = 0;					//pega nï¿½mero do plano do usuï¿½rio
 	var count1=0;
 	var name="";
 	var p=0;
 	var pln=0;
 
 	out = "<table id=\"myForceT0\" border=\"1\" align=\"center\">\n";	
-	out += "<tr><td  align=\"left\" valign=\"middle\">"+Str_Plan_Number+":</td>\n";
-	out += "<td align=\"left\" valign=\"middle\">\n";
-	out += "<select name=\"selplan\" id=\"selplan\" onchange=\"nrplansel=this.value\" >\n";
+	out += "<tr><td align=\"left\" valign=\"middle\" colspan=\"2\"><font size=\"2\">"+Str_Force_info+"</font><br/><font size=\"1\">";
+	for(var j=0;j<PLCs.length;j++)
+	{
+		out += PLCs[j].Name
+		out += " ("+Str_Storage_plans+":";
+		if(PLCs[j].PlanList && PLCs[j].PlanList.length && PLCs[j].PlanList.length>=2)
+			out += (PLCs[j].PlanList.length-2);
+		else
+			out += "0";
+		out += " - "+Str_User_plans+":"+PLCs[j].Plans.length+")<br/>";
+	}
+	out += "</font></td></tr>\n";
+	//---------------------------------------------------------------------------------
+	out2 += "<tr><td  align=\"left\" valign=\"middle\">"+Str_Plan_Number+":</td>\n";
+	out2 += "<td align=\"left\" valign=\"middle\">\n";
+	out2 += "<select name=\"selplan\" id=\"selplan\" onchange=\"nrplansel=this.value\" >\n";
 	if(nrplansel == -1)
-		out += "<option value=\"-1\" selected=\"selected\"><font size=\"1\"> - </font></option>\n";
+	out2 += "<option value=\"-1\" selected=\"selected\"><font size=\"1\"> - </font></option>\n";
 	else
-		out += "<option value=\"-1\"><font size=\"1\"> - </font></option>\n";
+	out2 += "<option value=\"-1\"><font size=\"1\"> - </font></option>\n";
 	if(nrplansel == 99)
-		out += "<option value=\"99\" selected=\"selected\"><font size=\"1\">"+Str_flashing_Plan+"</font></option>\n";
+	out2 += "<option value=\"99\" selected=\"selected\"><font size=\"1\">"+Str_flashing_Plan+"</font></option>\n";
 	else
-		out += "<option value=\"99\"><font size=\"1\">"+Str_flashing_Plan+"</font></option>\n";
+	out2 += "<option value=\"99\"><font size=\"1\">"+Str_flashing_Plan+"</font></option>\n";
 	//-------------------------------------------------
 	if(nrplansel == 97)
-		out += "<option value=\"97\" selected=\"selected\"><font size=\"1\">"+Str_Off_Plan+"</font></option>\n";
+	out2 += "<option value=\"97\" selected=\"selected\"><font size=\"1\">"+Str_Off_Plan+"</font></option>\n";
 	else
-		out += "<option value=\"97\"><font size=\"1\">"+Str_Off_Plan+"</font></option>\n";
+	out2 += "<option value=\"97\"><font size=\"1\">"+Str_Off_Plan+"</font></option>\n";
 	//-----------------------------------------------------------------------------------
 	var Cplans=255;
 	Cplans=PLCs[0].Plans.length;
@@ -831,34 +845,36 @@ function ShwArne1()
 		if(Cplans>(PLCs[j].PlanList.length-2))
 			Cplans=PLCs[j].PlanList.length-2;
 	}
-	if(Cplans<=0)
-		return "";
-	for(pln=0;pln<Cplans;pln++)
+	if(Cplans>0)
 	{
-		if(pln+1 == nrplansel)
-			out += "<option value=\""+(pln+1)+"\" selected=\"selected\"><font size=\"1\">"+Str_Plan+(pln+1)+"</font></option>\n";
-		else
-			out += "<option value=\""+(pln+1)+"\"><font size=\"1\">"+Str_Plan+(pln+1)+"</font></option>\n";
-	}
-	out += "</select>";
-	out += "</td></tr>\n";
-	out += "<tr><td align=\"left\" valign=\"middle\">"+Str_period+" [min]:</td>";
-	out += "<td align=\"left\" valign=\"middle\">";
-	//--------------------------------------------------------
-	if(GlobalParms.MODEL.indexOf("GW4")!=-1 || GlobalParms.MODEL.indexOf("GW")==-1)
-	{
-		out += "<select name=\"NxChgPlan\" id=\"NxChgPlan\" >\n";
-		out += OptTime();
+		out+=out2;
+		for(pln=0;pln<Cplans;pln++)
+		{
+			if(pln+1 == nrplansel)
+				out += "<option value=\""+(pln+1)+"\" selected=\"selected\"><font size=\"1\">"+Str_Plan+(pln+1)+"</font></option>\n";
+			else
+				out += "<option value=\""+(pln+1)+"\"><font size=\"1\">"+Str_Plan+(pln+1)+"</font></option>\n";
+		}
 		out += "</select>";
+		out += "</td></tr>\n";
+		out += "<tr><td align=\"left\" valign=\"middle\">"+Str_period+" [min]:</td>";
+		out += "<td align=\"left\" valign=\"middle\">";
+		//--------------------------------------------------------
+		if(GlobalParms.MODEL.indexOf("GW4")!=-1 || GlobalParms.MODEL.indexOf("GW")==-1)
+		{
+			out += "<select name=\"NxChgPlan\" id=\"NxChgPlan\" >\n";
+			out += OptTime();
+			out += "</select>";
+		}
+		else
+		{
+			out += "<input name=\"NxChgPlan\" id=\"NxChgPlan\" type=\"TEXT\" size=\"3\" value=\""+nxchg+"\" />";
+		}
+		//--------------------------------------------------------
+		out += "</td></tr>\n";
+		out += "<tr><td align=\"left\" valign=\"middle\" colspan=\"2\"><input type=\"button\" class=\"INTEXT2\" onclick=\"myForcePlanCont();\" value=\""+Str_Force_Plan+"\" /></td></tr>\n";
+		out += "<tr><td align=\"left\" valign=\"middle\" colspan=\"2\"><input type=\"button\" class=\"INTEXT2\" onclick=\"myRestPlan();\" value=\""+Str_Rest_Plan+"\" /></td></tr>\n";
 	}
-	else
-	{
-		out += "<input name=\"NxChgPlan\" id=\"NxChgPlan\" type=\"TEXT\" size=\"3\" value=\""+nxchg+"\" />";
-	}
-	//--------------------------------------------------------
-	out += "</td></tr>\n";
-	out += "<tr><td align=\"left\" valign=\"middle\" colspan=\"2\"><input type=\"button\" class=\"INTEXT2\" onclick=\"myForcePlanCont();\" value=\""+Str_Force_Plan+"\" /></td></tr>\n";
-	out += "<tr><td align=\"left\" valign=\"middle\" colspan=\"2\"><input type=\"button\" class=\"INTEXT2\" onclick=\"myRestPlan();\" value=\""+Str_Rest_Plan+"\" /></td></tr>\n";
 	out += "</table>\n";
 	//alert(out);
 	//inputFocus="myPlanN2";													//declara qual elemento recebe o foco
@@ -869,16 +885,16 @@ function ShwArne1()
 
 //**********************************************************************************************************
 //**********************************************************************************************************
-// Funções para setar os steps não permitidos
+// Funï¿½ï¿½es para setar os steps nï¿½o permitidos
 //**********************************************************************************************************
 //**********************************************************************************************************
 
 
 //**********************************************************************************************************
-// Função selcftest - seleciona ponto de conflito "x a y"
+// Funï¿½ï¿½o selcftest - seleciona ponto de conflito "x a y"
 //
-// Entradas - x - estágio de saída; y - estágio de destino
-// Saídas   - nenhuma 
+// Entradas - x - estï¿½gio de saï¿½da; y - estï¿½gio de destino
+// Saï¿½das   - nenhuma 
 //**********************************************************************************************************
 function selcftest(nrc1, nrc2)
 {
@@ -908,7 +924,7 @@ function selcftest(nrc1, nrc2)
 		}
 	}
 	else
-	{																							//não é para alterar, então cria!!!
+	{																							//nï¿½o ï¿½ para alterar, entï¿½o cria!!!
 		if (document.getElementById(ChkbName).checked == true)
 		{
 			if((OTU.CftPLCs[nrcftplc].length == 1) && (OTU.CftPLCs[nrcftplc][0].length == 0))
@@ -927,10 +943,10 @@ function selcftest(nrc1, nrc2)
 }
 
 //**********************************************************************************************************
-// Função selcftplc- seleciona conflito
+// Funï¿½ï¿½o selcftplc- seleciona conflito
 //
 // Entradas - nenhuma
-// Saídas   - nenhuma 
+// Saï¿½das   - nenhuma 
 //**********************************************************************************************************
 function selcftplc()
 {
@@ -953,10 +969,10 @@ function selcftplc()
 }
 
 //**********************************************************************************************************
-// Função ShwArne2 - mostra tela para configurar estágios conflitantes
+// Funï¿½ï¿½o ShwArne2 - mostra tela para configurar estï¿½gios conflitantes
 //
 // Entradas - nenhuma
-// Saídas   - nenhuma 
+// Saï¿½das   - nenhuma 
 //**********************************************************************************************************
 function ShwArne2()
 {
@@ -976,7 +992,7 @@ function ShwArne2()
 	if(nrcftplc != -1)
 	{												//se selecionou alguma coisa
 		if(PLCs[PlcIdx].Sts.length > 0)
-		{							//e já tem estágios, monta tela para definir conflitos
+		{							//e jï¿½ tem estï¿½gios, monta tela para definir conflitos
 			out += "<tr><td  align=\"left\" valign=\"middle\">\n";
 			out += "<table id=\"mycftplc2\" border=\"1\" align=\"center\">\n";
 			for(count1=0;count1<(PLCs[PlcIdx].Sts.length+1);count1++)

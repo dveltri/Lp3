@@ -18,6 +18,9 @@ var Str_looking_for_difference="Looking for difference:";
 var Str_conflict_transition="Transi&#231;&#227;o Prohibida:";
 var Str_Target="Target";
 var Str_Source="Source";
+var Str_Storage_plans="Plans in SD-card(.eil)"
+var Str_User_plans="Plans on editor(.es3)"
+var Str_Force_info="For foce plan you have got equivalent plan number in storage and editor plan"
 var Str_Typ_Src="Source type";
 var Str_States_STP="States of Steps";
 var Str_Sequense_STP="Sequence of Step";
@@ -89,7 +92,7 @@ var Str_Flow_Program="Flow Program";
 var Str_Easy_Program="Easy Program";
 var Str_New_scheduler="New Scheduler";
 var Str_scheduler="Scheduler";
-var Str_Config_Phases="Config Phases";				//Márcio - TESC - 26/03/2013
+var Str_Config_Phases="Config Phases";				//Mï¿½rcio - TESC - 26/03/2013
 
 //SubMenu (Info)
 var Str_Status="Status";
@@ -103,8 +106,8 @@ var Str_Fail="Fail";
 var Str_io_Time_out="Tiemeout";
 var Str_Input_Output="Inputs Outputs";
 var Str_All_Inputs="All Imputs";
-var Str_About="About";					//Márcio - 14/08/2012
-var Str_OTU="Out Station";					//Márcio - 14/08/2012
+var Str_About="About";					//Mï¿½rcio - 14/08/2012
+var Str_OTU="Out Station";					//Mï¿½rcio - 14/08/2012
 
 //SubMenu (Tools)
 var Str_FilerManager="File Manager";
@@ -307,76 +310,76 @@ var Str_Month="Month";
 var Str_Day="Day";
 var Str_weektable="Week Tabel";
 
-//variáveis para nova tela de geração de planos
-var Str_NewEasy_Program="New Easy Program";					//Márcio - 17/08/2012
-var Str_NewEasy_Plans="Plans";								//Márcio - 13/12/2012
-var	Str_NewEasy_InitSeq="Make Init Seq.";					//Márcio - 13/12/2012
-var	Str_Est_Time_YellowP="Yellow Blink Time";				//Márcio - 13/12/2012
-var	Str_Est_Time_RedT="Red Total Time";						//Márcio - 13/12/2012
+//variï¿½veis para nova tela de geraï¿½ï¿½o de planos
+var Str_NewEasy_Program="New Easy Program";					//Mï¿½rcio - 17/08/2012
+var Str_NewEasy_Plans="Plans";								//Mï¿½rcio - 13/12/2012
+var	Str_NewEasy_InitSeq="Make Init Seq.";					//Mï¿½rcio - 13/12/2012
+var	Str_Est_Time_YellowP="Yellow Blink Time";				//Mï¿½rcio - 13/12/2012
+var	Str_Est_Time_RedT="Red Total Time";						//Mï¿½rcio - 13/12/2012
 var Str_Red_Total="Total Red";
 var Str_Yellow_Blink="Blink Yellow";
 	
-//Genéricas
-var Str_Mov="Move";											//Márcio - 17/08/2012 - Troca string Mov: em Easy Program
-var Str_Sync="Sync";										//Márcio - 17/08/2012
-var Str_Labels="Labels";									//Márcio - 17/08/2012
-var Str_Condic="Condition";									//Márcio - 17/08/2012
-var Str_Copy="Copy";										//Márcio - 17/08/2012
-var Str_seg = "security";									//Márcio - 17/08/2012
-var Str_flashing_Plan="Flashing Plan";						//Márcio - 21/11/2012
+//Genï¿½ricas
+var Str_Mov="Move";											//Mï¿½rcio - 17/08/2012 - Troca string Mov: em Easy Program
+var Str_Sync="Sync";										//Mï¿½rcio - 17/08/2012
+var Str_Labels="Labels";									//Mï¿½rcio - 17/08/2012
+var Str_Condic="Condition";									//Mï¿½rcio - 17/08/2012
+var Str_Copy="Copy";										//Mï¿½rcio - 17/08/2012
+var Str_seg = "security";									//Mï¿½rcio - 17/08/2012
+var Str_flashing_Plan="Flashing Plan";						//Mï¿½rcio - 21/11/2012
 
 var Str_logic_state="Transitions";
 var Str_ocup="Load";
 var Str_restart_plan="Reload plans";
 var Str_reload_page="Need to reload the web page";
 
-var Str_Time = "Delay";										//Márcio - 27/12/2012
+var Str_Time = "Delay";										//Mï¿½rcio - 27/12/2012
 
-var Str_seg = "security";									//Márcio - 08/01/2013
-var Str_extend = "extended";								//Márcio - 08/01/2013
-var Str_maximum = "maximum";								//Márcio - 09/01/2013
-var Str_Comp_Program = "Assembler";							//Márcio - 10/01/2013
-var Str_Plan_Type = "Type of plan";							//Márcio - 28/01/2013
-var Str_Force_Plan = "Force plan";							//Márcio - 04/02/2013
-var Str_Rest_Plan = "Restore plans";						//Márcio - 04/02/2013
-var Str_Sinc = "Sync point";								//Márcio - 05/02/2013
-var Str_board = "Board type";								//Márcio - 07/02/2013
-var Str_boardH = "Select the board type";					//Márcio - 07/02/2013
+var Str_seg = "security";									//Mï¿½rcio - 08/01/2013
+var Str_extend = "extended";								//Mï¿½rcio - 08/01/2013
+var Str_maximum = "maximum";								//Mï¿½rcio - 09/01/2013
+var Str_Comp_Program = "Assembler";							//Mï¿½rcio - 10/01/2013
+var Str_Plan_Type = "Type of plan";							//Mï¿½rcio - 28/01/2013
+var Str_Force_Plan = "Force plan";							//Mï¿½rcio - 04/02/2013
+var Str_Rest_Plan = "Restore plans";						//Mï¿½rcio - 04/02/2013
+var Str_Sinc = "Sync point";								//Mï¿½rcio - 05/02/2013
+var Str_board = "Board type";								//Mï¿½rcio - 07/02/2013
+var Str_boardH = "Select the board type";					//Mï¿½rcio - 07/02/2013
 
-var Str_FilePlan = "Plans";									//Márcio - 28/02/2013
+var Str_FilePlan = "Plans";									//Mï¿½rcio - 28/02/2013
 var	Str_FileConf = "Conflict";
 var	Str_FileSch  = "Scheduler";
 var	Str_Files    = "Files";
 
-var Str_no_select = "No selected";							//Márcio José Soares - 11/04/2013
-var Str_Ocorr     = "Errors";								//Márcio - TESC - 12/04/2013
-var Str_Cod_Ocorr = "Error Code";							//Márcio - TESC - 12/04/2013
-var	Str_Descr_Ocorr = "Error Info";							//Márcio - TESC - 12/04/2013
-var	Str_DtHr_Ocorr = "Error Date / Hour";					//Márcio - TESC - 12/04/2013
-var Str_Day = "Day";										//Márcio - TESC - 15/04/2013
-var	Str_Month = "Month";									//Márcio - TESC - 15/04/2013
-var	Str_Year = "Year";										//Márcio - TESC - 15/04/2013
-var Str_Seek = "Busca";										//Márcio - TESC - 15/04/2013
-var Str_New_Seek = "New Seek";								//Márcio - TESC - 15/04/2013
+var Str_no_select = "No selected";							//Mï¿½rcio Josï¿½ Soares - 11/04/2013
+var Str_Ocorr     = "Errors";								//Mï¿½rcio - TESC - 12/04/2013
+var Str_Cod_Ocorr = "Error Code";							//Mï¿½rcio - TESC - 12/04/2013
+var	Str_Descr_Ocorr = "Error Info";							//Mï¿½rcio - TESC - 12/04/2013
+var	Str_DtHr_Ocorr = "Error Date / Hour";					//Mï¿½rcio - TESC - 12/04/2013
+var Str_Day = "Day";										//Mï¿½rcio - TESC - 15/04/2013
+var	Str_Month = "Month";									//Mï¿½rcio - TESC - 15/04/2013
+var	Str_Year = "Year";										//Mï¿½rcio - TESC - 15/04/2013
+var Str_Seek = "Busca";										//Mï¿½rcio - TESC - 15/04/2013
+var Str_New_Seek = "New Seek";								//Mï¿½rcio - TESC - 15/04/2013
 
-var Str_tp_controller = "Controller type => ";				//Márcio - TESC - 29/04/2013
-var Str_New_Easy_Seq = "Make init sequence";				//Márcio - TESC - 03/05/2013
+var Str_tp_controller = "Controller type => ";				//Mï¿½rcio - TESC - 29/04/2013
+var Str_New_Easy_Seq = "Make init sequence";				//Mï¿½rcio - TESC - 03/05/2013
 
-var Str_Config_OTU = "Config OTU";							//Márcio - TESC - 24/06/2013
+var Str_Config_OTU = "Config OTU";							//Mï¿½rcio - TESC - 24/06/2013
 
-var Str_Ctrl_OTU   = "Control";								//Márcio - TESC - 25/06/2013
+var Str_Ctrl_OTU   = "Control";								//Mï¿½rcio - TESC - 25/06/2013
 var	Str_Reply_OTU  = "Reply";
-var Str_OTU_Command = "Command";							//Márcio - TESC - 27/06/2013
+var Str_OTU_Command = "Command";							//Mï¿½rcio - TESC - 27/06/2013
 var	Str_OTU_Demand= "Demand";
 
-var	Str_OTU_Menu1 = " IN/OUT Bits";							//Márcio - TESC - 15/07/2013
+var	Str_OTU_Menu1 = " IN/OUT Bits";							//Mï¿½rcio - TESC - 15/07/2013
 var	Str_OTU_Menu2 = " Between green";				
 var	Str_OTU_Menu3 = " Conflict Sequence";
 
-var Str_OTU_CEV = " Colors";								//Márcio - TESC - 16/07/2013
+var Str_OTU_CEV = " Colors";								//Mï¿½rcio - TESC - 16/07/2013
 var Str_Control = " Controls";
 	
-var Str_FO = "Focus off";									//Márcio - TESC - 02/10/2013
+var Str_FO = "Focus off";									//Mï¿½rcio - TESC - 02/10/2013
 var	Str_Manual_CTRL = "Manual Control";
 var Str_Excesso = "Excess of";	
 var Str_Bord_off = "Lack of board";
@@ -614,7 +617,7 @@ var Str_Errors_Str=["Alert[0],Inicio de operacion - Version:%u.%u\n",
 "El PLC [%s] No se pudo cambiar de plan [%s]-X->[%s]\n",
 "Nao foi possivel alocar memoria para X \n",
 "%s access to Sd Card\n",
-"Nao foi possível alocar a memoria para o arquivo de configuracao X\n",
+"Nao foi possï¿½vel alocar a memoria para o arquivo de configuracao X\n",
 "Error [%s] access to file %s\n",
 "A fase %u de %s ja pertence a %s\n",
 "A fase %u %s designada esta fora do intervalo \n",
@@ -652,7 +655,7 @@ var Str_Errors_Str=["Alert[0],Inicio de operacion - Version:%u.%u\n",
 "Nome do arquivo de agenda nao configurado\n",
 "Nao foi possivel encontrar a tabela [Holidays & Dates] in %s\n",
 "EOF unspected looking [Holidays & Dates] in %s\n",
-"Nao foi possível encontrar a tabela [weeks]\n",
+"Nao foi possï¿½vel encontrar a tabela [weeks]\n",
 "A data nao tem uma tabela alocada\n",
 "A instrucao e grande demais para o buffer de processamento\n",
 "Conflito entre fase[%u].%X<->fase[%u].%X\n",
@@ -661,7 +664,7 @@ var Str_Errors_Str=["Alert[0],Inicio de operacion - Version:%u.%u\n",
 "Tempo minimo de vermelho [%ums]<[%ums] na fase: %u\n",
 "O plano %s nao tem um arquivo de conflito designado\n",
 "O plano %s nao tem um tempo de seguranca de ciclo configurado\n",
-"Salto de estado não permitidos\n",
+"Salto de estado nï¿½o permitidos\n",
 "Error de secuancia de color en fase[%u]\n",
 "Nao foi possivel alocar memoria para o arquivo %s\n",
 "Error %s access to file [%s]\n",
