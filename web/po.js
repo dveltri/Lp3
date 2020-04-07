@@ -428,6 +428,7 @@ function LanguageToPO()
 	Str_Error_Description="Descri&#231;&#227;o";
 	Str_Error_SelectNewError="Selecione novo erro";
 	Str_EV_RemoveMessage="Deseja remover \u00faltimo entreverdes?";
+	OptNEWPLNTYP=[-1,"Nuevo Plan!",0,"Nuevo plan Aislado",2,"Nuevo plan Sincronizado",1,"Nuevo plan Sincronizado BR"];
 	//******************************************* Fabiano Nogueira 10/04/2014
 	Str_Add_State="Adiciona Estado";	//Rog�rio - 09/05/2014
 	Str_Del_State="Apaga Estado";		//Rog�rio - 09/05/2014	
