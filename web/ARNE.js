@@ -806,14 +806,15 @@ function ShwArne1()
 	var pln=0;
 
 	out = "<table id=\"myForceT0\" border=\"1\" align=\"center\">\n";	
-	out += "<tr><td align=\"left\" valign=\"middle\" colspan=\"2\"><font size=\"2\"><b>"+Str_Force_info+"<b/><br/><font size=\"1\">";
+	out += "<tr><td align=\"left\" valign=\"middle\" colspan=\"2\"><font size=\"2\">"+Str_Force_info+"</font><br/><font size=\"1\">";
 	for(var j=0;j<PLCs.length;j++)
 	{
 		out += PLCs[j].Name
-		out += " ("+Str_Storage_plans+":"+PLCs[j].Plans.length;
+		out += " ("+Str_Storage_plans+":"+PLCs[j].PlanList.length-2;
 		out += Str_User_plans+":"+PLCs[j].Plans.length+")<br/>";
 	}
 	out += "</font></td></tr>\n";
+	//---------------------------------------------------------------------------------
 	out2 += "<tr><td  align=\"left\" valign=\"middle\">"+Str_Plan_Number+":</td>\n";
 	out2 += "<td align=\"left\" valign=\"middle\">\n";
 	out2 += "<select name=\"selplan\" id=\"selplan\" onchange=\"nrplansel=this.value\" >\n";
