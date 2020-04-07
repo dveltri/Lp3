@@ -823,18 +823,18 @@ function ShwArne1()
 	out2 += "<td align=\"left\" valign=\"middle\">\n";
 	out2 += "<select name=\"selplan\" id=\"selplan\" onchange=\"nrplansel=this.value\" >\n";
 	if(nrplansel == -1)
-	out2 += "<option value=\"-1\" selected=\"selected\"><font size=\"1\"> - </font></option>\n";
+		out2 += "<option value=\"-1\" selected=\"selected\"><font size=\"1\"> - </font></option>\n";
 	else
-	out2 += "<option value=\"-1\"><font size=\"1\"> - </font></option>\n";
+		out2 += "<option value=\"-1\"><font size=\"1\"> - </font></option>\n";
 	if(nrplansel == 99)
-	out2 += "<option value=\"99\" selected=\"selected\"><font size=\"1\">"+Str_flashing_Plan+"</font></option>\n";
+		out2 += "<option value=\"99\" selected=\"selected\"><font size=\"1\">"+Str_flashing_Plan+"</font></option>\n";
 	else
-	out2 += "<option value=\"99\"><font size=\"1\">"+Str_flashing_Plan+"</font></option>\n";
+		out2 += "<option value=\"99\"><font size=\"1\">"+Str_flashing_Plan+"</font></option>\n";
 	//-------------------------------------------------
 	if(nrplansel == 97)
-	out2 += "<option value=\"97\" selected=\"selected\"><font size=\"1\">"+Str_Off_Plan+"</font></option>\n";
+		out2 += "<option value=\"97\" selected=\"selected\"><font size=\"1\">"+Str_Off_Plan+"</font></option>\n";
 	else
-	out2 += "<option value=\"97\"><font size=\"1\">"+Str_Off_Plan+"</font></option>\n";
+		out2 += "<option value=\"97\"><font size=\"1\">"+Str_Off_Plan+"</font></option>\n";
 	//-----------------------------------------------------------------------------------
 	var Cplans=255;
 	Cplans=PLCs[0].Plans.length;
@@ -872,8 +872,10 @@ function ShwArne1()
 		}
 		//--------------------------------------------------------
 		out += "</td></tr>\n";
-		out += "<tr><td align=\"left\" valign=\"middle\" colspan=\"2\"><input type=\"button\" class=\"INTEXT2\" onclick=\"myForcePlanCont();\" value=\""+Str_Force_Plan+"\" /></td></tr>\n";
-		out += "<tr><td align=\"left\" valign=\"middle\" colspan=\"2\"><input type=\"button\" class=\"INTEXT2\" onclick=\"myRestPlan();\" value=\""+Str_Rest_Plan+"\" /></td></tr>\n";
+		out += "<tr><td align=\"left\" valign=\"middle\" colspan=\"2\"> \
+		<input type=\"button\" class=\"INTEXT2\" onclick=\"myForcePlanCont();\" value=\""+Str_Force_Plan+"\" /></td></tr>\n";
+		out += "<tr><td align=\"left\" valign=\"middle\" colspan=\"2\"> \
+		<input type=\"button\" class=\"INTEXT2\" onclick=\"myRestPlan();\" value=\""+Str_Rest_Plan+"\" /></td></tr>\n";
 	}
 	out += "</table>\n";
 	//alert(out);

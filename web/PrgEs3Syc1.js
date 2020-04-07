@@ -463,7 +463,7 @@ function SaveSplan1(PLC,Parms,Plan)
 			out+="#CFT:sec.sec;\n";
 		else
 			out+="#CFT:"+PLC.Sec.replace("//","/")+";\n";
-		out+="#MCT:"+(Plan.LCLSYCTCI*1100)+"\n";
+		out+="#MCT:\n";//out+="#MCT:"+(Plan.LCLSYCTCI*1100)+"\n";
 		out+=IniPlan;
 		out+="//--------------------------------------------\n";
 		out+="PLCS="+((1<<Parms.Controllers)-1)+"\n";
