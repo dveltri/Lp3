@@ -1,5 +1,9 @@
 function LanguageToPO()
 {
+	Str_Storage_plans="Plans in SD-card(.eil)"
+	Str_User_plans="Plans on editor(.es3)"
+	Str_Force_info="For foce plan you have got equivalent plan number in storage and editor plan"
+	
 	Str_FromStep="De passo";
 	Str_ToStep="para passo";
 	Str_Demand = "Demanda";
@@ -11,7 +15,7 @@ function LanguageToPO()
 	Str_MN_Config="Configura&#231;&#245;es";
 	Str_MN_Info="Informa&#231;&#245;es";
 	Str_MN_Tools="Ferramentas";
-	Str_check_Conf="Verificar e definir";			//Rogério - 09/05/2014
+	Str_check_Conf="Verificar e definir";			//Rogï¿½rio - 09/05/2014
 //SubMenu (Config)
 	Str_General="Geral";
 	Str_Controllers="Anel";
@@ -19,7 +23,7 @@ function LanguageToPO()
 	Str_Add_Conflict="Matriz de Conflito";
 	Str_Matrix="Matriz";
 	Str_Lack="Falha de L&#226;mpadas";
-	Str_Config_Phases="Config Grupos";				//Márcio - TESC - 26/03/2013
+	Str_Config_Phases="Config Grupos";				//Mï¿½rcio - TESC - 26/03/2013
 	Str_Config_Comms="Config Porta Com";
 	Str_Config_Iteris="Config Iteris";
 	Str_Config_OPCT="Config OPCT";
@@ -59,9 +63,9 @@ function LanguageToPO()
 	Str_GP_Log_Out="Destino do Log:";
 	Str_GP_LOG="Especifica o destino dos Logs";
 	Str_GP_FUT="Frequencia do Piscante:";
-	Str_GP_FUC="Especifica a frequencia (Hz) do sinal Sinc";	//Rogério 09/05/2014
+	Str_GP_FUC="Especifica a frequencia (Hz) do sinal Sinc";	//Rogï¿½rio 09/05/2014
 	Str_GP_FDT="Tempo apagado do Piscante:";
-	Str_GP_FDC="Especifica o tempo (%) que o sinal Sinc deve estar baixo";	//Rogério 09/05/2014
+	Str_GP_FDC="Especifica o tempo (%) que o sinal Sinc deve estar baixo";	//Rogï¿½rio 09/05/2014
 	Str_GP_Loops="La&#231;os:";
 	Str_GP_Loops_1="Especifica a quantidade de la&#231;os do sistema";
 	Str_GP_Inputs="Entradas:";
@@ -176,7 +180,7 @@ function LanguageToPO()
 	Str_Off="Desligado";
 	Str_Other_Stage="Alterar outro movimento";
 	
-	//variáveis para nova tela de geração de planos
+	//variï¿½veis para nova tela de geraï¿½ï¿½o de planos
 	Str_NewEasy_Plans="Planos";
 	Str_NewEasy_Program="Novo Plano";
 	Str_NewEasy_InitSeq="Sequencia de Inicio";
@@ -185,72 +189,72 @@ function LanguageToPO()
 	Str_Red_Total="Sequencia de inicio";
 	Str_Yellow_Blink="Amarelo piscante";
 	
-	//Genéricas
-	Str_Mov="Est";										//Márcio - 17/08/2012 - Troca string Mov: em Easy Program
-	Str_Times="Tempos";									//Márcio - 17/08/2012
-	Str_Sync="Sinc";									//Márcio - 17/08/2012
-	Str_Labels="Nomes";									//Márcio - 17/08/2012
-	Str_Condic="Condi&#231;&#227;o";					//Márcio - 17/08/2012
-	Str_Copy="Copiar";									//Márcio - 17/08/2012
+	//Genï¿½ricas
+	Str_Mov="Est";										//Mï¿½rcio - 17/08/2012 - Troca string Mov: em Easy Program
+	Str_Times="Tempos";									//Mï¿½rcio - 17/08/2012
+	Str_Sync="Sinc";									//Mï¿½rcio - 17/08/2012
+	Str_Labels="Nomes";									//Mï¿½rcio - 17/08/2012
+	Str_Condic="Condi&#231;&#227;o";					//Mï¿½rcio - 17/08/2012
+	Str_Copy="Copiar";									//Mï¿½rcio - 17/08/2012
 	
-	Str_flashing_Plan="Plano piscante";					//Márcio - 21/11/2012
+	Str_flashing_Plan="Plano piscante";					//Mï¿½rcio - 21/11/2012
 	
-	Str_logic_state="Transi&#231;&#245;es";				//Márcio - 26/12/2012
+	Str_logic_state="Transi&#231;&#245;es";				//Mï¿½rcio - 26/12/2012
 	Str_ocup="Ocupa&#231;&#227;o";
 	Str_restart_plan="Reiniciar planos";
 	Str_reload_page="Necess&#225;rio recarregar a p&#225;gina";
 	
-	Str_Time = "Tempo";									//Márcio - 27/12/2012
+	Str_Time = "Tempo";									//Mï¿½rcio - 27/12/2012
 	
-	Str_seg = "seguran&#231;a";							//Márcio - 08/01/2013
-	Str_extend = "extens&#227;o"						//Márcio - 08/01/2013
-	Str_maximum = "m&#225;ximo";						//Márcio - 09/01/2013
-	Str_Comp_Program = "Compilador";					//Márcio - 10/01/2013
-	Str_Plan_Type = "Tipo do plano";					//Márcio - 28/01/2013
-	Str_Force_Plan = "For&#231;a plano";				//Márcio - 04/02/2013
-	Str_Rest_Plan = "Restaura planos";					//Márcio - 04/02/2013
-	Str_Sinc = "Ponto de Sincronismo";					//Márcio - 05/02/2013
-	Str_board = "Tipo da placa";						//Márcio - 07/02/2013
-	Str_boardH = "Especifica o modelo da placa de captura";		//Márcio - 07/02/2013
+	Str_seg = "seguran&#231;a";							//Mï¿½rcio - 08/01/2013
+	Str_extend = "extens&#227;o"						//Mï¿½rcio - 08/01/2013
+	Str_maximum = "m&#225;ximo";						//Mï¿½rcio - 09/01/2013
+	Str_Comp_Program = "Compilador";					//Mï¿½rcio - 10/01/2013
+	Str_Plan_Type = "Tipo do plano";					//Mï¿½rcio - 28/01/2013
+	Str_Force_Plan = "For&#231;a plano";				//Mï¿½rcio - 04/02/2013
+	Str_Rest_Plan = "Restaura planos";					//Mï¿½rcio - 04/02/2013
+	Str_Sinc = "Ponto de Sincronismo";					//Mï¿½rcio - 05/02/2013
+	Str_board = "Tipo da placa";						//Mï¿½rcio - 07/02/2013
+	Str_boardH = "Especifica o modelo da placa de captura";		//Mï¿½rcio - 07/02/2013
 	
-	Str_FilePlan = "Planos";									//Márcio - 28/02/2013
+	Str_FilePlan = "Planos";									//Mï¿½rcio - 28/02/2013
 	Str_FileConf = "Conflitos";
 	Str_FileSch  = "Agendas";
 	Str_Files     = "Arquivos";
 	
-	Str_no_select = "N&#227;o selecionado";						//Márcio José Soares - 11/04/2013
-	Str_Ocorr     = "Ocorr&#234;ncias";							//Márcio - TESC - 12/04/2013
+	Str_no_select = "N&#227;o selecionado";						//Mï¿½rcio Josï¿½ Soares - 11/04/2013
+	Str_Ocorr     = "Ocorr&#234;ncias";							//Mï¿½rcio - TESC - 12/04/2013
 	
-	Str_Cod_Ocorr = "C&#243;digo do Erro";							//Márcio - TESC - 12/04/2013
-	Str_Descr_Ocorr = "Descri&#231;&#227;o da Ocorr&#234;ncia";		//Márcio - TESC - 12/04/2013
-	Str_DtHr_Ocorr = "Data / Hora da Ocorr&#234;ncia";				//Márcio - TESC - 12/04/2013
-	Str_Day = "Dia";												//Márcio - TESC - 15/04/2013
-	Str_Month = "M&#234;s";											//Márcio - TESC - 15/04/2013
-	Str_Year = "Ano";												//Márcio - TESC - 15/04/2013
-	Str_Seek = "Buscar";											//Márcio - TESC - 15/04/2013
-	Str_New_Seek = "Nova Busca";									//Márcio - TESC - 15/04/2013
+	Str_Cod_Ocorr = "C&#243;digo do Erro";							//Mï¿½rcio - TESC - 12/04/2013
+	Str_Descr_Ocorr = "Descri&#231;&#227;o da Ocorr&#234;ncia";		//Mï¿½rcio - TESC - 12/04/2013
+	Str_DtHr_Ocorr = "Data / Hora da Ocorr&#234;ncia";				//Mï¿½rcio - TESC - 12/04/2013
+	Str_Day = "Dia";												//Mï¿½rcio - TESC - 15/04/2013
+	Str_Month = "M&#234;s";											//Mï¿½rcio - TESC - 15/04/2013
+	Str_Year = "Ano";												//Mï¿½rcio - TESC - 15/04/2013
+	Str_Seek = "Buscar";											//Mï¿½rcio - TESC - 15/04/2013
+	Str_New_Seek = "Nova Busca";									//Mï¿½rcio - TESC - 15/04/2013
 	
 	Str_PhaseV="Movimentos Virtuais:";
 	Str_PhaseG="Grupo de Fases:";
 	
-	Str_tp_controller = "Tipo do controlador => ";					//Márcio - TESC - 29/04/2013
-	Str_New_Easy_Seq = "Gera sequ&#234;ncia de in&#237;cio";		//Márcio - TESC - 03/05/2013
+	Str_tp_controller = "Tipo do controlador => ";					//Mï¿½rcio - TESC - 29/04/2013
+	Str_New_Easy_Seq = "Gera sequ&#234;ncia de in&#237;cio";		//Mï¿½rcio - TESC - 03/05/2013
 //	
 
-	Str_Config_OTU = "Config OTU";									//Márcio - TESC - 24/06/2013
-	Str_Ctrl_OTU   = "Controle";									//Márcio - TESC - 25/06/2013
+	Str_Config_OTU = "Config OTU";									//Mï¿½rcio - TESC - 24/06/2013
+	Str_Ctrl_OTU   = "Controle";									//Mï¿½rcio - TESC - 25/06/2013
 	Str_Reply_OTU  = "Resposta";
-	Str_OTU_Command = "Comando";									//Márcio - TESC - 27/06/2013
+	Str_OTU_Command = "Comando";									//Mï¿½rcio - TESC - 27/06/2013
 	Str_OTU_Demand= "Demanda";
 	
-	Str_OTU_Menu1 = " Bits IN/OUT";									//Márcio - TESC - 15/07/2013
+	Str_OTU_Menu1 = " Bits IN/OUT";									//Mï¿½rcio - TESC - 15/07/2013
 	Str_OTU_Menu2 = " Entreverdes";				
 	Str_OTU_Menu3 = " Sequ&#234;ncia Conflit.";
 	
-	Str_OTU_CEV = " Cores";											//Márcio - TESC - 16/07/2013
+	Str_OTU_CEV = " Cores";											//Mï¿½rcio - TESC - 16/07/2013
 	Str_Control = " Controles";
 	
-	Str_FO = "Focos desligados";									//Márcio - TESC - 02/10/2013
+	Str_FO = "Focos desligados";									//Mï¿½rcio - TESC - 02/10/2013
 	Str_Manual_CTRL = "Controle Manual";
 	Str_Excesso = "Excesso de";
 	Str_Bord_off = "Falta de Placa";
@@ -377,9 +381,9 @@ function LanguageToPO()
 
 	Str_Lamp="Lampada";
 	
-	Str_Err_Electric_Red="Erro Eletrico de Vermelho";	//Rogério 09/05/2014
-	Str_Err_Electric_Yellow="Erro Eletrico de Amarelo";	//Rogério 09/05/2014
-	Str_Err_Electric_Green="Erro Eletrico de Verde";	//Rogério 09/05/2014
+	Str_Err_Electric_Red="Erro Eletrico de Vermelho";	//Rogï¿½rio 09/05/2014
+	Str_Err_Electric_Yellow="Erro Eletrico de Amarelo";	//Rogï¿½rio 09/05/2014
+	Str_Err_Electric_Green="Erro Eletrico de Verde";	//Rogï¿½rio 09/05/2014
 	
 	Str_MD_Normal_lock="Agenda Modo Local";
 	Str_New="Novo";
@@ -406,12 +410,12 @@ function LanguageToPO()
 	Str_DaysName=["Domingo","Segunda","Ter&#231;a","Quarta","Quinta","Sexta","S&#225;bado"];
 
 	Str_Lamp_Off="Foco Desligado";
-	Str_Service_On="Modo Teste";							//Rogério 09/05/2014
+	Str_Service_On="Modo Teste";							//Rogï¿½rio 09/05/2014
 	
-	Str_Phase_Errors_Disable="Inibe erros no Grupo";		//Rogério 09/05/2014
-	Str_Time_minimum_Green="Tempo de Verde de Seguran\u00e7a";	//Rogério 09/05/2014
-	Str_Time_minimum_Yellow="Tempo m&#237;nimo de Amarelo";	//Rogério 09/05/2014
-	Str_Time_minimum_Red="Tempo m&#237;nimo de Vermelho";	//Rogério 09/05/2014
+	Str_Phase_Errors_Disable="Inibe erros no Grupo";		//Rogï¿½rio 09/05/2014
+	Str_Time_minimum_Green="Tempo de Verde de Seguran\u00e7a";	//Rogï¿½rio 09/05/2014
+	Str_Time_minimum_Yellow="Tempo m&#237;nimo de Amarelo";	//Rogï¿½rio 09/05/2014
+	Str_Time_minimum_Red="Tempo m&#237;nimo de Vermelho";	//Rogï¿½rio 09/05/2014
 	
 	//******************************************* Fabiano Nogueira 10/04/2014
 	Str_Error_ErrorCode = "C&#243;digo de erro";
@@ -425,8 +429,8 @@ function LanguageToPO()
 	Str_Error_SelectNewError="Selecione novo erro";
 	Str_EV_RemoveMessage="Deseja remover \u00faltimo entreverdes?";
 	//******************************************* Fabiano Nogueira 10/04/2014
-	Str_Add_State="Adiciona Estado";	//Rogério - 09/05/2014
-	Str_Del_State="Apaga Estado";		//Rogério - 09/05/2014	
+	Str_Add_State="Adiciona Estado";	//Rogï¿½rio - 09/05/2014
+	Str_Del_State="Apaga Estado";		//Rogï¿½rio - 09/05/2014	
 	
 	Str_Error=["Alert[0],Inicio de operacao - Versao:%u.%u\n",
 "Alert[1],LDO power not OK reset",
@@ -450,7 +454,7 @@ function LanguageToPO()
 "El PLC [%s] No se pudo cambiar de plan [%s]-X->[%s]\n",
 "Nao foi possivel alocar memoria para X \n",
 "%s access to Sd Card\n",
-"Nao foi possível alocar a memoria para o arquivo de configuracao X\n",
+"Nao foi possï¿½vel alocar a memoria para o arquivo de configuracao X\n",
 "Error [%s] access to file %s\n",
 "A fase %u de %s ja pertence a %s\n",
 "A fase %u %s designada esta fora do intervalo \n",
@@ -488,7 +492,7 @@ function LanguageToPO()
 "Nome do arquivo de agenda nao configurado\n",
 "Nao foi possivel encontrar a tabela [Holidays & Dates] in %s\n",
 "EOF unspected looking [Holidays & Dates] in %s\n",
-"Nao foi possível encontrar a tabela [weeks]\n",
+"Nao foi possï¿½vel encontrar a tabela [weeks]\n",
 "A data nao tem uma tabela alocada\n",
 "A instrucao e grande demais para o buffer de processamento\n",
 "Conflito entre fase[%u].%X<->fase[%u].%X\n",
@@ -497,7 +501,7 @@ function LanguageToPO()
 "Tempo minimo de vermelho [%ums]<[%ums] na fase: %u\n",
 "O plano %s nao tem um arquivo de conflito designado\n",
 "O plano %s nao tem um tempo de seguranca de ciclo configurado\n",
-"Salto de estado não permitidos\n",
+"Salto de estado nï¿½o permitidos\n",
 "Error de secuancia de color en fase[%u]\n",
 "Nao foi possivel alocar memoria para o arquivo %s\n",
 "Error %s access to file [%s]\n",
