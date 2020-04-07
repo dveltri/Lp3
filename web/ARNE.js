@@ -815,7 +815,7 @@ function ShwArne1()
 			out += (PLCs[j].PlanList.length-2);
 		else
 			out += "0";
-		out += Str_User_plans+":"+PLCs[j].Plans.length+")<br/>";
+		out += " - "+Str_User_plans+":"+PLCs[j].Plans.length+")<br/>";
 	}
 	out += "</font></td></tr>\n";
 	//---------------------------------------------------------------------------------
