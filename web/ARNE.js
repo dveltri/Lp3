@@ -798,6 +798,7 @@ function OptTime()
 function ShwArne1()
 {
 	var out = "";
+	var out2 = "";
 	var nxchg = 0;					//pega n�mero do plano do usu�rio
 	var count1=0;
 	var name="";
@@ -813,22 +814,22 @@ function ShwArne1()
 		out += Str_User_plans+":"+PLCs[j].Plans.length+")<br/>";
 	}
 	out += "</font></td></tr>\n";
-	out += "<tr><td  align=\"left\" valign=\"middle\">"+Str_Plan_Number+":</td>\n";
-	out += "<td align=\"left\" valign=\"middle\">\n";
-	out += "<select name=\"selplan\" id=\"selplan\" onchange=\"nrplansel=this.value\" >\n";
+	out2 += "<tr><td  align=\"left\" valign=\"middle\">"+Str_Plan_Number+":</td>\n";
+	out2 += "<td align=\"left\" valign=\"middle\">\n";
+	out2 += "<select name=\"selplan\" id=\"selplan\" onchange=\"nrplansel=this.value\" >\n";
 	if(nrplansel == -1)
-		out += "<option value=\"-1\" selected=\"selected\"><font size=\"1\"> - </font></option>\n";
+	out2 += "<option value=\"-1\" selected=\"selected\"><font size=\"1\"> - </font></option>\n";
 	else
-		out += "<option value=\"-1\"><font size=\"1\"> - </font></option>\n";
+	out2 += "<option value=\"-1\"><font size=\"1\"> - </font></option>\n";
 	if(nrplansel == 99)
-		out += "<option value=\"99\" selected=\"selected\"><font size=\"1\">"+Str_flashing_Plan+"</font></option>\n";
+	out2 += "<option value=\"99\" selected=\"selected\"><font size=\"1\">"+Str_flashing_Plan+"</font></option>\n";
 	else
-		out += "<option value=\"99\"><font size=\"1\">"+Str_flashing_Plan+"</font></option>\n";
+	out2 += "<option value=\"99\"><font size=\"1\">"+Str_flashing_Plan+"</font></option>\n";
 	//-------------------------------------------------
 	if(nrplansel == 97)
-		out += "<option value=\"97\" selected=\"selected\"><font size=\"1\">"+Str_Off_Plan+"</font></option>\n";
+	out2 += "<option value=\"97\" selected=\"selected\"><font size=\"1\">"+Str_Off_Plan+"</font></option>\n";
 	else
-		out += "<option value=\"97\"><font size=\"1\">"+Str_Off_Plan+"</font></option>\n";
+	out2 += "<option value=\"97\"><font size=\"1\">"+Str_Off_Plan+"</font></option>\n";
 	//-----------------------------------------------------------------------------------
 	var Cplans=255;
 	Cplans=PLCs[0].Plans.length;
@@ -839,34 +840,36 @@ function ShwArne1()
 		if(Cplans>(PLCs[j].PlanList.length-2))
 			Cplans=PLCs[j].PlanList.length-2;
 	}
-	/*if(Cplans<=0)
-		return ""; // */
-	for(pln=0;pln<Cplans;pln++)
+	if(Cplans>0)
 	{
-		if(pln+1 == nrplansel)
-			out += "<option value=\""+(pln+1)+"\" selected=\"selected\"><font size=\"1\">"+Str_Plan+(pln+1)+"</font></option>\n";
-		else
-			out += "<option value=\""+(pln+1)+"\"><font size=\"1\">"+Str_Plan+(pln+1)+"</font></option>\n";
-	}
-	out += "</select>";
-	out += "</td></tr>\n";
-	out += "<tr><td align=\"left\" valign=\"middle\">"+Str_period+" [min]:</td>";
-	out += "<td align=\"left\" valign=\"middle\">";
-	//--------------------------------------------------------
-	if(GlobalParms.MODEL.indexOf("GW4")!=-1 || GlobalParms.MODEL.indexOf("GW")==-1)
-	{
-		out += "<select name=\"NxChgPlan\" id=\"NxChgPlan\" >\n";
-		out += OptTime();
+		out+=out2;
+		for(pln=0;pln<Cplans;pln++)
+		{
+			if(pln+1 == nrplansel)
+				out += "<option value=\""+(pln+1)+"\" selected=\"selected\"><font size=\"1\">"+Str_Plan+(pln+1)+"</font></option>\n";
+			else
+				out += "<option value=\""+(pln+1)+"\"><font size=\"1\">"+Str_Plan+(pln+1)+"</font></option>\n";
+		}
 		out += "</select>";
+		out += "</td></tr>\n";
+		out += "<tr><td align=\"left\" valign=\"middle\">"+Str_period+" [min]:</td>";
+		out += "<td align=\"left\" valign=\"middle\">";
+		//--------------------------------------------------------
+		if(GlobalParms.MODEL.indexOf("GW4")!=-1 || GlobalParms.MODEL.indexOf("GW")==-1)
+		{
+			out += "<select name=\"NxChgPlan\" id=\"NxChgPlan\" >\n";
+			out += OptTime();
+			out += "</select>";
+		}
+		else
+		{
+			out += "<input name=\"NxChgPlan\" id=\"NxChgPlan\" type=\"TEXT\" size=\"3\" value=\""+nxchg+"\" />";
+		}
+		//--------------------------------------------------------
+		out += "</td></tr>\n";
+		out += "<tr><td align=\"left\" valign=\"middle\" colspan=\"2\"><input type=\"button\" class=\"INTEXT2\" onclick=\"myForcePlanCont();\" value=\""+Str_Force_Plan+"\" /></td></tr>\n";
+		out += "<tr><td align=\"left\" valign=\"middle\" colspan=\"2\"><input type=\"button\" class=\"INTEXT2\" onclick=\"myRestPlan();\" value=\""+Str_Rest_Plan+"\" /></td></tr>\n";
 	}
-	else
-	{
-		out += "<input name=\"NxChgPlan\" id=\"NxChgPlan\" type=\"TEXT\" size=\"3\" value=\""+nxchg+"\" />";
-	}
-	//--------------------------------------------------------
-	out += "</td></tr>\n";
-	out += "<tr><td align=\"left\" valign=\"middle\" colspan=\"2\"><input type=\"button\" class=\"INTEXT2\" onclick=\"myForcePlanCont();\" value=\""+Str_Force_Plan+"\" /></td></tr>\n";
-	out += "<tr><td align=\"left\" valign=\"middle\" colspan=\"2\"><input type=\"button\" class=\"INTEXT2\" onclick=\"myRestPlan();\" value=\""+Str_Rest_Plan+"\" /></td></tr>\n";
 	out += "</table>\n";
 	//alert(out);
 	//inputFocus="myPlanN2";													//declara qual elemento recebe o foco
