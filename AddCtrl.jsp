@@ -136,28 +136,28 @@
 				//--------------------
 				archivo.write("ID "+ID+"\n");
 				{
-				archivo.write("MAC 00-01");
-				int ipf=0;
-				String temp="";
-				temp=IpAdd.replace('.', ':');
-				String [] ip = temp.split(":");
-				for(int i=0;i<ip.length;i++)
-				{
-					temp=""+ip[i];
-					ipf=Integer.parseInt(temp);
-					temp=""+Integer.toHexString(ipf);
-					temp=temp.toUpperCase();
-					ipf=temp.length();
-					if(ipf==1)
-						archivo.write("-0"+temp);
-					else
-						archivo.write("-"+temp);
-				}
-				archivo.write("\n");
+					archivo.write("MAC 00-01");
+					int ipf=0;
+					String temp="";
+					temp=IpAdd.replace('.', ':');
+					String [] ip = temp.split(":");
+					for(int i=0;i<ip.length;i++)
+					{
+						temp=""+ip[i];
+						ipf=Integer.parseInt(temp);
+						temp=""+Integer.toHexString(ipf);
+						temp=temp.toUpperCase();
+						ipf=temp.length();
+						if(ipf==1)
+							archivo.write("-0"+temp);
+						else
+							archivo.write("-"+temp);
+					}
+					archivo.write("\n");
 				}
 				archivo.write("ETH0 "+IpAdd+"\n");
 				if(Msk!=null)
-				archivo.write("NETMASK0 "+Msk+"\n");
+					archivo.write("NETMASK0 "+Msk+"\n");
 				if (Model.indexOf("M3")!=-1)
 					archivo.write("MACDGW FF-FF-FF-FF-FF-FF\n");
 				if (Model.indexOf("M4")!=-1)
@@ -170,9 +170,9 @@
 				//----------------------------------------------------------------------- MST
 				if (Model.indexOf("SAD-V")!=-1)
 				{
-						archivo.write("LOG 0\n");
-						archivo.write("Inputs 0\n");
-						archivo.write("Loops 0\n");
+					archivo.write("LOG 0\n");
+					archivo.write("Inputs 0\n");
+					archivo.write("Loops 0\n");
 					
 					if (Model.indexOf("SAD-V2M4")!=-1)
 						archivo.write("Phases 2\n");
@@ -187,7 +187,7 @@
 				//----------------------------------------------------------------------- GW
 				if (Model.indexOf("GW")!=-1)
 				{
-						archivo.write("LOG 0\n");
+					archivo.write("LOG 0\n");
 					if (Model.indexOf("GW1M3FT")!=-1)
 					{
 						archivo.write("Inputs 0\n");
@@ -217,14 +217,14 @@
 				//-----------------------------------------------------------------------MAC
 				if (Model.indexOf("MAC")!=-1)
 				{
-						archivo.write("LOG 0\n");
+					archivo.write("LOG 0\n");
 					if (Model.indexOf("TC1M4")!=-1)
 					{
 						archivo.write("Inputs 0\n");
 						archivo.write("Loops 0\n");
 						archivo.write("Phases 4\n");
 						archivo.write("ATZ &00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00&00\n");
-				}
+					}
 				}
 				//-----------------------------------------------------------------------DGV
 				if (Model.indexOf("DGV")!=-1)
@@ -272,7 +272,7 @@
 	//------------------------------------------------------------------
 	try
 	{
-	  	String temp  = new String();
+		String temp  = new String();
 		File directorio;
 		if (Os.indexOf("Win")!=-1)
 		{

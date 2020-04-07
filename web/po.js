@@ -1,8 +1,8 @@
 function LanguageToPO()
 {
-	Str_Storage_plans="Plans in SD-card(.eil)"
-	Str_User_plans="Plans on editor(.es3)"
-	Str_Force_info="For foce plan you have got equivalent plan number in storage and editor plan"
+	Str_Storage_plans="Planos no SD-card(.eil)"
+	Str_User_plans="Planos no editor(.es3)"
+	Str_Force_info="Para força o plano voce tem que ter um a numero equivalente entre os planos no editor e SD-card"
 	
 	Str_FromStep="De passo";
 	Str_ToStep="para passo";
