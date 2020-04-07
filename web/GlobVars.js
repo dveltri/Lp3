@@ -11,7 +11,7 @@ var Reload=0x000;
 var ObjInterval;
 var Refresh=0;
 var dest=0;
-var language="ES";
+var language="PO";
 var TcType=0;
 var WAC=12345;
 var Log_En=0;
