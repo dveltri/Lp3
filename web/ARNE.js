@@ -810,7 +810,11 @@ function ShwArne1()
 	for(var j=0;j<PLCs.length;j++)
 	{
 		out += PLCs[j].Name
-		out += " ("+Str_Storage_plans+":"+PLCs[j].PlanList.length-2;
+		out += " ("+Str_Storage_plans+":";
+		if(PLCs[j].PlanList && PLCs[j].PlanList.length && PLCs[j].PlanList.length>=2)
+			out += (PLCs[j].PlanList.length-2);
+		else
+			out += "0";
 		out += Str_User_plans+":"+PLCs[j].Plans.length+")<br/>";
 	}
 	out += "</font></td></tr>\n";
