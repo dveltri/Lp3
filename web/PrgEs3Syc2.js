@@ -622,8 +622,10 @@ function SaveSplan2(PLC,Parms,Plan)
 			out+="\tmov 0 otu.fr\n";
 		}
 		out+="\t== 254 Nsts SLOF\n";
-		out+="\t== Nsts Csts\n";
+		out+="\t== Nsts Csts NOCHGSTS\n";
 		out+="\tmov TIMERS tstart\n";
+		out+="\ttmin\n";
+		out+="NOCHGSTS\n";
 		if(Parms.MODEL.indexOf("RT")!=-1)
 		{
 			out+="\tmov Nsts otu.step\n";
@@ -711,7 +713,6 @@ out+="FSTP0\n\
 	mov Nstp Cstp\n\
 	mov MCSS[Cstp] Nsts\n\
 	call SETSTS\n\
-	tmin\n\
 	mov 0 temp\n\
 KEEPWAIT\n\
 	delay 1000\n\
