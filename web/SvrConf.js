@@ -697,12 +697,12 @@ function LoadConfSrc()
 		break;
 		case 90:
 		{
-			if (Errors.length)
+			/*if (Errors.length)
 			{
 				ShwPBar('Loading Errors data...'+Errors[ErrIdx].Path+"/"+Errors[ErrIdx].Name);
 				request=GetUrl(PrgEd[SrcIdx].host+"/"+Errors[ErrIdx].Path+"/"+Errors[ErrIdx].Name,RcvConfSrc);
 			}
-			else
+			else*/
 			{
 				request=1;
 				percent=100;
