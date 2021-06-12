@@ -497,9 +497,7 @@ function ShowErrorFileList()
 		out+="<a href=\""+PrgEd[SrcIdx].host+(Errors[x].Path+"/").replace("//","/")+HTMLEncode(Errors[x].Name)+"?WAC="+WAC+"\" target=\"_blank\">\n";
 		out+="<img src=\"../../img/save1.png\" width=\"20\" height=\"20\" border=\"0\" />";
 		out+="</a>";
-		out+="<a href=\"\" onclick=\"UpFile='"+HTMLEncode(Errors[x].Name)+"';UpPath='"+Errors[x].Path+"';UpType='txt';\
-		GetUrl(PrgEd[SrcIdx].host+"/"+Errors["+x+"].Path+"/"+Errors["+x+"].Name, rcv_err_query);return false\">\n";
-		//rcvERR(Errors["+x+"].Datos);return false\">\n";
+		out+="<a href=\"\" onclick=\"UpFile='"+HTMLEncode(Errors[x].Name)+"';UpPath='"+Errors[x].Path+"';UpType='txt';get_err_file('"+PrgEd[SrcIdx].host+"/"+Errors[x].Path+"/"+Errors[x].Name+"');return false\">\n";
 		out+="[";
 		if(Errors[x].Path=="/err" || Errors[x].Path=="/err/")
 			out+=Str_General;
@@ -555,6 +553,11 @@ function UpdateErrorList(Datos)
 		Errors.splice(DelErr,1);
 	}
 	ReDraw(moni_errors);
+}
+
+function get_err_file(file)
+{
+	GetUrl(file, rcv_err_query);
 }
 
 function rcv_err_query(Datos)
